@@ -11,14 +11,20 @@
   },
   "rnpm": {
     "assets": [
-    "./media/fonts/"
+      "./media/fonts/"
     ]
   },
   "dependencies": {
+    "@material/card": "^8.0.0",
     "native-base": "^2.13.15",
     "react": "16.13.1",
     "react-native": "0.63.4",
-    "react-native-global-props": "^1.1.5"
+    "react-native-gesture-handler": "^1.9.0",
+    "react-native-global-props": "^1.1.5",
+    "react-native-paper": "^4.4.1",
+    "react-native-reanimated": "^1.13.2",
+    "react-native-tab-view": "^2.15.2",
+    "react-native-vector-icons": "^7.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
