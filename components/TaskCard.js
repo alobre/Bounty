@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {StyleSheet, View} from 'react-native'
 import globalStyles from './GlobalStyles.js'
 import { Avatar, Button, Card, Title, Paragraph, Text, Subheading, Divider, TouchableRipple } from 'react-native-paper';
+import { Row } from 'native-base';
 
 // import { Left, Thumbnail, Container, Header, Text, Content, Card, CardItem, Body } from 'native-base';
 
@@ -10,52 +11,25 @@ const TaskCard = ({username, title, category, description, wage}) =>{
     <Card elevation={4}>
     <Card.Title title={title} subtitle={category}/>
     <Card.Content>
-      <View style={styles.profile}>
-        <Avatar.Image size={24} source={require('../media/obama.jpg')} />
-        <Subheading style={styles.username}>{username}</Subheading>
-      </View>
+      <TouchableRipple onPress={()=> console.log('Profile')}>
+        <View style={styles.profile}>
+          <Avatar.Image size={24} source={require('../media/obama.jpg')} />
+          <Subheading style={styles.username}>{username}</Subheading>
+        </View>
+      </TouchableRipple>
       <Divider/>
       <Paragraph style={globalStyles.fontSerif}>{description}</Paragraph>
     </Card.Content>
     <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
+    <View style={styles.priceAndContact}>
+    <Text style={styles.price}>{wage}</Text>
     <TouchableRipple rippleColor="rgba(0, 0, 0, .32)">
       <Card.Actions style={styles.buttonParent}>
-        <Button onPress={() => console.log('Pressed')}>Auftraggeber kontaktieren</Button>
+        <Button style={styles.contactContractor} onPress={() => console.log('Auftraggeber Kontaktieren')}>Auftraggeber kontaktieren</Button>
       </Card.Actions>
     </TouchableRipple>
+    </View>
   </Card>
-      // <Container>
-      //   <Header />
-      //   <Content>
-      //     <Card style={styles.card}>
-      //       <CardItem style={styles.title}>
-      //         <Text header style={globalStyles.fontSansBold}>{title}</Text>
-  
-      //       </CardItem>
-      //     <CardItem style={styles.profile}>
-      //       <Left>
-      //         <Thumbnail small source={require('../media/obama.jpg')} />
-      //         <Body>
-      //           <Text>{username}</Text>
-      //         </Body>
-      //           </Left>
-      //     </CardItem>
-      //       <CardItem>
-      //         <Text note>{category}</Text>
-      //       </CardItem>
-      //       <CardItem>
-      //         <Body>
-      //           <Text style={globalStyles.fontSerif}>
-      //             {description}
-      //           </Text>
-      //         </Body>
-      //       </CardItem>
-      //       <CardItem footer bordered>
-      //         <Text style={globalStyles.fontSans}>{wage}</Text>
-      //       </CardItem>
-      //    </Card>
-      //   </Content>
-      // </Container>
     );
   }
 
@@ -76,6 +50,16 @@ const TaskCard = ({username, title, category, description, wage}) =>{
     },
     buttonParent:{
       justifyContent: "flex-end"
+    },
+    priceAndContact:{
+      flexDirection: "row"
+    },
+    price:{
+      flex:1,
+      color: "#5fd47e",
+      fontSize: 40,
+    },
+    contactContractor:{
     }
   })
 
