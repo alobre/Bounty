@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {StyleSheet, View} from 'react-native'
 import globalStyles from './GlobalStyles.js'
 import { Avatar, Button, Card, Title, Paragraph, Text, Subheading, Divider, TouchableRipple } from 'react-native-paper';
-import { Row } from 'native-base';
 
 // import { Left, Thumbnail, Container, Header, Text, Content, Card, CardItem, Body } from 'native-base';
 
