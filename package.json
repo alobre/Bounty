@@ -1,6 +1,6 @@
 {
   "name": "BountyHunter",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "@material/card": "^8.0.0",
+    "@react-native-firebase/app": "^10.2.0",
+    "@react-native-firebase/auth": "^10.2.0",
     "native-base": "^2.13.15",
     "react": "16.13.1",
     "react-native": "0.63.4",

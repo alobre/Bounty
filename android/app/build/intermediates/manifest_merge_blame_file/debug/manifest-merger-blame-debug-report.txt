@@ -15,54 +15,168 @@
 12-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:4:5-67
 12-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:4:22-64
 13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-13-->[com.facebook.flipper:flipper:0.54.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\1c7787ec82631e0394972c76bdabe608\flipper-0.54.0\AndroidManifest.xml:16:5-76
-13-->[com.facebook.flipper:flipper:0.54.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\1c7787ec82631e0394972c76bdabe608\flipper-0.54.0\AndroidManifest.xml:16:22-73
-14
-15    <application
-15-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:6:5-25:19
-16        android:name="com.bountyhunter.MainApplication"
-16-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:7:7-38
-17        android:allowBackup="false"
-17-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:11:7-34
-18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-18-->[androidx.core:core:1.1.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\639e914bfc1efa21e36199d3ff2c5eef\core-1.1.0\AndroidManifest.xml:24:18-86
-19        android:debuggable="true"
-20        android:icon="@mipmap/ic_launcher"
-20-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:9:7-41
-21        android:label="@string/app_name"
-21-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:8:7-39
-22        android:roundIcon="@mipmap/ic_launcher_round"
-22-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:10:7-52
-23        android:theme="@style/AppTheme"
-23-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:12:7-38
-24        android:usesCleartextTraffic="true" >
-24-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\debug\AndroidManifest.xml:7:18-53
-25        <activity
-25-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:13:7-23:18
-26            android:name="com.bountyhunter.MainActivity"
-26-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:14:9-37
-27            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
-27-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:16:9-86
-28            android:label="@string/app_name"
-28-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:15:9-41
-29            android:launchMode="singleTask"
-29-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:17:9-40
-30            android:windowSoftInputMode="adjustResize" >
-30-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:18:9-51
-31            <intent-filter>
-31-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:19:9-22:25
-32                <action android:name="android.intent.action.MAIN" />
-32-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:20:13-65
-32-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:20:21-62
-33
-34                <category android:name="android.intent.category.LAUNCHER" />
-34-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:21:13-73
-34-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:21:23-70
-35            </intent-filter>
-36        </activity>
-37        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
-37-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:24:7-84
-37-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:24:17-81
-38    </application>
-39
-40</manifest>
+13-->[com.facebook.flipper:flipper:0.54.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\a0953a6941c1135d57623c7d643d23a3\flipper-0.54.0\AndroidManifest.xml:16:5-76
+13-->[com.facebook.flipper:flipper:0.54.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\a0953a6941c1135d57623c7d643d23a3\flipper-0.54.0\AndroidManifest.xml:16:22-73
+14    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+14-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6be347fc773bd3718759b2fcb64e74c7\play-services-measurement-api-18.0.0\AndroidManifest.xml:23:5-79
+14-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6be347fc773bd3718759b2fcb64e74c7\play-services-measurement-api-18.0.0\AndroidManifest.xml:23:22-76
+15    <uses-permission android:name="android.permission.WAKE_LOCK" />
+15-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6be347fc773bd3718759b2fcb64e74c7\play-services-measurement-api-18.0.0\AndroidManifest.xml:24:5-68
+15-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6be347fc773bd3718759b2fcb64e74c7\play-services-measurement-api-18.0.0\AndroidManifest.xml:24:22-65
+16    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+16-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:26:5-110
+16-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:26:22-107
+17
+18    <application
+18-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:6:5-25:19
+19        android:name="com.bountyhunter.MainApplication"
+19-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:7:7-38
+20        android:allowBackup="false"
+20-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:11:7-34
+21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+21-->[androidx.core:core:1.1.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6466522822c9f31c5107b8fc2277998a\core-1.1.0\AndroidManifest.xml:24:18-86
+22        android:debuggable="true"
+23        android:icon="@mipmap/ic_launcher"
+23-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:9:7-41
+24        android:label="@string/app_name"
+24-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:8:7-39
+25        android:roundIcon="@mipmap/ic_launcher_round"
+25-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:10:7-52
+26        android:theme="@style/AppTheme"
+26-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:12:7-38
+27        android:usesCleartextTraffic="true" >
+27-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\debug\AndroidManifest.xml:7:18-53
+28        <activity
+28-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:13:7-23:18
+29            android:name="com.bountyhunter.MainActivity"
+29-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:14:9-37
+30            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+30-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:16:9-86
+31            android:label="@string/app_name"
+31-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:15:9-41
+32            android:launchMode="singleTask"
+32-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:17:9-40
+33            android:windowSoftInputMode="adjustResize" >
+33-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:18:9-51
+34            <intent-filter>
+34-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:19:9-22:25
+35                <action android:name="android.intent.action.MAIN" />
+35-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:20:13-65
+35-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:20:21-62
+36
+37                <category android:name="android.intent.category.LAUNCHER" />
+37-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:21:13-73
+37-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:21:23-70
+38            </intent-filter>
+39        </activity>
+40        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+40-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:24:7-84
+40-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:24:17-81
+41
+42        <service
+42-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6be347fc773bd3718759b2fcb64e74c7\play-services-measurement-api-18.0.0\AndroidManifest.xml:27:9-33:19
+43            android:name="com.google.firebase.components.ComponentDiscoveryService"
+43-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6be347fc773bd3718759b2fcb64e74c7\play-services-measurement-api-18.0.0\AndroidManifest.xml:28:13-84
+44            android:directBootAware="true"
+44-->[com.google.firebase:firebase-common:19.4.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\aec5479a76a04bcdd361e04de4476ad8\jetified-firebase-common-19.4.0\AndroidManifest.xml:35:13-43
+45            android:exported="false" >
+45-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6be347fc773bd3718759b2fcb64e74c7\play-services-measurement-api-18.0.0\AndroidManifest.xml:29:13-37
+46            <meta-data
+46-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6be347fc773bd3718759b2fcb64e74c7\play-services-measurement-api-18.0.0\AndroidManifest.xml:30:13-32:85
+47                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+47-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6be347fc773bd3718759b2fcb64e74c7\play-services-measurement-api-18.0.0\AndroidManifest.xml:31:17-139
+48                android:value="com.google.firebase.components.ComponentRegistrar" />
+48-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6be347fc773bd3718759b2fcb64e74c7\play-services-measurement-api-18.0.0\AndroidManifest.xml:32:17-82
+49            <meta-data
+49-->[com.google.firebase:firebase-installations:16.3.4] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\dc1de0c209d52e17e0d8a11f498db4e8\firebase-installations-16.3.4\AndroidManifest.xml:18:13-20:85
+50                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+50-->[com.google.firebase:firebase-installations:16.3.4] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\dc1de0c209d52e17e0d8a11f498db4e8\firebase-installations-16.3.4\AndroidManifest.xml:19:17-127
+51                android:value="com.google.firebase.components.ComponentRegistrar" />
+51-->[com.google.firebase:firebase-installations:16.3.4] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\dc1de0c209d52e17e0d8a11f498db4e8\firebase-installations-16.3.4\AndroidManifest.xml:20:17-82
+52        </service>
+53
+54        <provider
+54-->[com.google.firebase:firebase-common:19.4.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\aec5479a76a04bcdd361e04de4476ad8\jetified-firebase-common-19.4.0\AndroidManifest.xml:26:9-31:39
+55            android:name="com.google.firebase.provider.FirebaseInitProvider"
+55-->[com.google.firebase:firebase-common:19.4.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\aec5479a76a04bcdd361e04de4476ad8\jetified-firebase-common-19.4.0\AndroidManifest.xml:27:13-77
+56            android:authorities="com.bountyhunter.firebaseinitprovider"
+56-->[com.google.firebase:firebase-common:19.4.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\aec5479a76a04bcdd361e04de4476ad8\jetified-firebase-common-19.4.0\AndroidManifest.xml:28:13-72
+57            android:directBootAware="true"
+57-->[com.google.firebase:firebase-common:19.4.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\aec5479a76a04bcdd361e04de4476ad8\jetified-firebase-common-19.4.0\AndroidManifest.xml:29:13-43
+58            android:exported="false"
+58-->[com.google.firebase:firebase-common:19.4.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\aec5479a76a04bcdd361e04de4476ad8\jetified-firebase-common-19.4.0\AndroidManifest.xml:30:13-37
+59            android:initOrder="100" />
+59-->[com.google.firebase:firebase-common:19.4.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\aec5479a76a04bcdd361e04de4476ad8\jetified-firebase-common-19.4.0\AndroidManifest.xml:31:13-36
+60
+61        <activity
+61-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:23:9-27:75
+62            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+62-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:24:13-93
+63            android:excludeFromRecents="true"
+63-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:25:13-46
+64            android:exported="false"
+64-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:26:13-37
+65            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+65-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:27:13-72
+66        <!--
+67            Service handling Google Sign-In user revocation. For apps that do not integrate with
+68            Google Sign-In, this service will never be started.
+69        -->
+70        <service
+70-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:33:9-37:51
+71            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+71-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:34:13-89
+72            android:exported="true"
+72-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:35:13-36
+73            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+73-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:36:13-107
+74            android:visibleToInstantApps="true" />
+74-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:37:13-48
+75
+76        <activity
+76-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d3caf54114e86177d18237a7364d1766\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+77            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+77-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d3caf54114e86177d18237a7364d1766\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+78            android:exported="false"
+78-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d3caf54114e86177d18237a7364d1766\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+79            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+79-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d3caf54114e86177d18237a7364d1766\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+80
+81        <receiver
+81-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:29:9-33:20
+82            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+82-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:30:13-85
+83            android:enabled="true"
+83-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:31:13-35
+84            android:exported="false" >
+84-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:32:13-37
+85        </receiver>
+86
+87        <service
+87-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:35:9-38:40
+88            android:name="com.google.android.gms.measurement.AppMeasurementService"
+88-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:36:13-84
+89            android:enabled="true"
+89-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:37:13-35
+90            android:exported="false" />
+90-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:38:13-37
+91        <service
+91-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:39:9-43:72
+92            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+92-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:40:13-87
+93            android:enabled="true"
+93-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:41:13-35
+94            android:exported="false"
+94-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:42:13-37
+95            android:permission="android.permission.BIND_JOB_SERVICE" />
+95-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:43:13-69
+96
+97        <meta-data
+97-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\65af5ae97f64d61b11a05fa95c62ea6d\jetified-play-services-basement-17.1.1\AndroidManifest.xml:23:9-25:69
+98            android:name="com.google.android.gms.version"
+98-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\65af5ae97f64d61b11a05fa95c62ea6d\jetified-play-services-basement-17.1.1\AndroidManifest.xml:24:13-58
+99            android:value="@integer/google_play_services_version" />
+99-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\65af5ae97f64d61b11a05fa95c62ea6d\jetified-play-services-basement-17.1.1\AndroidManifest.xml:25:13-66
+100    </application>
+101
+102</manifest>

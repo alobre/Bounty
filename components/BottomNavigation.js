@@ -7,7 +7,7 @@ import { BottomNavigation, Text } from 'react-native-paper';
 
 const BountyRoute = () => <TaskTab></TaskTab>
 const MessagesRoute = () => <Messages></Messages>;
-const SettingsRoute = () => <Text>Settings</Text>;
+const SettingsRoute = () => {};
 
 const bottomNavigation = () => {
     const [index, setIndex] = React.useState(0);

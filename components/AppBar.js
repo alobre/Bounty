@@ -2,6 +2,7 @@ import React from 'react';
 import { Appbar, Avatar, Text } from 'react-native-paper';
 import { StyleSheet } from 'react-native';
 import { Col, Row, Grid } from "react-native-easy-grid";
+import Login from './Login'
 
 let profilePic="{require('../media/obama.jpg')}"
 const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
@@ -15,7 +16,7 @@ const AppBar = () => (
           <Text style={styles.title}>Bounty</Text>
         </Col>
         <Col style={styles.colProfile} size={10}>
-          <Avatar.Image style={styles.profile} size={42} source={require('../media/obama.jpg')} />
+          <Login/>
         </Col>
         <Col size={10}>
           <Appbar.Action icon={MORE_ICON} onPress={() => {}} />
@@ -45,7 +46,5 @@ const AppBar = () => (
      colProfile:{
       justifyContent: "center",
      },
-     profile:{
-      alignSelf: 'flex-end'
-     },
+
    });
