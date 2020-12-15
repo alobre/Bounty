@@ -1,6 +1,6 @@
 {
   "name": "BountyHunter",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -24,7 +24,8 @@
     "react-native-paper": "^4.4.1",
     "react-native-reanimated": "^1.13.2",
     "react-native-tab-view": "^2.15.2",
-    "react-native-vector-icons": "^7.1.0"
+    "react-native-vector-icons": "^7.1.0",
+    "socket.io-client": "^3.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

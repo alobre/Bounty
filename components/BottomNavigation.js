@@ -1,11 +1,12 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native'
 import TaskTab from './TaskTab'
+import Messages from './Messages'
 import globalStyles from './GlobalStyles.js'
 import { BottomNavigation, Text } from 'react-native-paper';
 
 const BountyRoute = () => <TaskTab></TaskTab>
-const MessagesRoute = () => <Text>Messages</Text>;
+const MessagesRoute = () => <Messages></Messages>;
 const SettingsRoute = () => <Text>Settings</Text>;
 
 const bottomNavigation = () => {
