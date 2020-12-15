@@ -7,7 +7,15 @@ import { Col, Row, Grid } from "react-native-easy-grid";
 // import { Left, Thumbnail, Container, Header, Text, Content, Card, CardItem, Body } from 'native-base';
 const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
 
+
 const TaskCard = ({username, title, category, description, wage}) =>{
+
+  const [visible, setVisible] = React.useState(false);
+
+  const openMenu = () => setVisible(true);
+
+  const closeMenu = () => setVisible(false);
+
   return (
     <Card style={styles.card} elevation={4}>
     <Grid>
@@ -15,7 +23,11 @@ const TaskCard = ({username, title, category, description, wage}) =>{
       <Card.Title title={title} subtitle={category}/>
     </Col>
     <Col style={styles.colMoreButton}>
-      <IconButton style={styles.moreButton} icon="dots-vertical" size={20} onPress={() => {}}></IconButton>
+        <Menu
+          visible={visible}
+          onDismiss={closeMenu}
+          anchor={<IconButton style={styles.moreButton} icon={MORE_ICON} size={20} onPress={openMenu}></IconButton>}>
+          <Menu.Item icon="alert-octagon" onPress={() => {}} title="Report Task" /></Menu>
     </Col>
     </Grid>
     <Card.Content>
