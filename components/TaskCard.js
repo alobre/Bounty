@@ -1,14 +1,23 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native'
 import globalStyles from './GlobalStyles.js'
-import { Avatar, Button, Card, Title, Paragraph, Text, Subheading, Divider, TouchableRipple } from 'react-native-paper';
+import { Avatar, Button, Card, Title, Paragraph, Text, Subheading, Divider, TouchableRipple, Badge, IconButton, Menu } from 'react-native-paper';
+import { Col, Row, Grid } from "react-native-easy-grid";
 
 // import { Left, Thumbnail, Container, Header, Text, Content, Card, CardItem, Body } from 'native-base';
+const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
 
 const TaskCard = ({username, title, category, description, wage}) =>{
   return (
-    <Card elevation={4}>
-    <Card.Title title={title} subtitle={category}/>
+    <Card style={styles.card} elevation={4}>
+    <Grid>
+    <Col>
+      <Card.Title title={title} subtitle={category}/>
+    </Col>
+    <Col style={styles.colMoreButton}>
+      <IconButton style={styles.moreButton} icon="dots-vertical" size={20} onPress={() => {}}></IconButton>
+    </Col>
+    </Grid>
     <Card.Content>
       <TouchableRipple onPress={()=> console.log('Profile')}>
         <View style={styles.profile}>
@@ -21,7 +30,11 @@ const TaskCard = ({username, title, category, description, wage}) =>{
     </Card.Content>
     <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
     <View style={styles.priceAndContact}>
-    <Text style={styles.price}>{wage}</Text>
+      <View style={styles.priceParent}>
+        <Badge size={40} style={styles.price}>
+          {wage}
+        </Badge>
+      </View>
     <TouchableRipple rippleColor="rgba(0, 0, 0, .32)">
       <Card.Actions style={styles.buttonParent}>
         <Button style={styles.contactContractor} onPress={() => console.log('Auftraggeber Kontaktieren')}>Auftraggeber kontaktieren</Button>
@@ -34,7 +47,16 @@ const TaskCard = ({username, title, category, description, wage}) =>{
 
   const styles = StyleSheet.create({
     card:{
-      borderRadius: 1
+      margin: 6
+    },
+    colMoreButton:{
+      justifyContent: 'flex-start',
+      alignContent: "center"
+    },
+    moreButton:{
+      borderRadius: 30,
+      alignContent: 'center',
+      alignSelf: 'flex-end'
     },
     title:{
       flex: 3,
@@ -51,12 +73,18 @@ const TaskCard = ({username, title, category, description, wage}) =>{
       justifyContent: "flex-end"
     },
     priceAndContact:{
+      
       flexDirection: "row"
     },
+    priceParent:{
+      flex:1
+    },
     price:{
-      flex:1,
-      color: "#5fd47e",
-      fontSize: 40,
+      backgroundColor: "#eddd2d",
+      borderColor: '#968b0f',
+      borderWidth: 1,
+      margin: 10,
+      alignSelf: "flex-start"
     },
     contactContractor:{
     }
