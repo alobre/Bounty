@@ -17,12 +17,12 @@
 13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 13-->[com.facebook.flipper:flipper:0.54.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\a0953a6941c1135d57623c7d643d23a3\flipper-0.54.0\AndroidManifest.xml:16:5-76
 13-->[com.facebook.flipper:flipper:0.54.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\a0953a6941c1135d57623c7d643d23a3\flipper-0.54.0\AndroidManifest.xml:16:22-73
-14    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-14-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6be347fc773bd3718759b2fcb64e74c7\play-services-measurement-api-18.0.0\AndroidManifest.xml:23:5-79
-14-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6be347fc773bd3718759b2fcb64e74c7\play-services-measurement-api-18.0.0\AndroidManifest.xml:23:22-76
-15    <uses-permission android:name="android.permission.WAKE_LOCK" />
-15-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6be347fc773bd3718759b2fcb64e74c7\play-services-measurement-api-18.0.0\AndroidManifest.xml:24:5-68
-15-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6be347fc773bd3718759b2fcb64e74c7\play-services-measurement-api-18.0.0\AndroidManifest.xml:24:22-65
+14    <uses-permission android:name="android.permission.WAKE_LOCK" />
+14-->[:react-native-firebase_auth] C:\Users\alobre\Documents\Programmieren\BountyHunter\node_modules\@react-native-firebase\auth\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-68
+14-->[:react-native-firebase_auth] C:\Users\alobre\Documents\Programmieren\BountyHunter\node_modules\@react-native-firebase\auth\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:22-65
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+15-->[:react-native-firebase_auth] C:\Users\alobre\Documents\Programmieren\BountyHunter\node_modules\@react-native-firebase\auth\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-79
+15-->[:react-native-firebase_auth] C:\Users\alobre\Documents\Programmieren\BountyHunter\node_modules\@react-native-firebase\auth\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:22-76
 16    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
 16-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:26:5-110
 16-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:26:22-107
@@ -72,111 +72,206 @@
 40        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
 40-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:24:7-84
 40-->C:\Users\alobre\Documents\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:24:17-81
-41
-42        <service
-42-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6be347fc773bd3718759b2fcb64e74c7\play-services-measurement-api-18.0.0\AndroidManifest.xml:27:9-33:19
-43            android:name="com.google.firebase.components.ComponentDiscoveryService"
-43-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6be347fc773bd3718759b2fcb64e74c7\play-services-measurement-api-18.0.0\AndroidManifest.xml:28:13-84
-44            android:directBootAware="true"
-44-->[com.google.firebase:firebase-common:19.4.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\aec5479a76a04bcdd361e04de4476ad8\jetified-firebase-common-19.4.0\AndroidManifest.xml:35:13-43
-45            android:exported="false" >
-45-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6be347fc773bd3718759b2fcb64e74c7\play-services-measurement-api-18.0.0\AndroidManifest.xml:29:13-37
-46            <meta-data
-46-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6be347fc773bd3718759b2fcb64e74c7\play-services-measurement-api-18.0.0\AndroidManifest.xml:30:13-32:85
-47                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-47-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6be347fc773bd3718759b2fcb64e74c7\play-services-measurement-api-18.0.0\AndroidManifest.xml:31:17-139
-48                android:value="com.google.firebase.components.ComponentRegistrar" />
-48-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6be347fc773bd3718759b2fcb64e74c7\play-services-measurement-api-18.0.0\AndroidManifest.xml:32:17-82
-49            <meta-data
-49-->[com.google.firebase:firebase-installations:16.3.4] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\dc1de0c209d52e17e0d8a11f498db4e8\firebase-installations-16.3.4\AndroidManifest.xml:18:13-20:85
-50                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-50-->[com.google.firebase:firebase-installations:16.3.4] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\dc1de0c209d52e17e0d8a11f498db4e8\firebase-installations-16.3.4\AndroidManifest.xml:19:17-127
-51                android:value="com.google.firebase.components.ComponentRegistrar" />
-51-->[com.google.firebase:firebase-installations:16.3.4] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\dc1de0c209d52e17e0d8a11f498db4e8\firebase-installations-16.3.4\AndroidManifest.xml:20:17-82
-52        </service>
-53
-54        <provider
-54-->[com.google.firebase:firebase-common:19.4.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\aec5479a76a04bcdd361e04de4476ad8\jetified-firebase-common-19.4.0\AndroidManifest.xml:26:9-31:39
-55            android:name="com.google.firebase.provider.FirebaseInitProvider"
-55-->[com.google.firebase:firebase-common:19.4.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\aec5479a76a04bcdd361e04de4476ad8\jetified-firebase-common-19.4.0\AndroidManifest.xml:27:13-77
-56            android:authorities="com.bountyhunter.firebaseinitprovider"
-56-->[com.google.firebase:firebase-common:19.4.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\aec5479a76a04bcdd361e04de4476ad8\jetified-firebase-common-19.4.0\AndroidManifest.xml:28:13-72
-57            android:directBootAware="true"
-57-->[com.google.firebase:firebase-common:19.4.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\aec5479a76a04bcdd361e04de4476ad8\jetified-firebase-common-19.4.0\AndroidManifest.xml:29:13-43
-58            android:exported="false"
-58-->[com.google.firebase:firebase-common:19.4.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\aec5479a76a04bcdd361e04de4476ad8\jetified-firebase-common-19.4.0\AndroidManifest.xml:30:13-37
-59            android:initOrder="100" />
-59-->[com.google.firebase:firebase-common:19.4.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\aec5479a76a04bcdd361e04de4476ad8\jetified-firebase-common-19.4.0\AndroidManifest.xml:31:13-36
-60
-61        <activity
-61-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:23:9-27:75
-62            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-62-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:24:13-93
-63            android:excludeFromRecents="true"
-63-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:25:13-46
-64            android:exported="false"
-64-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:26:13-37
-65            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-65-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:27:13-72
-66        <!--
-67            Service handling Google Sign-In user revocation. For apps that do not integrate with
-68            Google Sign-In, this service will never be started.
-69        -->
-70        <service
-70-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:33:9-37:51
-71            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-71-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:34:13-89
-72            android:exported="true"
-72-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:35:13-36
-73            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-73-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:36:13-107
-74            android:visibleToInstantApps="true" />
-74-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:37:13-48
-75
-76        <activity
-76-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d3caf54114e86177d18237a7364d1766\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
-77            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-77-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d3caf54114e86177d18237a7364d1766\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
-78            android:exported="false"
-78-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d3caf54114e86177d18237a7364d1766\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
-79            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-79-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d3caf54114e86177d18237a7364d1766\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
-80
-81        <receiver
-81-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:29:9-33:20
-82            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-82-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:30:13-85
-83            android:enabled="true"
-83-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:31:13-35
-84            android:exported="false" >
-84-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:32:13-37
-85        </receiver>
-86
-87        <service
-87-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:35:9-38:40
-88            android:name="com.google.android.gms.measurement.AppMeasurementService"
-88-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:36:13-84
-89            android:enabled="true"
-89-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:37:13-35
-90            android:exported="false" />
-90-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:38:13-37
-91        <service
-91-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:39:9-43:72
-92            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-92-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:40:13-87
-93            android:enabled="true"
-93-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:41:13-35
-94            android:exported="false"
-94-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:42:13-37
-95            android:permission="android.permission.BIND_JOB_SERVICE" />
-95-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:43:13-69
-96
-97        <meta-data
-97-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\65af5ae97f64d61b11a05fa95c62ea6d\jetified-play-services-basement-17.1.1\AndroidManifest.xml:23:9-25:69
-98            android:name="com.google.android.gms.version"
-98-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\65af5ae97f64d61b11a05fa95c62ea6d\jetified-play-services-basement-17.1.1\AndroidManifest.xml:24:13-58
-99            android:value="@integer/google_play_services_version" />
-99-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\65af5ae97f64d61b11a05fa95c62ea6d\jetified-play-services-basement-17.1.1\AndroidManifest.xml:25:13-66
-100    </application>
-101
-102</manifest>
+41        <activity
+41-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:27:9-44:20
+42            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+42-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:28:13-80
+43            android:excludeFromRecents="true"
+43-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:29:13-46
+44            android:exported="true"
+44-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:30:13-36
+45            android:launchMode="singleTask"
+45-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:31:13-44
+46            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+46-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:32:13-72
+47            <intent-filter>
+47-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:33:13-43:29
+48                <action android:name="android.intent.action.VIEW" />
+48-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:34:17-69
+48-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:34:25-66
+49
+50                <category android:name="android.intent.category.DEFAULT" />
+50-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:17-76
+50-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:27-73
+51                <category android:name="android.intent.category.BROWSABLE" />
+51-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:37:17-78
+51-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:37:27-75
+52
+53                <data
+53-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:39:17-42:51
+54                    android:host="firebase.auth"
+54-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:40:21-49
+55                    android:path="/"
+55-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:41:21-37
+56                    android:scheme="genericidp" />
+56-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:42:21-48
+57            </intent-filter>
+58        </activity>
+59        <activity
+59-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:45:9-62:20
+60            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+60-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:46:13-79
+61            android:excludeFromRecents="true"
+61-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:47:13-46
+62            android:exported="true"
+62-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:48:13-36
+63            android:launchMode="singleTask"
+63-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:49:13-44
+64            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+64-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:50:13-72
+65            <intent-filter>
+65-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:51:13-61:29
+66                <action android:name="android.intent.action.VIEW" />
+66-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:34:17-69
+66-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:34:25-66
+67
+68                <category android:name="android.intent.category.DEFAULT" />
+68-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:17-76
+68-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:27-73
+69                <category android:name="android.intent.category.BROWSABLE" />
+69-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:37:17-78
+69-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:37:27-75
+70
+71                <data
+71-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:39:17-42:51
+72                    android:host="firebase.auth"
+72-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:40:21-49
+73                    android:path="/"
+73-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:41:21-37
+74                    android:scheme="recaptcha" />
+74-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:42:21-48
+75            </intent-filter>
+76        </activity>
+77
+78        <service
+78-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:64:9-73:19
+79            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
+79-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:65:13-101
+80            android:enabled="true"
+80-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:66:13-35
+81            android:exported="false" >
+81-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:67:13-37
+82            <intent-filter>
+82-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:68:13-72:29
+83                <action android:name="com.google.firebase.auth.api.gms.service.START" />
+83-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:69:17-89
+83-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:69:25-86
+84
+85                <category android:name="android.intent.category.DEFAULT" />
+85-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:17-76
+85-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:27-73
+86            </intent-filter>
+87        </service>
+88        <service
+88-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:74:9-80:19
+89            android:name="com.google.firebase.components.ComponentDiscoveryService"
+89-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:75:13-84
+90            android:directBootAware="true"
+90-->[com.google.firebase:firebase-common:19.4.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\aec5479a76a04bcdd361e04de4476ad8\jetified-firebase-common-19.4.0\AndroidManifest.xml:35:13-43
+91            android:exported="false" >
+91-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:76:13-37
+92            <meta-data
+92-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:77:13-79:85
+93                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+93-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:78:17-109
+94                android:value="com.google.firebase.components.ComponentRegistrar" />
+94-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d92d68c66cf4862f3283a31b184f0848\jetified-firebase-auth-20.0.1\AndroidManifest.xml:79:17-82
+95            <meta-data
+95-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6be347fc773bd3718759b2fcb64e74c7\play-services-measurement-api-18.0.0\AndroidManifest.xml:30:13-32:85
+96                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+96-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6be347fc773bd3718759b2fcb64e74c7\play-services-measurement-api-18.0.0\AndroidManifest.xml:31:17-139
+97                android:value="com.google.firebase.components.ComponentRegistrar" />
+97-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6be347fc773bd3718759b2fcb64e74c7\play-services-measurement-api-18.0.0\AndroidManifest.xml:32:17-82
+98            <meta-data
+98-->[com.google.firebase:firebase-installations:16.3.4] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\dc1de0c209d52e17e0d8a11f498db4e8\firebase-installations-16.3.4\AndroidManifest.xml:18:13-20:85
+99                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+99-->[com.google.firebase:firebase-installations:16.3.4] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\dc1de0c209d52e17e0d8a11f498db4e8\firebase-installations-16.3.4\AndroidManifest.xml:19:17-127
+100                android:value="com.google.firebase.components.ComponentRegistrar" />
+100-->[com.google.firebase:firebase-installations:16.3.4] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\dc1de0c209d52e17e0d8a11f498db4e8\firebase-installations-16.3.4\AndroidManifest.xml:20:17-82
+101        </service>
+102
+103        <provider
+103-->[com.google.firebase:firebase-common:19.4.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\aec5479a76a04bcdd361e04de4476ad8\jetified-firebase-common-19.4.0\AndroidManifest.xml:26:9-31:39
+104            android:name="com.google.firebase.provider.FirebaseInitProvider"
+104-->[com.google.firebase:firebase-common:19.4.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\aec5479a76a04bcdd361e04de4476ad8\jetified-firebase-common-19.4.0\AndroidManifest.xml:27:13-77
+105            android:authorities="com.bountyhunter.firebaseinitprovider"
+105-->[com.google.firebase:firebase-common:19.4.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\aec5479a76a04bcdd361e04de4476ad8\jetified-firebase-common-19.4.0\AndroidManifest.xml:28:13-72
+106            android:directBootAware="true"
+106-->[com.google.firebase:firebase-common:19.4.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\aec5479a76a04bcdd361e04de4476ad8\jetified-firebase-common-19.4.0\AndroidManifest.xml:29:13-43
+107            android:exported="false"
+107-->[com.google.firebase:firebase-common:19.4.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\aec5479a76a04bcdd361e04de4476ad8\jetified-firebase-common-19.4.0\AndroidManifest.xml:30:13-37
+108            android:initOrder="100" />
+108-->[com.google.firebase:firebase-common:19.4.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\aec5479a76a04bcdd361e04de4476ad8\jetified-firebase-common-19.4.0\AndroidManifest.xml:31:13-36
+109
+110        <activity
+110-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:23:9-27:75
+111            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+111-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:24:13-93
+112            android:excludeFromRecents="true"
+112-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:25:13-46
+113            android:exported="false"
+113-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:26:13-37
+114            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+114-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:27:13-72
+115        <!--
+116            Service handling Google Sign-In user revocation. For apps that do not integrate with
+117            Google Sign-In, this service will never be started.
+118        -->
+119        <service
+119-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:33:9-37:51
+120            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+120-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:34:13-89
+121            android:exported="true"
+121-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:35:13-36
+122            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+122-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:36:13-107
+123            android:visibleToInstantApps="true" />
+123-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\33989af206de8df2bc991bb8c7a4e1ea\play-services-auth-19.0.0\AndroidManifest.xml:37:13-48
+124
+125        <activity
+125-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d3caf54114e86177d18237a7364d1766\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+126            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+126-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d3caf54114e86177d18237a7364d1766\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+127            android:exported="false"
+127-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d3caf54114e86177d18237a7364d1766\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+128            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+128-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\d3caf54114e86177d18237a7364d1766\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+129
+130        <receiver
+130-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:29:9-33:20
+131            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+131-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:30:13-85
+132            android:enabled="true"
+132-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:31:13-35
+133            android:exported="false" >
+133-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:32:13-37
+134        </receiver>
+135
+136        <service
+136-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:35:9-38:40
+137            android:name="com.google.android.gms.measurement.AppMeasurementService"
+137-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:36:13-84
+138            android:enabled="true"
+138-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:37:13-35
+139            android:exported="false" />
+139-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:38:13-37
+140        <service
+140-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:39:9-43:72
+141            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+141-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:40:13-87
+142            android:enabled="true"
+142-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:41:13-35
+143            android:exported="false"
+143-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:42:13-37
+144            android:permission="android.permission.BIND_JOB_SERVICE" />
+144-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\6f74dcac7c5d27c507231f5c02635066\play-services-measurement-18.0.0\AndroidManifest.xml:43:13-69
+145
+146        <meta-data
+146-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\65af5ae97f64d61b11a05fa95c62ea6d\jetified-play-services-basement-17.1.1\AndroidManifest.xml:23:9-25:69
+147            android:name="com.google.android.gms.version"
+147-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\65af5ae97f64d61b11a05fa95c62ea6d\jetified-play-services-basement-17.1.1\AndroidManifest.xml:24:13-58
+148            android:value="@integer/google_play_services_version" />
+148-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\alobre\.gradle\caches\transforms-2\files-2.1\65af5ae97f64d61b11a05fa95c62ea6d\jetified-play-services-basement-17.1.1\AndroidManifest.xml:25:13-66
+149    </application>
+150
+151</manifest>

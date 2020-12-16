@@ -1,8 +1,9 @@
 {
   "name": "BountyHunter",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "private": true,
   "scripts": {
+    "prestart": "npm-link-shared ./node_modules/<other package>/node_modules . react",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",

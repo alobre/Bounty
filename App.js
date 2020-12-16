@@ -4,8 +4,6 @@ import AppBar from './components/AppBar'
 import BottomNavigation from './components/BottomNavigation'
 import { Provider as PaperProvider } from 'react-native-paper';
 
-let desctipton="Hallo, Ich bräuchte: 3x Äpfel, Tomaten, Faschiertes Rind, Käse, 3x Äpfel, Tomaten, Faschiertes Rind, Käse, 3x Äpfel, Tomaten, Faschiertes Rind, Käse, 3x Äpfel, Tomaten, Faschiertes Rind, Käse"
-
 const App = () => {
   return (
     <PaperProvider>

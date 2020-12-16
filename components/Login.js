@@ -1,24 +1,101 @@
-import * as React from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import { View, StyleSheet  } from 'react-native';
-import { Button, Paragraph, Dialog, Portal, Avatar, TouchableRipple } from 'react-native-paper';
+import { Button, Paragraph, Dialog, Portal, Avatar, TouchableRipple, IconButton, TextInput, Divider, Text } from 'react-native-paper';
+import auth from '@react-native-firebase/auth';
 
-const MyComponent = () => {
-  const [visible, setVisible] = React.useState(false);
+function LoginApp() {
+  // Set an initializing state whilst Firebase connects
+  const [initializing, setInitializing] = useState(true);
+  const [user, setUser] = useState();
 
-  const showDialog = () => setVisible(true);
+  // Handle user state changes
+  function onAuthStateChanged(user) {
+    setUser(user);
+    if (initializing) setInitializing(false);
+  }
 
-  const hideDialog = () => setVisible(false);
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    return subscriber; // unsubscribe on unmount
+  }, []);
 
-  return (  
+  if (initializing) return null;
+
+  // if (!user) {
+  //   return (
+  //     <View>
+  //       <Text>Login</Text>
+  //     </View>
+  //   );
+  // }
+
+  // return (
+  //   <View>
+  //     <Text>Welcome {user.email}</Text>
+  //   </View>
+  // );
+  return(<View></View>)
+}
+
+
+export default class Login extends Component<Props>{
+// const Login = () =>{
+constructor(props){
+  super(props);
+  this.state = {
+    visible: false,
+    email: '',
+    password: '',
+  }
+}
+
+
+  createUser = () =>{
+    auth()
+    .createUserWithEmailAndPassword(this.state.email, this.state.password)
+    .then(() => {
+      console.log('User account created & signed in!');
+    })
+    .catch(error => {
+      if (error.code === 'auth/email-already-in-use') {
+        console.log('That email address is already in use!');
+      }
+  
+      if (error.code === 'auth/invalid-email') {
+        console.log('That email address is invalid!');
+      }
+  
+      console.error(error);
+    });
+  }
+
+  // [visible, setVisible] = useState(false);
+
+
+
+  render(){
+  const showDialog = () => this.setState({ visible: true })
+
+  const hideDialog = () => this.setState({ visible: false })
+
+    return (  
     <View>
+      <LoginApp></LoginApp>
         <TouchableRipple borderless={true} style={styles.avatarParent} onPress={showDialog} rippleColor="rgba(0, 0, 0, .32)">
-      <Avatar.Image style={styles.profile} size={42} source={require('../media/obama.jpg')} />
+        {/* <Avatar.Image style={styles.profile} size={42} source={require('../media/obama.jpg')} /> */}
+        <IconButton icon="login" size={24}></IconButton>
       </TouchableRipple>
       <Portal>
-        <Dialog visible={visible} onDismiss={hideDialog}>
-          <Dialog.Title>Alert</Dialog.Title>
+        <Dialog visible={this.state.visible} onDismiss={hideDialog}>
+          <Dialog.Title>Login</Dialog.Title>
           <Dialog.Content>
-            <Paragraph>This is simple dialog</Paragraph>
+            <TextInput onChangeText={ text => this.setState({ email: text })} label="Email" mode="outlined"></TextInput>
+            <TextInput onChangeText={ text => this.setState({ password: text })} label="Password" mode="outlined"></TextInput>
+            <Button icon="login" mode="outlined" uppercase={false} onPress={this.createUser}>Login</Button>
+            <Button icon="gmail" mode="outlined" uppercase={false} onPress={() => console.log('Pressed')}>Login with Gmail</Button>
+            <Button icon="facebook" mode="outlined" uppercase={false} onPress={() => console.log('Pressed')}>Login with Facebook</Button>
+            <Divider></Divider>
+            <Text>Not Registered yet?</Text>
           </Dialog.Content>
           <Dialog.Actions>
             <Button onPress={hideDialog}>Done</Button>
@@ -27,8 +104,9 @@ const MyComponent = () => {
       </Portal>
     </View>
   );
+  }
 };
-
+// export default Login
 const styles = StyleSheet.create({
     profile:{
         alignSelf: 'center'
@@ -37,5 +115,3 @@ const styles = StyleSheet.create({
         borderRadius:50
     }
 })
-
-export default MyComponent;
