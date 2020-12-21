@@ -1,41 +1,8 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import { View, StyleSheet  } from 'react-native';
 import { Button, Paragraph, Dialog, Portal, Avatar, TouchableRipple, IconButton, TextInput, Divider, Text } from 'react-native-paper';
 import auth from '@react-native-firebase/auth';
 import { GoogleSignin } from '@react-native-community/google-signin';
-
-// function LoginApp() {
-//   // Set an initializing state whilst Firebase connects
-//   const [initializing, setInitializing] = useState(true);
-//   const [user, setUser] = useState();
-
-//   // Handle user state changes
-//   function onAuthStateChanged(user) {
-//     setUser(user);
-//     if (initializing) setInitializing(false);
-//   }
-
-//   useEffect(() => {
-//     const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
-//     return subscriber; // unsubscribe on unmount
-//   }, []);
-
-//   if (initializing) return null;
-//   if (!user) {
-//     return (
-//       <View>
-
-//       </View>
-//     );
-//   }
-
-//   return (
-//     <View>
-//       <Text>Welcome {user.email}</Text>
-//     </View>
-//   );
-//   // return(<View></View>)
-// }
 
 GoogleSignin.configure({
   webClientId: '823936420532-4ne8kstai80ctb5orvp2ovlesuef5tna.apps.googleusercontent.com',

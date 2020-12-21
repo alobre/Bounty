@@ -9,7 +9,7 @@ let profilePic="{require('../media/obama.jpg')}"
 const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
 
 const AppBar = () => (
-    <Appbar style={styles.appbar}>
+    <Appbar.Header style={styles.appbar}>
       <Grid>
         <Col size={20}>
         </Col>
@@ -19,12 +19,13 @@ const AppBar = () => (
         <Col style={styles.colProfile} size={10}>
           {/* <Login/> */}
           <LoginOrLogout/>
+          
         </Col>
         <Col size={10}>
           <Appbar.Action icon={MORE_ICON} onPress={() => {}} />
         </Col>
         </Grid>
-     </Appbar>
+     </Appbar.Header>
     );
    
    export default AppBar

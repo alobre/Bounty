@@ -3,6 +3,7 @@ import { View, StyleSheet, Text  } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import Login from './Login'
 import Logout from './Logout'
+import Profile from './Profile'
 
 const LoginOrLogout = () => {
     const [initializing, setInitializing] = useState(true);
@@ -32,6 +33,7 @@ const LoginOrLogout = () => {
     return (
       <View>
         <Logout user={user}></Logout>
+        {/* <Profile></Profile> */}
       </View>
     );
 }
