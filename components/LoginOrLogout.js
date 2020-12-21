@@ -4,6 +4,7 @@ import auth from '@react-native-firebase/auth';
 import Login from './Login'
 import Logout from './Logout'
 import Profile from './Profile'
+import Routes from './Routes'
 
 const LoginOrLogout = () => {
     const [initializing, setInitializing] = useState(true);

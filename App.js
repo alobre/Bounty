@@ -3,6 +3,7 @@ import {View, StyleSheet, FlatList, Alert, Dimensions} from 'react-native';
 import AppBar from './components/AppBar'
 import BottomNavigation from './components/BottomNavigation'
 import { Provider as PaperProvider } from 'react-native-paper';
+import Routes from './components/Routes'
 
 const App = () => {
   return (
@@ -16,4 +17,4 @@ const App = () => {
 
 
 
-export default App;
+export default Routes;
