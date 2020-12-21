@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text  } from 'react-native';
+import { Col, Row, Grid } from "react-native-easy-grid";
 import firestore from '@react-native-firebase/firestore';
-
-
-
 
 export default class User extends Component<props>{
     constructor(props){
@@ -35,7 +33,13 @@ export default class User extends Component<props>{
 
       render(){
           return(
-              <View><Text>Name: {this.state.user.name}</Text></View>
+            <View>
+                  <Grid>
+                    <Col>
+                    <Text>Name: {this.state.user.name}</Text>
+                    </Col>
+                  </Grid>
+              </View>
           )
       }
 }

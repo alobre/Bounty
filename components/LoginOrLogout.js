@@ -1,12 +1,13 @@
 import React, { Component, useState, useEffect } from 'react'
 import { View, StyleSheet, Text  } from 'react-native';
+import { Button  } from "react-native-paper";
 import auth from '@react-native-firebase/auth';
 import Login from './Login'
 import Logout from './Logout'
 import Profile from './Profile'
 import Routes from './Routes'
 
-const LoginOrLogout = () => {
+const LoginOrLogout = ({ parentCallback }) => {
     const [initializing, setInitializing] = useState(true);
     const [user, setUser] = useState();
   
@@ -20,22 +21,32 @@ const LoginOrLogout = () => {
       const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
       return subscriber; // unsubscribe on unmount
     }, []);
-  
+    
+    function onTrigger(data){
+      parentCallback(data);
+    }
+
     if (initializing) return null;
+    onTrigger(user)
     if (!user) {
       return (
-        <View>
-          <Login></Login>
-        </View>
+        // <View>
+        //   <Login></Login>
+        // </View>
+        false
       );
     }
     console.log(user)
   
     return (
-      <View>
-        <Logout user={user}></Logout>
-        {/* <Profile></Profile> */}
-      </View>
+      // <View>
+      //   <Logout user={user}></Logout>
+      //   {/* <Profile></Profile> */}
+      //   {/* <Button
+      //   title="Profile"
+      //   onPress={() => navigation.navigate('Profile')}*/}
+      // </View>
+      true
     );
 }
 
