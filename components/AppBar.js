@@ -4,6 +4,7 @@ import { StyleSheet } from 'react-native';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import Login from './Login'
 import Logout from './Logout'
+import Profile from './Profile'
 import LoginOrLogout from './LoginOrLogout'
 
 let profilePic="{require('../media/obama.jpg')}"
@@ -17,8 +18,7 @@ const AppBar = ({ navigation, previous }) =>
     setLoggedIn(childData);
   }
     if(loggedIn){
-      // action = <Button onPress={()=> navigation.navigate('Profile')}>Alo</Button>
-      action =             <TouchableRipple style={styles.avatarParent} onPress={()=> navigation.navigate('Profile')} borderless={true} rippleColor="rgba(0, 0, 0, .32)">
+      action = <TouchableRipple style={styles.avatarParent} onPress={()=> navigation.push('Profile')} borderless={true} rippleColor="rgba(0, 0, 0, .32)">
       <Avatar.Image style={styles.profile} size={32} source={{uri: loggedIn.photoURL}} />
   </TouchableRipple>
     }
@@ -27,10 +27,11 @@ const AppBar = ({ navigation, previous }) =>
     }
 return(
     <Appbar.Header style={styles.appbar}>
-      {previous ? <Appbar.BackAction onPress={navigation.goBack} /> : null}
-      <Grid>
+            <Grid>
         <Col size={20}>
+          {previous ? <Appbar.BackAction onPress={navigation.goBack} /> : null}
         </Col>
+
         <Col style={styles.colTitle} size={40}>
           <Text style={styles.title}>Bounty</Text>
         </Col>
@@ -57,6 +58,8 @@ return(
        bottom: 0,
      },
      colTitle:{
+       color:'red',
+      alignSelf:'center',
       justifyContent: 'center'
      },
      title:{

@@ -12,11 +12,6 @@ function HomeScreen({ navigation }) {
   return (
     <PaperProvider>
           {/* <LoginOrLogout></LoginOrLogout> */}
-
-      <Button
-        title="Go to details"
-        onPress={() => navigation.navigate('LoginOrLogout')}
-      />
     <BottomNavigation></BottomNavigation>
     </PaperProvider>
   );

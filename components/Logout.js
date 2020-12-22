@@ -11,26 +11,29 @@ export default class Login extends Component<props>{
         }
       }
     LogOut = () => {
+        this.props.navigation.navigate('Home')
         auth()
         .signOut()
-        .then(() => console.log('User signed out!'));
+        .then(() => 'Logged Out');
         }
+    navigateHome = () => {
+        this.props.navigation
+    }
     render(){
     return(
-        <View>
-            <TouchableRipple style={styles.avatarParent} onPress={this.LogOut} borderless={true} rippleColor="rgba(0, 0, 0, .32)">
-                <Avatar.Image style={styles.profile} size={32} source={{uri: this.props.user.photoURL}} />
-                {/* <IconButton icon="logout" size={24}></IconButton> */}
-            </TouchableRipple>
+        <View style={styles.logoutButtonParent}>
+            <Button style={styles.logoutButton} color="#fc1f1c" icon="logout" mode="text" onPress={this.LogOut}>
+                Logout
+            </Button>
         </View>
     )
 }
 }
 const styles = StyleSheet.create({
-    profile:{
-        alignSelf: 'center'
+    logoutButton:{
+        justifyContent: 'center'
     },
-    avatarParent:{
-        borderRadius:50
+    logoutButton:{
+        marginHorizontal: 120
     }
 })
