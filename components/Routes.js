@@ -3,10 +3,10 @@ import React, { Component, useState, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {View, Text, Button, StyleSheet} from 'react-native';
-import AppBar from './AppBar'
-import BottomNavigation from './BottomNavigation'
+import AppBar from './GlobalComponents/AppBar'
+import BottomNavigation from './GlobalComponents/BottomNavigation'
 import { Provider as PaperProvider } from 'react-native-paper';
-import Profile from './Profile'
+import Profile from './Profile/Profile'
 
 function HomeScreen({ navigation }) {
   return (

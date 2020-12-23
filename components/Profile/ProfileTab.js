@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View, StyleSheet, Dimensions } from 'react-native';
 import { TabView, SceneMap } from 'react-native-tab-view';
-import TaskCard from '../TaskCard'
+import TaskCard from '../Tasks/TaskCard'
 
 const description = 'Hallo! Ich hätte gerne: 4 Bananen, 6er Pack Wasser (prickelnd), Gouda, Salami'
 
