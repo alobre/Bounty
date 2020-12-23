@@ -3,6 +3,7 @@ import { View, StyleSheet  } from 'react-native';
 import { Button, Paragraph, Dialog, Portal, Avatar, TouchableRipple, IconButton, TextInput, Divider, Text } from 'react-native-paper';
 import auth from '@react-native-firebase/auth';
 import { GoogleSignin } from '@react-native-community/google-signin';
+import Post from '../Firestore/Post'
 
 GoogleSignin.configure({
   webClientId: '823936420532-4ne8kstai80ctb5orvp2ovlesuef5tna.apps.googleusercontent.com',
@@ -27,7 +28,7 @@ async function onGoogleButtonPress() {
     return auth().signInWithCredential(credential);
   })
   .then((user) => {
-    console.log(user)
+    Post(user)
     // If you need to do anything with the user, do it here
     // The user will be logged in automatically by the
     // `onAuthStateChanged` listener we set up in App.js earlier
@@ -57,15 +58,15 @@ constructor(props){
     auth()
     .createUserWithEmailAndPassword(this.state.email, this.state.password)
     .then(() => {
-      console.log('User account created & signed in!');
+      // console.log('User account created & signed in!');
     })
     .catch(error => {
       if (error.code === 'auth/email-already-in-use') {
-        console.log('That email address is already in use!');
+        // console.log('That email address is already in use!');
       }
   
       if (error.code === 'auth/invalid-email') {
-        console.log('That email address is invalid!');
+        // console.log('That email address is invalid!');
       }
   
       console.error(error);
@@ -100,7 +101,7 @@ constructor(props){
             <TextInput onChangeText={ text => this.setState({ email: text })} label="Email" mode="outlined"></TextInput>
             <TextInput onChangeText={ text => this.setState({ password: text })} label="Password" mode="outlined"></TextInput>
             <Button icon="login" mode="outlined" uppercase={false} onPress={this.createUser}>Login</Button>
-            <Button icon="gmail" mode="outlined" uppercase={false} onPress={() => onGoogleButtonPress().then(() => console.log('Signed in with Google!'))}>Login with Google</Button>
+            <Button icon="gmail" mode="outlined" uppercase={false} onPress={() => onGoogleButtonPress()}>Login with Google</Button>
             <Button icon="facebook" mode="outlined" uppercase={false} onPress={() => console.log('Pressed')}>Login with Facebook</Button>
             <Divider></Divider>
             <Text>Not Registered yet?</Text>

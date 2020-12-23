@@ -33,7 +33,6 @@ export default class User extends Component{
         const userDocument = firestore()
       .collection('lE5CQoYZdLfWJimgYQHj')
       .get();
-      console.log(userDocument)
       }
       
       componentDidMount(){
@@ -60,7 +59,6 @@ export default class User extends Component{
                   <Subheading style={styles.email}>{this.state.user.email}</Subheading>
                 </Card.Content>
                 <Card.Content style={styles.logoutButtonParent}>
-                  <Button onPress={()=> console.log(this.props.navigation.navigate('Home'))}></Button>
                   <Logout navigation={this.props.navigation} style={styles.logoutButton}/>
                 </Card.Content>
               </Card>

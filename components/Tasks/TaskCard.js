@@ -31,7 +31,7 @@ const TaskCard = ({username, title, category, description, wage}) =>{
     </Col>
     </Grid>
     <Card.Content>
-      <TouchableRipple onPress={()=> console.log('Profile')}>
+      <TouchableRipple>
         <View style={styles.profile}>
           <Avatar.Image size={24} source={require('../../media/obama.jpg')} />
           <Subheading style={styles.username}>{username}</Subheading>

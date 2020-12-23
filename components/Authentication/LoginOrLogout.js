@@ -32,7 +32,6 @@ const LoginOrLogout = ({ parentCallback }) => {
         false
       );
     }
-    console.log(user)
   
     return (
       // <View>
