@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useQuery } from 'react';
 import { Appbar, Avatar, Text, Button , TouchableRipple} from 'react-native-paper';
 import { StyleSheet } from 'react-native';
 import { Col, Row, Grid } from "react-native-easy-grid";
@@ -15,6 +15,13 @@ const AppBar = ({ navigation, previous }) =>
   function callback(childData){
     setLoggedIn(childData);
   }
+  // const { data, loading, error } = useQuery(QUERY);
+
+  // useEffect(() => {
+  //     if (data && data.users.length === 0) {
+  //         return handleNoUsersLoaded();
+  //     }
+  // }, [data, handleNoUsersLoaded]);
     if(loggedIn){
       action = <TouchableRipple style={styles.avatarParent} onPress={()=> navigation.push('Profile')} borderless={true} rippleColor="rgba(0, 0, 0, .32)">
       <Avatar.Image style={styles.profile} size={32} source={{uri: loggedIn.photoURL}} />

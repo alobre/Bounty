@@ -12,18 +12,21 @@ const LoginOrLogout = ({ parentCallback }) => {
       setUser(user);
       if (initializing) setInitializing(false);
     }
-  
+    function onTrigger(data){
+        parentCallback(data);
+      }
     useEffect(() => {
       const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
       return subscriber; // unsubscribe on unmount
     }, []);
+    useEffect(()=>{
+      onTrigger(user)
+    })
     
-    function onTrigger(data){
-      parentCallback(data);
-    }
+    
 
     if (initializing) return null;
-    onTrigger(user)
+    
     if (!user) {
       return (
         // <View>
