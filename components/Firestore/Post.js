@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { View, StyleSheet  } from 'react-native';
 import firestore from '@react-native-firebase/firestore';
+import auth from '@react-native-firebase/auth';
 
-export default function addUser(user){
+export default function addUser(){
     // console.log(firestore())
-    console.log(user)
+    // console.log(auth().currentUser)
+  let user = auth().currentUser
    firestore()
   .collection('users')
   .doc(user.uid)
@@ -23,14 +25,4 @@ export default function addUser(user){
   .then(() => {
     console.log('User added!');
   }); 
-  // firestore()
-  // .collection('users')
-  // .doc("test")
-  // .set({
-  //   "test": "test"
-  // })
-  // .then(() => {
-  //   console.log('User added!');
-  // }); 
-
 }

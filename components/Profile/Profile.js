@@ -13,16 +13,6 @@ import { GoogleSignin } from '@react-native-community/google-signin';
 export default class User extends Component{
     constructor(props){
         super(props);
-        this.getUser();
-        // this.subscriber = firestore().collection('users').doc('lE5CQoYZdLfWJimgYQHj').onSnapshot( doc => {
-        //   this.setState({
-        //     user: {
-        //       name: doc.data().name,
-        //       email: doc.data().email,
-        //       photoURL: doc.data().photoURL,
-        //     }
-        //   })
-        // })
         this.state = {
           user: {
             name: '',
@@ -31,19 +21,13 @@ export default class User extends Component{
           }
         }
       }
-
-      getUser = async () => {
-        const userDocument = firestore()
-      .collection('lE5CQoYZdLfWJimgYQHj')
-      .get();
-      }
       
       componentDidMount(){
-        this.subscriber = firestore().collection('users').doc('lE5CQoYZdLfWJimgYQHj').onSnapshot( doc => {
+        this.subscriber = firestore().collection('users').doc(auth().currentUser.uid).onSnapshot( doc => {
           if(doc){
           this.setState({
             user: {
-              name: doc.data().name,
+              name: doc.data().displayName,
               email: doc.data().email,
               photoURL: doc.data().photoURL,
             }

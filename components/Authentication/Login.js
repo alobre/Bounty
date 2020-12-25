@@ -27,12 +27,7 @@ async function onGoogleButtonPress() {
     // Login with the credential
     return auth().signInWithCredential(credential);
   })
-  .then((user) => {
-    Post(auth().currentUser)
-    // If you need to do anything with the user, do it here
-    // The user will be logged in automatically by the
-    // `onAuthStateChanged` listener we set up in App.js earlier
-  })
+  .then((user)=>Post())
   .catch((error) => {
     const { code, message } = error;
     // For details of error codes, see the docs
@@ -73,20 +68,10 @@ constructor(props){
     });
   }
 
-  // LogOut = () => {
-  // auth()
-  // .signOut()
-  // .then(() => console.log('User signed out!'));
-  // }
-  // [visible, setVisible] = useState(false);
 
 
 
   render(){
-  
-//  const showDialog = () => this.setState({ visible: true })
-
-//   const hideDialog = () => this.setState({ visible: false })
     return (  
     <View>
       {/* <LoginApp></LoginApp> */}

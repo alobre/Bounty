@@ -7,25 +7,16 @@ import AppBar from './GlobalComponents/AppBar'
 import BottomNavigation from './GlobalComponents/BottomNavigation'
 import { Provider as PaperProvider } from 'react-native-paper';
 import Profile from './Profile/Profile'
+import AddTaskButton from './Tasks/AddTaskButton'
+import PostTask from './Tasks/PostTask'
 
 function HomeScreen({ navigation }) {
   return (
     <PaperProvider>
-          {/* <LoginOrLogout></LoginOrLogout> */}
+    <AddTaskButton navigation={navigation}></AddTaskButton>
     <BottomNavigation></BottomNavigation>
     </PaperProvider>
   );
-}
-
-class DetailsScreen extends Component{
-  render(){
-
-  return (
-    <View>
-      <Text>Details Screen</Text>
-    </View>
-  );    
-  }
 }
 
 const Stack = createStackNavigator();
@@ -51,7 +42,7 @@ export default class App extends Component {
         }}>
           <Stack.Screen name="Home" component={HomeScreen} />
         {/* <Stack.Screen name="LoginOrLogout" component={LoginOrLogout} /> */}
-        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name="PostTask" component={PostTask} />
         <Stack.Screen name="Profile" component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>
