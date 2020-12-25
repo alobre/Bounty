@@ -28,7 +28,7 @@ async function onGoogleButtonPress() {
     return auth().signInWithCredential(credential);
   })
   .then((user) => {
-    Post(user)
+    Post(auth().currentUser)
     // If you need to do anything with the user, do it here
     // The user will be logged in automatically by the
     // `onAuthStateChanged` listener we set up in App.js earlier

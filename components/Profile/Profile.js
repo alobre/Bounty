@@ -6,6 +6,9 @@ import firestore from '@react-native-firebase/firestore';
 import ProfileTab from './ProfileTab'
 import Logout from '../Authentication/Logout'
 import { ScrollView } from 'react-native-gesture-handler'
+import Post from '../Firestore/Post'
+import auth from '@react-native-firebase/auth';
+import { GoogleSignin } from '@react-native-community/google-signin';
 
 export default class User extends Component{
     constructor(props){
@@ -59,6 +62,8 @@ export default class User extends Component{
                   <Subheading style={styles.email}>{this.state.user.email}</Subheading>
                 </Card.Content>
                 <Card.Content style={styles.logoutButtonParent}>
+                  {/* <Button onPress={async()=>{ const currentUser = await GoogleSignin.getCurrentUser(); Post(currentUser.user)}}>Post</Button> */}
+                  {/* <Button onPress={async()=>{ const user = await auth().currentUser; Post(user) }}>Post</Button> */}
                   <Logout navigation={this.props.navigation} style={styles.logoutButton}/>
                 </Card.Content>
               </Card>
