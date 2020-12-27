@@ -8,7 +8,7 @@ import BottomNavigation from './GlobalComponents/BottomNavigation'
 import { Provider as PaperProvider } from 'react-native-paper';
 import Profile from './Profile/Profile'
 import AddTaskButton from './Tasks/AddTaskButton'
-import PostTask from './Tasks/PostTask'
+import PostTask from './Firestore/PostTask'
 
 function HomeScreen({ navigation }) {
   return (
