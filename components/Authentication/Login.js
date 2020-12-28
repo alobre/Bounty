@@ -3,7 +3,7 @@ import { View, StyleSheet  } from 'react-native';
 import { Button, Paragraph, Dialog, Portal, Avatar, TouchableRipple, IconButton, TextInput, Divider, Text } from 'react-native-paper';
 import auth from '@react-native-firebase/auth';
 import { GoogleSignin } from '@react-native-community/google-signin';
-import Post from '../Firestore/Post'
+import StoreUser from '../Firestore/StoreUser'
 
 GoogleSignin.configure({
   webClientId: '823936420532-4ne8kstai80ctb5orvp2ovlesuef5tna.apps.googleusercontent.com',
@@ -27,7 +27,7 @@ async function onGoogleButtonPress() {
     // Login with the credential
     return auth().signInWithCredential(credential);
   })
-  .then((user)=>Post())
+  .then((user)=>StoreUser())
   .catch((error) => {
     const { code, message } = error;
     // For details of error codes, see the docs

@@ -8,7 +8,8 @@ import BottomNavigation from './GlobalComponents/BottomNavigation'
 import { Provider as PaperProvider } from 'react-native-paper';
 import Profile from './Profile/Profile'
 import AddTaskButton from './Tasks/AddTaskButton'
-import PostTask from './Firestore/PostTask'
+import PostTask from './Tasks/PostTask'
+import SelectBounty from './Tasks/SelectBounty';
 
 function HomeScreen({ navigation }) {
   return (
@@ -43,6 +44,7 @@ export default class App extends Component {
           <Stack.Screen name="Home" component={HomeScreen} />
         {/* <Stack.Screen name="LoginOrLogout" component={LoginOrLogout} /> */}
         <Stack.Screen name="PostTask" component={PostTask} />
+        <Stack.Screen name="SelectBounty" component={SelectBounty} />
         <Stack.Screen name="Profile" component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>
