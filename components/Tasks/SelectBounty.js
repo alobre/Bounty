@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { Text, Button, TextInput } from 'react-native-paper';
 import { ScrollView } from 'react-native-gesture-handler';
 import auth from '@react-native-firebase/auth';
 import TaskCard from './TaskCard';
+import StoreTask from '../Firestore/StoreTask';
 
 export default class SelectBounty extends Component{
     constructor(props){
         super(props);
         this.state={
-
+            task:{
+                "username": auth().currentUser.displayName,
+                "title": this.props.route.params.title,
+                "description": this.props.route.params.description,
+                "tags": this.props.route.params.tags,
+                "bounty": "€"
+            },
+            bounty: "5"
         }
     }
 
@@ -19,7 +28,11 @@ export default class SelectBounty extends Component{
     render(){
         return(
             <ScrollView>
-                <TaskCard username={auth().currentUser.displayName} title={this.props.route.params.title} category={this.props.route.params.tags} description={this.props.route.params.description} wage="5€"></TaskCard>
+                <TaskCard username={auth().currentUser.displayName} title={this.props.route.params.title} category={this.props.route.params.tags} description={this.props.route.params.description} wage={this.state.task.bounty}></TaskCard>
+                <TextInput onChangeText={(text) => this.setState(state => state.task.bounty = text) }></TextInput>
+                <Button onPress={ () => {
+                    StoreTask(this.state.task)
+                    } }>Submit</Button>
             </ScrollView>
         )
     }

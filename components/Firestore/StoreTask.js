@@ -2,14 +2,10 @@ import React from 'react';
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
 
-export default function StoreTask(title, description, tags){
+export default function StoreTask(task){
     firestore().collection('tasks').doc(auth().currentUser.uid).get().then((doc)=>{
         if(!doc.data().allTasks){
-            let allTasks = [{
-                'title': title,
-                'description': description,
-                'tags': tags
-            }]
+            let allTasks = [task]
             firestore()
             .collection('tasks')
             .doc(auth().currentUser.uid)
@@ -27,11 +23,7 @@ export default function StoreTask(title, description, tags){
         if(doc.data().allTasks){
            let currentTasks = doc.data()
             currentTasks.allTasks.push(
-            {
-                'title': title,
-                'description': description,
-                'tags': tags
-            }
+            task
             )
             console.log(currentTasks)
             firestore()
