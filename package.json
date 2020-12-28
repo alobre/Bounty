@@ -1,6 +1,6 @@
 {
   "name": "BountyHunter",
-  "version": "0.5.7",
+  "version": "0.5.6",
   "private": true,
   "scripts": {
     "prestart": "npm-link-shared ./node_modules/<other package>/node_modules . react",
@@ -21,11 +21,9 @@
     "@react-native-community/masked-view": "^0.1.10",
     "@react-native-firebase/app": "^10.2.0",
     "@react-native-firebase/auth": "^10.2.0",
-    "@react-native-firebase/database": "^10.3.1",
     "@react-native-firebase/firestore": "^10.3.1",
     "@react-navigation/native": "^5.8.10",
     "@react-navigation/stack": "^5.12.8",
-    "moment": "^2.29.1",
     "native-base": "^2.13.15",
     "react": "16.13.1",
     "react-native": "0.63.4",

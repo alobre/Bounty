@@ -19,8 +19,6 @@ import org.reactnative.maskedview.RNCMaskedViewPackage;
 import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
 // @react-native-firebase/auth
 import io.invertase.firebase.auth.ReactNativeFirebaseAuthPackage;
-// @react-native-firebase/database
-import io.invertase.firebase.database.ReactNativeFirebaseDatabasePackage;
 // @react-native-firebase/firestore
 import io.invertase.firebase.firestore.ReactNativeFirebaseFirestorePackage;
 // react-native-gesture-handler
@@ -82,7 +80,6 @@ public class PackageList {
       new RNCMaskedViewPackage(),
       new ReactNativeFirebaseAppPackage(),
       new ReactNativeFirebaseAuthPackage(),
-      new ReactNativeFirebaseDatabasePackage(),
       new ReactNativeFirebaseFirestorePackage(),
       new RNGestureHandlerPackage(),
       new ReanimatedPackage(),
