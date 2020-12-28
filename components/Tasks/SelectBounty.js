@@ -5,6 +5,9 @@ import { ScrollView } from 'react-native-gesture-handler';
 import auth from '@react-native-firebase/auth';
 import TaskCard from './TaskCard';
 import StoreTask from '../Firestore/StoreTask';
+import firestore from '@react-native-firebase/firestore';
+import database from '@react-native-firebase/database';
+import moment from 'moment';
 
 export default class SelectBounty extends Component{
     constructor(props){
@@ -15,14 +18,16 @@ export default class SelectBounty extends Component{
                 "title": this.props.route.params.title,
                 "description": this.props.route.params.description,
                 "tags": this.props.route.params.tags,
-                "bounty": "€"
+                "bounty": "€",
+                "date": moment().format('DD.MM.YYYY'),
+                "time": moment().format('HH:mm')
             },
             bounty: "5"
         }
     }
 
     componentDidMount(){
-        console.log(this.props)
+        
     }
 
     render(){
@@ -31,6 +36,10 @@ export default class SelectBounty extends Component{
                 <TaskCard username={auth().currentUser.displayName} title={this.props.route.params.title} category={this.props.route.params.tags} description={this.props.route.params.description} wage={this.state.task.bounty}></TaskCard>
                 <TextInput onChangeText={(text) => this.setState(state => state.task.bounty = text) }></TextInput>
                 <Button onPress={ () => {
+                    this.setState(state => {
+                        state.task.date = moment().format('DD.MM.YYYY');
+                        state.task.time = moment().format('HH:mm');
+                    });
                     StoreTask(this.state.task)
                     } }>Submit</Button>
             </ScrollView>
