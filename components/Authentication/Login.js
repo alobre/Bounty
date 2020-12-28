@@ -36,7 +36,7 @@ async function onGoogleButtonPress() {
   });
 }
 
-export default class Login extends Component<Props>{
+export default class Login extends Component{
 // const Login = () =>{
 constructor(props){
   super(props);
