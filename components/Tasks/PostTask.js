@@ -6,7 +6,7 @@ import { Textarea, Form, Item, Input } from "native-base";
 import Toast from 'react-native-tiny-toast'
 import StoreTask from '../Firestore/StoreTask';
 import validate from 'validate.js'
-import {constraints} from '../Validation/constraints'
+import { constraintsTask } from '../Validation/constraints'
 
 export default class PostTask extends Component{
     constructor(props){
@@ -42,12 +42,12 @@ export default class PostTask extends Component{
     }
 
     validateTitleAndTags(){
-        return validate({"title": this.state.title, "tags": this.state.tags}, constraints, {format: "detailed"})
+        return validate({"title": this.state.title, "tags": this.state.tags}, constraintsTask, {format: "detailed"})
     }
     async proceedOrError(){
         let Validation = await this.validateTitleAndTags()
         if(Validation == undefined){
-            this.props.navigation.push('SelectBounty', { "title": this.state.title , "description": this.state.description, "tags": this.state.tags })
+            this.props.navigation.navigate('SelectBounty', { "title": this.state.title , "description": this.state.description, "tags": this.state.tags })
         } else {
             Validation.filter(err => {
                 this.setState(state=>{

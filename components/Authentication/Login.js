@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet  } from 'react-native';
+import { View, StyleSheet, Dimensions } from 'react-native';
 import { Button, Paragraph, Dialog, Portal, Avatar, TouchableRipple, IconButton, TextInput, Divider, Text } from 'react-native-paper';
 import auth from '@react-native-firebase/auth';
 import { GoogleSignin } from '@react-native-community/google-signin';
@@ -74,9 +74,7 @@ constructor(props){
   render(){
     return (  
     <View>
-      {/* <LoginApp></LoginApp> */}
         <TouchableRipple borderless={true} style={styles.avatarParent} onPress={() => this.setState({ visible: true })} rippleColor="rgba(0, 0, 0, .32)">
-        {/* <Avatar.Image style={styles.profile} size={42} source={require('../media/obama.jpg')} /> */}
         <IconButton icon="login" size={24}></IconButton>
       </TouchableRipple>
       <Portal>
@@ -85,11 +83,16 @@ constructor(props){
           <Dialog.Content>
             <TextInput onChangeText={ text => this.setState({ email: text })} label="Email" mode="outlined"></TextInput>
             <TextInput onChangeText={ text => this.setState({ password: text })} label="Password" mode="outlined"></TextInput>
-            <Button icon="login" mode="outlined" uppercase={false} onPress={this.createUser}>Login</Button>
-            <Button icon="gmail" mode="outlined" uppercase={false} onPress={() => onGoogleButtonPress()}>Login with Google</Button>
-            <Button icon="facebook" mode="outlined" uppercase={false} onPress={() => console.log('Pressed')}>Login with Facebook</Button>
-            <Divider></Divider>
+            <Button style={styles.loginButton} icon="login" mode="outlined" uppercase={false} onPress={this.createUser}>Login</Button>
+
+            <Divider style={styles.divider}></Divider>
             <Text>Not Registered yet?</Text>
+            <Button style={styles.registerButton} icon="account-plus" mode="outlined" uppercase={false} onPress={() => {this.props.navigation.navigate('Register'); this.setState({ visible: false })}}>Register</Button>
+
+            <Divider style={styles.divider}></Divider>
+            <Button style={styles.loginGoogle} icon="gmail" mode="outlined" uppercase={false} onPress={() => onGoogleButtonPress()}>Login with Google</Button>
+            <Button style={styles.loginFacebook} icon="facebook" mode="outlined" uppercase={false} onPress={() => console.log('Pressed')}>Login with Facebook</Button>
+
           </Dialog.Content>
           <Dialog.Actions>
             <Button onPress={() => this.setState({ visible: false })}>Done</Button>
@@ -107,5 +110,17 @@ const styles = StyleSheet.create({
     },
     avatarParent:{
         borderRadius:50
-    }
+    },
+    loginButton:{
+      marginTop: Dimensions.get('window').height/50
+    },
+    divider:{
+      marginVertical: Dimensions.get('window').height/50
+    },
+    loginGoogle:{
+      marginBottom: Dimensions.get('window').height/100
+    },
+    loginFacebook:{
+      marginBottom: Dimensions.get('window').height/50
+    },
 })

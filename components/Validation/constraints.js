@@ -1,4 +1,4 @@
-export const constraints = {
+export const constraintsTask = {
     title: {
       presence: true,
       length: {
@@ -18,3 +18,19 @@ export const constraints = {
         }
     }
   };
+
+export const constraintsRegister = {
+  email:{
+    presence: true,
+    email:{
+      message: "Email ungültig"
+    }
+  },
+  password:{
+    presence: true,
+    length:{
+      minimum: 8,
+      tooShort: "Passwort muss mindestens 8 Stellen enthalten"
+    }
+  }
+}

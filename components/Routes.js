@@ -11,6 +11,7 @@ import Profile from './Profile/Profile'
 import AddTaskButton from './Tasks/AddTaskButton'
 import PostTask from './Tasks/PostTask'
 import SelectBounty from './Tasks/SelectBounty';
+import Register from './Authentication/Register';
 
 function HomeScreen({ navigation }) {
   return (
@@ -48,6 +49,7 @@ export default class App extends Component {
         <Stack.Screen name="PostTask" component={PostTask} />
         <Stack.Screen name="SelectBounty" component={SelectBounty} />
         <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="Register" component={Register} />
       </Stack.Navigator>
     </NavigationContainer>
     </PaperProvider>

@@ -29,21 +29,11 @@ const LoginOrLogout = ({ parentCallback }) => {
     
     if (!user) {
       return (
-        // <View>
-        //   <Login></Login>
-        // </View>
         false
       );
     }
   
     return (
-      // <View>
-      //   <Logout user={user}></Logout>
-      //   {/* <Profile></Profile> */}
-      //   {/* <Button
-      //   title="Profile"
-      //   onPress={() => navigation.navigate('Profile')}*/}
-      // </View>
       true
     );
 }

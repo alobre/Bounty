@@ -13,15 +13,13 @@ export default class PostTask extends Component{
 
     render(){
         return(
-            // <TouchableRipple onPress={()=>this.props.navigation.push('PostTask')}>
             <Portal>
             <FAB
             style={styles.fab}
             large
             icon="plus"
-            onPress={()=> this.props.navigation.push('PostTask')}
+            onPress={()=> this.props.navigation.navigate('PostTask')}
         /></Portal>
-        // </TouchableRipple>
         )
     }
 }

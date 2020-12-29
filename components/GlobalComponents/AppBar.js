@@ -23,12 +23,12 @@ const AppBar = ({ navigation, previous }) =>
   //     }
   // }, [data, handleNoUsersLoaded]);
     if(loggedIn){
-      action = <TouchableRipple style={styles.avatarParent} onPress={()=> navigation.push('Profile')} borderless={true} rippleColor="rgba(0, 0, 0, .32)">
+      action = <TouchableRipple style={styles.avatarParent} onPress={()=> navigation.navigate('Profile')} borderless={true} rippleColor="rgba(0, 0, 0, .32)">
       <Avatar.Image style={styles.profile} size={32} source={{uri: loggedIn.photoURL}} />
   </TouchableRipple>
     }
     if(!loggedIn){
-      action = <Login/>
+      action = <Login navigation={navigation} />
     }
 return(
     <Appbar.Header style={styles.appbar}>
@@ -41,7 +41,6 @@ return(
           <Text style={styles.title}>Bounty</Text>
         </Col>
         <Col style={styles.colProfile} size={10}>
-          {/* <Login/> */}
           {action}
           <LoginOrLogout parentCallback={callback} />
         </Col>
