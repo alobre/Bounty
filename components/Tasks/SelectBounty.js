@@ -5,8 +5,6 @@ import { ScrollView } from 'react-native-gesture-handler';
 import auth from '@react-native-firebase/auth';
 import TaskCard from './TaskCard';
 import StoreTask from '../Firestore/StoreTask';
-import firestore from '@react-native-firebase/firestore';
-import database from '@react-native-firebase/database';
 import moment from 'moment';
 
 export default class SelectBounty extends Component{

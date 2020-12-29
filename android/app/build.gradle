@@ -187,6 +187,8 @@ dependencies {
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
     
+    implementation project(':react-native-vector-icons')
+
     implementation 'com.android.support:multidex:1.0.3'
 
     implementation 'androidx.multidex:multidex:2.0.1'

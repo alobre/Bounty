@@ -1,6 +1,6 @@
 {
   "name": "BountyHunter",
-  "version": "0.5.7",
+  "version": "0.5.8",
   "private": true,
   "scripts": {
     "prestart": "npm-link-shared ./node_modules/<other package>/node_modules . react",
@@ -36,8 +36,10 @@
     "react-native-safe-area-context": "^3.1.9",
     "react-native-screens": "^2.16.1",
     "react-native-tab-view": "^2.15.2",
+    "react-native-tiny-toast": "^1.0.7",
     "react-native-vector-icons": "^7.1.0",
-    "socket.io-client": "^3.0.4"
+    "socket.io-client": "^3.0.4",
+    "validate.js": "^0.13.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",

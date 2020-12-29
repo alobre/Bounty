@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BountyHunter.iml" filepath="$PROJECT_DIR$/.idea/modules/BountyHunter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/BountyHunter.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/BountyHunter.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2005464718/BountyHunter.react-native-community_google-signin.iml" filepath="$PROJECT_DIR$/.idea/modules/-2005464718/BountyHunter.react-native-community_google-signin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2111809635/BountyHunter.react-native-community_masked-view.iml" filepath="$PROJECT_DIR$/.idea/modules/2111809635/BountyHunter.react-native-community_masked-view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1185488457/BountyHunter.react-native-firebase_app.iml" filepath="$PROJECT_DIR$/.idea/modules/-1185488457/BountyHunter.react-native-firebase_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1157638802/BountyHunter.react-native-firebase_auth.iml" filepath="$PROJECT_DIR$/.idea/modules/1157638802/BountyHunter.react-native-firebase_auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/221251173/BountyHunter.react-native-firebase_database.iml" filepath="$PROJECT_DIR$/.idea/modules/221251173/BountyHunter.react-native-firebase_database.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-191975039/BountyHunter.react-native-firebase_firestore.iml" filepath="$PROJECT_DIR$/.idea/modules/-191975039/BountyHunter.react-native-firebase_firestore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1011054036/BountyHunter.react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/.idea/modules/1011054036/BountyHunter.react-native-gesture-handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1845220296/BountyHunter.react-native-reanimated.iml" filepath="$PROJECT_DIR$/.idea/modules/1845220296/BountyHunter.react-native-reanimated.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1611688253/BountyHunter.react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/1611688253/BountyHunter.react-native-safe-area-context.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1315291541/BountyHunter.react-native-screens.iml" filepath="$PROJECT_DIR$/.idea/modules/1315291541/BountyHunter.react-native-screens.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2127467138/BountyHunter.react-native-vector-icons.iml" filepath="$PROJECT_DIR$/.idea/modules/2127467138/BountyHunter.react-native-vector-icons.iml" />
+    </modules>
+  </component>
+</project>

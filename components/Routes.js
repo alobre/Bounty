@@ -2,10 +2,11 @@ import 'react-native-gesture-handler';
 import React, { Component, useState, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import {View, Text, Button, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import AppBar from './GlobalComponents/AppBar'
 import BottomNavigation from './GlobalComponents/BottomNavigation'
-import { Provider as PaperProvider } from 'react-native-paper';
+import { Provider as PaperProvider, Button } from 'react-native-paper';
+import { Root } from 'native-base'
 import Profile from './Profile/Profile'
 import AddTaskButton from './Tasks/AddTaskButton'
 import PostTask from './Tasks/PostTask'
@@ -13,10 +14,11 @@ import SelectBounty from './Tasks/SelectBounty';
 
 function HomeScreen({ navigation }) {
   return (
+    <Root>
     <PaperProvider>
     <AddTaskButton navigation={navigation}></AddTaskButton>
     <BottomNavigation></BottomNavigation>
-    </PaperProvider>
+    </PaperProvider></Root>
   );
 }
 

@@ -1,9 +1,12 @@
 import { View } from 'native-base';
 import React, { Component, setState } from 'react';
-import { StyleSheet } from 'react-native';
-import { TextInput, Button, Chip, Text, Snackbar } from 'react-native-paper';
-import { Textarea, Form, Item, Input, Toast } from "native-base";
+import { StyleSheet, Dimensions } from 'react-native';
+import { TextInput, Button, Chip, Text, Snackbar, HelperText } from 'react-native-paper';
+import { Textarea, Form, Item, Input } from "native-base"; 
+import Toast from 'react-native-tiny-toast'
 import StoreTask from '../Firestore/StoreTask';
+import validate from 'validate.js'
+import {constraints} from '../Validation/constraints'
 
 export default class PostTask extends Component{
     constructor(props){
@@ -15,7 +18,13 @@ export default class PostTask extends Component{
             description:'',
             currentTag: '',
             tags:[],
+            titleError: true,
+            tagsError: true,
             chipWarning: false,
+            errorMsg: {
+                title: "",
+                tags: ""
+            }
         }
     }
 
@@ -32,6 +41,35 @@ export default class PostTask extends Component{
         this.setState({tags: newList})
     }
 
+    validateTitleAndTags(){
+        return validate({"title": this.state.title, "tags": this.state.tags}, constraints, {format: "detailed"})
+    }
+    async proceedOrError(){
+        let Validation = await this.validateTitleAndTags()
+        if(Validation == undefined){
+            this.props.navigation.push('SelectBounty', { "title": this.state.title , "description": this.state.description, "tags": this.state.tags })
+        } else {
+            Validation.filter(err => {
+                this.setState(state=>{
+                    let attr = err.attribute
+                    if(attr == 'title') {
+                        state.errorMsg.title = err.error
+                        this.titleError()
+                    }
+                    if(attr == 'tags') {
+                        state.errorMsg.tags = err.error
+                        this.tagsError()
+                    }
+                })
+            })
+        
+        }
+    }
+
+    titleError = () =>  this.setState({titleError: true});
+
+    tagsError = () =>  this.setState({titleError: true});
+
     toggleChipWarning = () => this.setState({chipWarning: true});
 
     dismissChipWarning = () => this.setState({chipWarning: false});
@@ -39,13 +77,22 @@ export default class PostTask extends Component{
     render(){
         return(
             <View>
-                <Item>
-                    <Input onChangeText={text=> this.state.title = text} placeholder="Titel" />
+                
+                {/* <Text> {this.state.errorMsg.title}</Text> */}
+                
+                <Item>                
+                    <TextInput style={styles.titleInput} onChangeText={text=> this.state.title = text} placeholder="Titel" />  
                 </Item>
+                <HelperText type="error" visible={this.state.titleError}>
+                        {this.state.errorMsg.title}
+                </HelperText>
                 <Form>
-                    <Textarea onChangeText={text=> this.state.description = text} rowSpan={12} bordered placeholder="Beschreibung..." />
+                    <TextInput multiline numberOfLines={12} onChangeText={text=> this.state.description = text} placeholder="Beschreibung..." />
                 </Form>
                 <View style={styles.tagParent}>
+                <HelperText type="error" visible={this.state.tagsError}>
+                        {this.state.errorMsg.tags}
+                </HelperText>
                     {this.state.tags.map(tag => <Chip key={tag}  onClose={ ()=> this.removeTagFromTags(tag) } closeIconAccessibilityLabel="close" mode="outlined">{tag}</Chip>)}
                     <Snackbar
                     visible={this.state.chipWarning}
@@ -60,18 +107,18 @@ export default class PostTask extends Component{
                 <Item>
                     <Input onChangeText={text=> this.state.currentTag = text} onSubmitEditing={ ()=> this.addTagToTags(this.state.currentTag)} placeholder="Schlagwörter" />
                 </Item>
-                <Button icon="send" mode="contained" onPress={()=> 
-                this.props.navigation.push('SelectBounty', { "title": this.state.title , "description": this.state.description, "tags": this.state.tags })
-                }>
-                    Auftrag aufgeben
+                <Button icon="send" mode="contained" onPress={()=>  this.proceedOrError()}>
+                    Weiter
                 </Button>
-
             </View>
         )
     }
 }
 
 const styles = StyleSheet.create({
+    titleInput:{
+        width: Dimensions.get('window').width
+    },
     tagParent:{
         justifyContent: 'flex-start',
         flexDirection: 'row',
