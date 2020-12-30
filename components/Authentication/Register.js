@@ -5,13 +5,15 @@ import { TextInput, Button } from "react-native-paper";
 import auth from '@react-native-firebase/auth';
 import validate from 'validate.js'
 import { constraintsRegister } from "../Validation/constraints";
+import StoreUser from '../Firestore/StoreUser'
 
 export default class Register extends Component {
     constructor(props){
         super(props)
         this.state={
             email: '',
-            password: ''
+            password: '',
+            displayName: ''
         }
     }
 
@@ -20,6 +22,7 @@ export default class Register extends Component {
         .createUserWithEmailAndPassword(this.state.email, this.state.password)
         .then((userCredential) => {
             console.log('User account created & signed in!');
+            StoreUser('register', { displayName: this.state.displayName });
             userCredential.user.sendEmailVerification()
         })
         .catch(error => {
@@ -38,6 +41,7 @@ export default class Register extends Component {
     render() {
         return (
             <ScrollView>
+                <TextInput onChangeText={text => this.setState(state=> {state.displayName = text})} placeholder="Benutzername"></TextInput>
                 <TextInput onChangeText={text => this.setState(state=> {state.email = text})} placeholder="Email"></TextInput>
                 <TextInput onChangeText={text => this.setState(state=>{state.password = text})} placeholder="Passwort"></TextInput>
                 <TextInput placeholder="Passwort"></TextInput>

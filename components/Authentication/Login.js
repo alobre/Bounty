@@ -27,7 +27,7 @@ async function onGoogleButtonPress() {
     // Login with the credential
     return auth().signInWithCredential(credential);
   })
-  .then((user)=>StoreUser())
+  .then((user)=>StoreUser('google'))
   .catch((error) => {
     const { code, message } = error;
     // For details of error codes, see the docs
