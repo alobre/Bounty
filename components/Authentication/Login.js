@@ -51,7 +51,7 @@ constructor(props){
 
   createUser = () =>{
     auth()
-    .createUserWithEmailAndPassword(this.state.email, this.state.password)
+    .signInWithEmailAndPassword(this.state.email, this.state.password)
     .then(() => {
       // console.log('User account created & signed in!');
     })
@@ -67,8 +67,6 @@ constructor(props){
       console.error(error);
     });
   }
-
-
 
 
   render(){
@@ -87,7 +85,7 @@ constructor(props){
 
             <Divider style={styles.divider}></Divider>
             <Text>Not Registered yet?</Text>
-            <Button style={styles.registerButton} icon="account-plus" mode="outlined" uppercase={false} onPress={() => {this.props.navigation.navigate('Register'); this.setState({ visible: false })}}>Register</Button>
+            <Button style={styles.registerButton} icon="account-plus" mode="outlined" uppercase={false} onPress={() => {this.props.navigation.navigate('Register', this.props.navigation); this.setState({ visible: false })}}>Register</Button>
 
             <Divider style={styles.divider}></Divider>
             <Button style={styles.loginGoogle} icon="gmail" mode="outlined" uppercase={false} onPress={() => onGoogleButtonPress()}>Login with Google</Button>

@@ -22,6 +22,7 @@ export default class User extends Component{
       }
       
       componentDidMount(){
+        console.log(auth().currentUser);
         this.subscriber = firestore().collection('users').doc(auth().currentUser.uid).onSnapshot( doc => {
           if(doc){
           this.setState({

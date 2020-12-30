@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Dimensions, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import { TextInput, Button } from "react-native-paper";
+import { TextInput, Button, Dialog, Portal, Paragraph } from "react-native-paper";
 import auth from '@react-native-firebase/auth';
 import validate from 'validate.js'
 import { constraintsRegister } from "../Validation/constraints";
@@ -13,7 +13,8 @@ export default class Register extends Component {
         this.state={
             email: '',
             password: '',
-            displayName: ''
+            displayName: '',
+            dialogVisible: false
         }
     }
 
@@ -22,8 +23,10 @@ export default class Register extends Component {
         .createUserWithEmailAndPassword(this.state.email, this.state.password)
         .then((userCredential) => {
             console.log('User account created & signed in!');
+            this.setState({dialogVisible: true})
             StoreUser('register', { displayName: this.state.displayName });
             userCredential.user.sendEmailVerification()
+            this.Logout()
         })
         .catch(error => {
             if (error.code === 'auth/email-already-in-use') {
@@ -37,10 +40,31 @@ export default class Register extends Component {
             console.error(error);
         });
     }
+    
+  Logout(){
+    auth()
+        .signOut()
+        .then(() => 'Logged Out');
+  }
 
     render() {
         return (
             <ScrollView>
+                <Portal>
+                <Dialog visible={this.state.dialogVisible}>
+                    <Dialog.Title>Sie sind fast Fertig!</Dialog.Title>
+                    <Dialog.Content>
+                        <Paragraph>Sie sind nun erfolgreich Registriert!</Paragraph>
+                        <Paragraph>Bitte öffnen Sie den Bestätigungslink den Sie auf Ihre Email({this.state.email}) erhalten haben!</Paragraph>
+                    </Dialog.Content>
+                    <Dialog.Actions>
+                        <Button onPress={()=> {
+                            this.setState({dialogVisible: false})
+                            this.props.navigation.navigate('Home')
+                            }}>Zum Login</Button>
+                    </Dialog.Actions>
+                </Dialog>
+                </Portal>
                 <TextInput onChangeText={text => this.setState(state=> {state.displayName = text})} placeholder="Benutzername"></TextInput>
                 <TextInput onChangeText={text => this.setState(state=> {state.email = text})} placeholder="Email"></TextInput>
                 <TextInput onChangeText={text => this.setState(state=>{state.password = text})} placeholder="Passwort"></TextInput>
