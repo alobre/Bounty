@@ -2,11 +2,12 @@ import React from 'react';
 import { Dimensions, View } from 'react-native'
 import { TabView, SceneMap } from 'react-native-tab-view';
 import RecomendedTasks from './RecomendedTasks'
+import {CurrentTasks} from "./CurrentTasks";
 const FirstRoute = () => (
     <RecomendedTasks/>
   );
   const SecondRoute = () => (
-    <View style={ {backgroundColor: '#673ab7'} } />
+    <CurrentTasks></CurrentTasks>
   );
   const initialLayout = { width: Dimensions.get('window').width };
 

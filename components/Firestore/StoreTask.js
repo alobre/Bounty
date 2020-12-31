@@ -22,6 +22,7 @@ export default function StoreTask(task){
         }
         if(doc.data().allTasks){
            let currentTasks = doc.data()
+           task.id = currentTasks.allTasks.length + 1
             currentTasks.allTasks.push(
             task
             )
