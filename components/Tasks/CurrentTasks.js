@@ -20,7 +20,9 @@ const CurrentTasks = () => {
   const tasksRef = firestore().collection('tasks');
 
   async function getTasks(){
-    let snapshot = await firestore.colletion('tasks').orderBy('allTasks.id').limit(3).get();
+    firestore().collection('tasks').doc(auth().currentUser.uid).collection('tasks').get().then((querySnapshot) => {
+      // console.log(querySnapshot.docs[0].data())
+    })
     if(snapshot.empty == true){
       console.log("empty")
     }

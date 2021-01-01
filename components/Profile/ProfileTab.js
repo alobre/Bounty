@@ -27,7 +27,7 @@ export default function ProfileTab() {
       <TaskCard username="alobre" title="Kleiner Einkauf" category="Einkauf" description={description} wage="5€"></TaskCard>
   );
   const error = () => (
-    <TaskCard username="alobre" title="Kleiner Einkauf" category="Einkauf" description={description} wage="5€"></TaskCard>
+    <YourTasks></YourTasks>
 );
 
 
