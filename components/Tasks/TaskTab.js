@@ -2,12 +2,13 @@ import React from 'react';
 import { Dimensions, View } from 'react-native'
 import { TabView, SceneMap } from 'react-native-tab-view';
 import RecomendedTasks from './RecomendedTasks'
-import {CurrentTasks} from "./CurrentTasks";
+import CurrentTasks from "./CurrentTasks";
 const FirstRoute = () => (
     <RecomendedTasks/>
   );
   const SecondRoute = () => (
     <CurrentTasks></CurrentTasks>
+    // <View></View>
   );
   const initialLayout = { width: Dimensions.get('window').width };
 
