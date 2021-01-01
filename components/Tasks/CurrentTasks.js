@@ -19,12 +19,12 @@ const CurrentTasks = () => {
 
   const tasksRef = firestore().collection('tasks');
 
-  function getTasks(){
-    let snapshot = tasksRef.orderBy('id').limit(3).get();
-    if(!snapshot.empty){
+  async function getTasks(){
+    let snapshot = await firestore.colletion('tasks').orderBy('allTasks.id').limit(3).get();
+    if(snapshot.empty == true){
       console.log("empty")
     }
-    console.log(snapshot)
+    console.log(tasksRef)
   }
 
   useEffect(() => {
