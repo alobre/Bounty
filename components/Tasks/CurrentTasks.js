@@ -80,7 +80,7 @@ const CurrentTasks = () => {
 
   const onRefresh = () => {
     setTimeout(() => {
-      getRestaurants();
+      getTasks();
     }, 1000);
   }
 

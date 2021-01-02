@@ -1,20 +1,62 @@
-import React from 'react';
-import {StyleSheet, View} from 'react-native'
+import React, { useState } from 'react';
+import {StyleSheet, View, Modal } from 'react-native'
 import globalStyles from '../GlobalComponents/GlobalStyles.js'
-import { Avatar, Button, Card, Title, Paragraph, Text, Subheading, Divider, TouchableRipple, Badge, IconButton, Menu } from 'react-native-paper';
+import { Avatar, Button, Card, Title, Paragraph, Text, Subheading, Divider, TouchableRipple, Badge, IconButton, Menu, Icon } from 'react-native-paper';
 import { Col, Row, Grid } from "react-native-easy-grid";
+import ImageGallery from "./ImageGallery";
 
-// import { Left, Thumbnail, Container, Header, Text, Content, Card, CardItem, Body } from 'native-base';
 const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
 
 
-const TaskCard = ({username, title, category, description, wage}) =>{
+const TaskCard = ({username, title, category, description, wage, imageURL}) =>{
 
-  const [visible, setVisible] = React.useState(false);
+  const [visible, setVisible] = useState(false);
 
   const openMenu = () => setVisible(true);
 
   const closeMenu = () => setVisible(false);
+
+  let [imageVisible, setImageVisible] = useState(false)
+
+  const items= [
+    {
+      url: 'https://picsum.photos/700',
+      index: 0
+    },
+    {
+      url: 'https://picsum.photos/800',
+      index: 1
+    },
+    {
+      url: 'https://picsum.photos/900',
+      index: 2
+    },
+    {
+      url: 'https://picsum.photos/600',
+      index: 3
+    },
+    {
+      url: 'https://picsum.photos/500',
+      index: 4
+    },
+    {
+      url: 'https://picsum.photos/400',
+      index: 5
+    },
+    {
+      url: 'https://picsum.photos/300',
+      index: 6
+    },
+    {
+      url: 'https://picsum.photos/200',
+      index: 7
+    },
+    {
+      url: 'https://picsum.photos/100',
+      index: 8  
+    },
+  ]
+
 
   return (
     <Card style={styles.card} elevation={4}>
@@ -40,7 +82,13 @@ const TaskCard = ({username, title, category, description, wage}) =>{
       <Divider/>
       <Paragraph style={globalStyles.fontSerif}>{description}</Paragraph>
     </Card.Content>
-    <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
+    {
+      ((imageURL) ? true : false) &&
+      <Card.Cover source={{ uri: imageURL }} />
+    }
+
+    <ImageGallery items={items}></ImageGallery>
+
     <View style={styles.priceAndContact}>
       <View style={styles.priceParent}>
         <Badge size={40} style={styles.price}>
