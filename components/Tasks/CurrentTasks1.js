@@ -21,7 +21,7 @@ const CurrentTasks = () => {
     const [lastDoc, setLastDoc] = useState(null);
     const [restaurants, setRestaurants] = useState([]);
   
-    const restaurantsRef = firestore().collection('tasks');
+    const restaurantsRef = firestore().collectionGroup('UserTasks');
   
     useEffect(() => {
       getRestaurants();

@@ -9,13 +9,13 @@ import { View } from 'native-base';
 const GetUserTasks = () => {
     let [tasks, setTasks] = useState([])
     if(tasks == ''){
-        firestore().collection('tasks').doc(auth().currentUser.uid).collection('tasks').get().then((querySnapshot) => {
+        firestore().collection('tasks').doc(auth().currentUser.uid).collection('UserTasks').get().then((querySnapshot) => {
                 setTasks(querySnapshot.docs)
         })
     }
 return(
 <View>
-    {tasks.map(task => <TaskCard key={task.data().task.id} username={task.data().task.username} title={task.data().task.title} category={task.data().task.tags} description={task.data().task.description} wage={task.data().task.bounty}></TaskCard>)}
+    {tasks.map(task => <TaskCard key={task.data().id} username={task.data().username} title={task.data().title} category={task.data().tags} description={task.data().description} wage={task.data().bounty}></TaskCard>)}
 </View>
 )
 }

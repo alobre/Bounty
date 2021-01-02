@@ -7,8 +7,9 @@ const FirstRoute = () => (
     <RecomendedTasks/>
   );
   const SecondRoute = () => (
-    // <CurrentTasks></CurrentTasks>
-    <View></View>
+    <View>
+      <CurrentTasks></CurrentTasks>
+    </View>
   );
   const initialLayout = { width: Dimensions.get('window').width };
 
