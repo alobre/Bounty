@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
-import { Modal, FlatList, View, Dimensions, Image, StyleSheet, Text } from 'react-native';
-import { TouchableRipple } from "react-native-paper";
+import { FlatList, View, Dimensions, Image, StyleSheet, Text, Modal } from 'react-native';
+import { TouchableRipple, Dialog } from "react-native-paper";
 import ReactNativeZoomableView from '@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView';
 
 function logOutZoomState(event, gestureState, zoomableViewEventObject){
@@ -13,6 +13,9 @@ function logOutZoomState(event, gestureState, zoomableViewEventObject){
     console.log('');
     console.log(`Zoomed from ${zoomableViewEventObject.lastZoomLevel} to  ${zoomableViewEventObject.zoomLevel}`);
   }
+
+const deviceWidth = Dimensions.get("window").width;
+const deviceHeight = Dimensions.get("window").height;
 
 const ImageGallery = ({items}) => {
 
@@ -33,8 +36,16 @@ const ImageGallery = ({items}) => {
                 keyExtractor={item => item.url}
                 style={styles.imageContainer}
             />
-            <Modal visible={modal !== null} animated>
-                {/* <View style={styles.zoomWrapper}> */}
+
+
+            
+                <Modal 
+                visible={modal != null}
+                transparent
+                statusBarTranslucent
+                onRequestClose={()=>setModal(null)}
+            >
+                <View style={styles.zoomWrapper}>
                     <ReactNativeZoomableView
                 zoomEnabled={true}
                 maxZoom={2.0}
@@ -47,16 +58,18 @@ const ImageGallery = ({items}) => {
                 style={styles.zoomedImageParent}
                 captureEvent={true}
                 >
+            
                     <Image
                     source={modal !== null ? {uri: items[modal].url} : null }
                     style={styles.zoomedImage}
                     resizeMode="contain"
                     />
-                </ReactNativeZoomableView>
-                {/* </View> */}
-                
                     
+                </ReactNativeZoomableView>
+                </View>
+                
             </Modal>
+            
         </View>
     )
 }
@@ -70,16 +83,22 @@ const styles = StyleSheet.create({
 
     },
     zoomedImageParent:{
-        backgroundColor: 'black'
+        // backgroundColor: 'black'
     },
     zoomedImage:{
         // height: Dimensions.get('window').width,
         // width: Dimensions.get('window').width
-        flex: 1, width: null, height: '100%'
+        flex: 1,
+        width: null,
+        height: '100%',
+        zIndex: 1
     },
     zoomWrapper:{
         flex: 1,
         overflow: 'hidden',
+    },
+    modal:{
+        margin: 0
     }
 
 })
