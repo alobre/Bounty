@@ -18,15 +18,13 @@ export default class SelectBounty extends Component{
                 "tags": this.props.route.params.tags,
                 "bounty": "€",
                 "date": moment().format('DD.MM.YYYY'),
-                "time": moment().format('HH:mm')
+                "time": moment().format('HH:mm'),
+                "images": this.props.route.params.images,
             },
             bounty: "5"
         }
     }
 
-    componentDidMount(){
-        
-    }
 
     render(){
         return(

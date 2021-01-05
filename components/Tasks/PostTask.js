@@ -3,8 +3,11 @@ import React, { Component, setState } from 'react';
 import { StyleSheet, Dimensions } from 'react-native';
 import { TextInput, Button, Chip, Text, Snackbar, HelperText } from 'react-native-paper';
 import { Textarea, Form, Item, Input } from "native-base"; 
+import ImagePicker from 'react-native-image-crop-picker';
 import Toast from 'react-native-tiny-toast'
 import StoreTask from '../Firestore/StoreTask';
+import storage from '@react-native-firebase/storage';
+import auth from '@react-native-firebase/auth';
 import validate from 'validate.js'
 import { constraintsTask } from '../Validation/constraints'
 
@@ -24,7 +27,8 @@ export default class PostTask extends Component{
             errorMsg: {
                 title: "",
                 tags: ""
-            }
+            },
+            images: []
         }
     }
 
@@ -36,6 +40,28 @@ export default class PostTask extends Component{
         }
         
     }
+
+    addPhoto(){
+        ImagePicker.openPicker({
+            multiple: true
+        }).then(images => {
+        // for (let i = 0; i < images.length; i++) {
+        //     const image = images[i];
+        //     console.log(image);
+        //     let ref = storage().ref('/tasks/' + auth().currentUser.uid + '/123321/' + i + '-TaskImage.jpg' )
+        //     let task = ref.putFile(image.path)
+        //     task.on('state_changed', taskSnapshot => {
+        //         console.log(`${taskSnapshot.bytesTransferred} transferred out of ${taskSnapshot.totalBytes}`);
+        //     });
+            
+        //     task.then(() => {
+        //         console.log('Image uploaded to the bucket!');
+        //     });
+        // }
+            this.setState({images: images})
+        });
+    }
+
     removeTagFromTags(tag){
         let newList = this.state.tags.filter(el => el != tag)
         this.setState({tags: newList})
@@ -47,7 +73,7 @@ export default class PostTask extends Component{
     async proceedOrError(){
         let Validation = await this.validateTitleAndTags()
         if(Validation == undefined){
-            this.props.navigation.navigate('SelectBounty', { "title": this.state.title , "description": this.state.description, "tags": this.state.tags })
+            this.props.navigation.navigate('SelectBounty', { "title": this.state.title , "description": this.state.description, "tags": this.state.tags, "images": this.state.images })
         } else {
             Validation.filter(err => {
                 this.setState(state=>{
@@ -65,6 +91,7 @@ export default class PostTask extends Component{
         
         }
     }
+
 
     titleError = () =>  this.setState({titleError: true});
 
@@ -107,6 +134,7 @@ export default class PostTask extends Component{
                 <Item>
                     <Input onChangeText={text=> this.state.currentTag = text} onSubmitEditing={ ()=> this.addTagToTags(this.state.currentTag)} placeholder="Schlagwörter" />
                 </Item>
+                <Button onPress={()=> this.addPhoto()}>Pictures</Button>
                 <Button icon="send" mode="contained" onPress={()=>  this.proceedOrError()}>
                     Weiter
                 </Button>

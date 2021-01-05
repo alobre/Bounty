@@ -1302,6 +1302,11 @@
   resolved "https://registry.npmjs.org/@react-native-firebase/firestore/-/firestore-10.3.1.tgz"
   integrity sha512-K2/c6qVoIVwhsc5r754n4nPmxtk95AuBFMpbZuma/et8mGuq+ZKBVPNH41pOBY9V7Nu+aTqoVdN9vs8yZ/b/og==
 
+"@react-native-firebase/storage@^10.4.0":
+  version "10.4.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/storage/-/storage-10.4.0.tgz#b56d62050b8f172bac8e89d554af45f24e532855"
+  integrity sha512-kVQotHz5Sy0YQJkdghZ4zD0FaIh8JgkdW51wvQZ35xqDb1tckHJvjCXC1ImRl2jy4OFQ2UBaMsGOOjYcT8m2dA==
+
 "@react-navigation/core@^5.14.4":
   version "5.14.4"
   resolved "https://registry.npmjs.org/@react-navigation/core/-/core-5.14.4.tgz"
@@ -6194,6 +6199,11 @@ react-native-global-props@^1.1.5:
   version "1.1.5"
   resolved "https://registry.npmjs.org/react-native-global-props/-/react-native-global-props-1.1.5.tgz"
   integrity sha512-QDeAdRel6zyJfbgyFxZi9QXZe78OdlANxJae0rJn76uTqdt/A+iWBVjJy3NmaN/fpKy0uV0HhW6Hu4xM0QCisQ==
+
+react-native-image-crop-picker@^0.35.2:
+  version "0.35.2"
+  resolved "https://registry.yarnpkg.com/react-native-image-crop-picker/-/react-native-image-crop-picker-0.35.2.tgz#21e085e40cb5724e1e986b8eba59ef23df19598c"
+  integrity sha512-4nHAYwnemFJLzVJPl5dhNB+WQgNp41MLJjyYCypatMZl2GJD+EVXnu5eSUQE+UOpaIEhSVtqK5Y3OQ93hMhosQ==
 
 react-native-image-pan-zoom@^2.1.12:
   version "2.1.12"

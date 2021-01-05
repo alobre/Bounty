@@ -93,6 +93,7 @@ androidx/core/view/ViewCompat$NestedScrollType.class
 androidx/core/view/ViewCompat$ScrollAxis.class
 androidx/core/view/ViewCompat$ScrollIndicators.class
 androidx/core/widget/TextViewCompat$AutoSizeTextType.class
+androidx/exifinterface/media/ExifInterface$IfdType.class
 androidx/lifecycle/Lifecycle$Event.class
 androidx/lifecycle/OnLifecycleEvent.class
 androidx/multidex/MultiDex$V14$ElementConstructor.class
@@ -328,6 +329,7 @@ com/google/firebase/firestore/util/AsyncQueue.class
 com/google/firebase/firestore/util/Preconditions.class
 com/google/firebase/platforminfo/AutoValue_LibraryVersion.class
 com/google/firebase/platforminfo/LibraryVersion.class
+com/google/firebase/storage/StorageException$ErrorCode.class
 com/google/gson/annotations/Expose.class
 com/google/gson/annotations/JsonAdapter.class
 com/google/gson/annotations/SerializedName.class
@@ -348,6 +350,9 @@ com/google/j2objc/annotations/WeakOuter.class
 com/google/protobuf/ExperimentalApi.class
 com/swmansion/reanimated/MapUtils.class
 com/swmansion/rnscreens/ScreenStackHeaderConfigViewManager.class
+com/yalantis/ucrop/UCropActivity$GestureTypes.class
+com/yalantis/ucrop/UCropFragment$GestureTypes.class
+com/yalantis/ucrop/view/OverlayView$FreestyleMode.class
 io/grpc/CallOptions.class
 io/grpc/EquivalentAddressGroup$Attr.class
 io/grpc/ExperimentalApi.class
@@ -393,6 +398,7 @@ io/invertase/firebase/database/ReactNativeFirebaseDatabaseQueryModule$3.class
 io/invertase/firebase/database/ReactNativeFirebaseDatabaseQueryModule$4.class
 io/invertase/firebase/database/ReactNativeFirebaseDatabaseTransactionModule$1.class
 io/invertase/firebase/interfaces/ContextProvider.class
+io/invertase/firebase/storage/ReactNativeFirebaseStoragePackage.class
 io/perfmark/package-info.class
 javax/annotation/CheckForNull.class
 javax/annotation/CheckForSigned.class
