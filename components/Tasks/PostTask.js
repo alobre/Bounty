@@ -1,13 +1,14 @@
 import { View } from 'native-base';
 import React, { Component, setState } from 'react';
 import { StyleSheet, Dimensions } from 'react-native';
-import { TextInput, Button, Chip, Text, Snackbar, HelperText } from 'react-native-paper';
+import { TextInput, Button, Chip, Text, Snackbar, HelperText, IconButton, Colors } from 'react-native-paper';
 import { Textarea, Form, Item, Input } from "native-base"; 
 import ImagePicker from 'react-native-image-crop-picker';
 import Toast from 'react-native-tiny-toast'
 import StoreTask from '../Firestore/StoreTask';
 import storage from '@react-native-firebase/storage';
 import auth from '@react-native-firebase/auth';
+import ImageGallery from './ImageGallery'
 import validate from 'validate.js'
 import { constraintsTask } from '../Validation/constraints'
 
@@ -28,7 +29,8 @@ export default class PostTask extends Component{
                 title: "",
                 tags: ""
             },
-            images: []
+            images: [],
+            imageGalleryItems: []
         }
     }
 
@@ -58,6 +60,12 @@ export default class PostTask extends Component{
         //         console.log('Image uploaded to the bucket!');
         //     });
         // }
+            let build=[];
+            images.filter( image => {
+                build.push({url: image.path})
+            })
+            this.setState({imageGalleryItems: build})
+            console.log(this.state.imageGalleryItems);
             this.setState({images: images})
         });
     }
@@ -134,7 +142,13 @@ export default class PostTask extends Component{
                 <Item>
                     <Input onChangeText={text=> this.state.currentTag = text} onSubmitEditing={ ()=> this.addTagToTags(this.state.currentTag)} placeholder="Schlagwörter" />
                 </Item>
-                <Button onPress={()=> this.addPhoto()}>Pictures</Button>
+                <ImageGallery items={this.state.imageGalleryItems}></ImageGallery>
+                <IconButton
+                    icon="camera"
+                    color={Colors.red500}
+                    size={48}
+                    onPress={()=> this.addPhoto()}
+                />
                 <Button icon="send" mode="contained" onPress={()=>  this.proceedOrError()}>
                     Weiter
                 </Button>
