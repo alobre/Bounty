@@ -6,7 +6,7 @@ function AddPicturesToTask(images, callback){
     let allImagesPath = []
     for (let i = 0; i < images.length; i++) {
         const image = images[i];
-        // console.log(image);
+        console.log(image);
         let imageName = i + '-TaskImage.jpg'
         let ref = storage().ref('/tasks/' + auth().currentUser.uid + '/123321/' + imageName )
         let task = ref.putFile(image.path)
@@ -15,12 +15,13 @@ function AddPicturesToTask(images, callback){
             // console.log(taskSnapshot);
         });
         
-        task.then((image) => {
+        task.then(async(image) => {
             // console.log('Image uploaded to the bucket!');
+            let downloadUrl = await storage().ref(image.metadata.fullPath).getDownloadURL()
             allImagesPath.push(
-                imageName = image.metadata
+                {url : downloadUrl}
             )
-            if(allImagesPath.length == i){
+            if(images.length - 1 == i){
                 callback(allImagesPath)
             }
         });

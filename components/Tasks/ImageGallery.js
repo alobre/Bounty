@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react';
 import { FlatList, View, Dimensions, Image, StyleSheet, Text, Modal } from 'react-native';
 import { TouchableRipple, Dialog } from "react-native-paper";
 import ReactNativeZoomableView from '@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView';
-
+import storage from '@react-native-firebase/storage';
 function logOutZoomState(event, gestureState, zoomableViewEventObject){
     console.log('');
     console.log('');
@@ -18,7 +18,6 @@ const deviceWidth = Dimensions.get("window").width;
 const deviceHeight = Dimensions.get("window").height;
 
 const ImageGallery = ({items}) => {
-
     const [modal, setModal] = useState(null)
     return(
         <View>

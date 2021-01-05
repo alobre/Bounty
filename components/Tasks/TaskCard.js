@@ -82,12 +82,15 @@ const TaskCard = ({username, title, category, description, wage, imageURL}) =>{
       <Divider/>
       <Paragraph style={globalStyles.fontSerif}>{description}</Paragraph>
     </Card.Content>
-    {
+    {/* {
       ((imageURL) ? true : false) &&
       <Card.Cover source={{ uri: imageURL }} />
-    }
+    } */}
 
-    <ImageGallery items={items}></ImageGallery>
+    {/* {((imageUrl) ? true : false) && */}
+      <ImageGallery items={imageURL}></ImageGallery> 
+    {/* } */}
+    
 
     <View style={styles.priceAndContact}>
       <View style={styles.priceParent}>

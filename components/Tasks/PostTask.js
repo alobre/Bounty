@@ -6,6 +6,7 @@ import { Textarea, Form, Item, Input } from "native-base";
 import ImagePicker from 'react-native-image-crop-picker';
 import Toast from 'react-native-tiny-toast'
 import StoreTask from '../Firestore/StoreTask';
+import firestore from '@react-native-firebase/firestore';
 import storage from '@react-native-firebase/storage';
 import auth from '@react-native-firebase/auth';
 import ImageGallery from './ImageGallery'
@@ -65,13 +66,45 @@ export default class PostTask extends Component{
                 build.push({url: image.path})
             })
             this.setState({imageGalleryItems: build})
-            console.log(this.state.imageGalleryItems);
             this.setState({images: images})
         });
     }
 
-    removeTagFromTags(tag){
-        let newList = this.state.tags.filter(el => el != tag)
+    async listImage(){
+    // firestore()
+    // .collection('tasks')
+    // .doc(auth().currentUser.uid)
+    // .collection('UserTasks')
+    // .doc('qB3Juq9mInwi5xa7qRBC')
+    // .get()
+    // .then(async(data)=>{
+    //     console.log(data.data().images[0].fullPath);
+    //     let test = await storage().ref(data.data().images[0].fullPath).getDownloadURL()
+    //     console.log(test);
+    // })
+    // let test = await storage().ref('/tasks/ZTl8uxjhqXUSq2Ytl1kcW2iPUCo1/123321/1-TaskImage.jpg').getDownloadURL()
+    // console.log(test);
+    // firestore()
+    //         .collection('tasks')
+    //         .doc(auth().currentUser.uid)
+    //         .collection('UserTasks')
+    //         .doc()
+    //         .set(
+    //             {
+    //                 'id': 'task.id',
+    //                 'title': 'task.title',
+    //                 'description': 'task.description',
+    //                 'tags': 'task.tags',
+    //                 'time': 'task.time',
+    //                 'date': 'task.date',
+    //                 'username': 'task.username',
+    //                 'bounty': 'task.bounty',
+    //                 'images': 'images'
+    //             })
+    }
+
+    async removeTagFromTags(tag){
+        let newList = await this.state.tags.filter(el => el != tag)
         this.setState({tags: newList})
     }
 
@@ -149,6 +182,7 @@ export default class PostTask extends Component{
                     size={48}
                     onPress={()=> this.addPhoto()}
                 />
+                <Button onPress={()=> this.listImage()}>show</Button>
                 <Button icon="send" mode="contained" onPress={()=>  this.proceedOrError()}>
                     Weiter
                 </Button>
