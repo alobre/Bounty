@@ -5,55 +5,45 @@ import { InputGroup } from 'native-base';
 import AddPicturesToTask from '../Storage/AddPicturesToTask';
 
 export default function StoreTask(task){
-    console.log(task.images);
-    if(task.images.length >= 0){
-    AddPicturesToTask(task.images, (images) => {
-        console.log(images);
-                firestore().collection('tasks').doc(auth().currentUser.uid).collection('UserTasks').get().then(data=>{
-                    task.id = data.docs.length + 1
-                    console.log(data);
-                    // console.log(task)
-                    firestore()
-                    .collection('tasks')
-                    .doc(auth().currentUser.uid)
-                    .collection('UserTasks')
-                    .doc()
-                    .set(
-                        {
-                            'id': task.id,
-                            'title': task.title,
-                            'description': task.description,
-                            'tags': task.tags,
-                            'time': task.time,
-                            'date': task.date,
-                            'username': task.username,
-                            'bounty': task.bounty,
-                            'images': images
-                        })
-                })    
-        })
-    } else {
-            firestore().collection('tasks').doc(auth().currentUser.uid).collection('UserTasks').get().then(data=>{
-                task.id = data.docs.length + 1
-                console.log(data);
-                // console.log(task)
+    console.log(task);
                 firestore()
                 .collection('tasks')
                 .doc(auth().currentUser.uid)
                 .collection('UserTasks')
-                .doc()
-                .set(
-                    {
-                        'id': task.id,
+                .add(
+                    {   
+                        'id': false,
                         'title': task.title,
                         'description': task.description,
                         'tags': task.tags,
                         'time': task.time,
+                        'dateAndTime': task.dateAndTime,
                         'date': task.date,
                         'username': task.username,
                         'bounty': task.bounty,
                         'images': false
-                    })
-            })    
-        }    
+                    }).then(doc => {
+                        if(task.images.length > 0){
+                            AddPicturesToTask(task.images, doc.id, async(images) => {
+                                firestore()
+                                .collection('tasks')
+                                .doc(auth().currentUser.uid)
+                                .collection('UserTasks')
+                                .doc(doc.id)
+                                .update({
+                                    id: doc.id,
+                                    images: images
+                                })
+                            })
+                        } else {
+                            firestore()
+                            .collection('tasks')
+                            .doc(auth().currentUser.uid)
+                            .collection('UserTasks')
+                            .doc(doc.id)
+                            .update({
+                                id: doc.id,
+                            })
+                        }
+                }).catch(err=>console.log(err))
 }

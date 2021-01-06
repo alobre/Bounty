@@ -32,7 +32,7 @@ const CurrentTasks = () => {
 
   const getTasks = async () => {
     setIsLoading(true);
-    const snapshot = await UserTasksRef.orderBy('time', 'desc').limit(3).get();
+    const snapshot = await UserTasksRef.orderBy('dateAndTime', 'desc').limit(3).get();
 
     if(!snapshot.empty){
       let newTasks = [];

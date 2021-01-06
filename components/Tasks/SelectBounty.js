@@ -19,6 +19,7 @@ export default class SelectBounty extends Component{
                 "bounty": "€",
                 "date": moment().format('DD.MM.YYYY'),
                 "time": moment().format('HH:mm'),
+                "dateAndTime": moment().format('YYYY.MM.DD HH:mm'),
                 "images": this.props.route.params.images,
             },
             bounty: "5"
@@ -35,6 +36,7 @@ export default class SelectBounty extends Component{
                     this.setState(state => {
                         state.task.date = moment().format('DD.MM.YYYY');
                         state.task.time = moment().format('HH:mm');
+                        state.task.dateAndTime = moment().format('YYYY.MM.DD HH:mm');
                     });
                     StoreTask(this.state.task)
                     } }>Submit</Button>
