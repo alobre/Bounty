@@ -3,7 +3,7 @@ export const constraintsTask = {
       presence: true,
       length: {
         minimum: 4,
-        maximum: 20,
+        maximum: 50,
         tooShort: "Titel muss mindestens 4 Zeichen enthalten",
         tooLong: "Titel darf maximal 20 Zeichen enthalten",
       }

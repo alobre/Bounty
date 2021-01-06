@@ -11,10 +11,10 @@ const RecomendedTasks = () => {
 
         <View>
         <ScrollView>
+        {/* <TaskCard username="alobre" title="Kleiner Einkauf" category="Einkauf" description={description} wage="5€"></TaskCard>
         <TaskCard username="alobre" title="Kleiner Einkauf" category="Einkauf" description={description} wage="5€"></TaskCard>
         <TaskCard username="alobre" title="Kleiner Einkauf" category="Einkauf" description={description} wage="5€"></TaskCard>
-        <TaskCard username="alobre" title="Kleiner Einkauf" category="Einkauf" description={description} wage="5€"></TaskCard>
-        <TaskCard username="alobre" title="Kleiner Einkauf" category="Einkauf" description={description} wage="5€"></TaskCard>
+        <TaskCard username="alobre" title="Kleiner Einkauf" category="Einkauf" description={description} wage="5€"></TaskCard> */}
         </ScrollView>
         </View>
     )

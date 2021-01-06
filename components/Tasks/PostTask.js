@@ -16,6 +16,7 @@ import { constraintsTask } from '../Validation/constraints'
 export default class PostTask extends Component{
     constructor(props){
         super(props);
+        this.currentInput = React.createRef();
         this.addTagToTags = this.addTagToTags.bind(this)
         this.removeTagFromTags = this.removeTagFromTags.bind(this)
         this.state={
@@ -173,7 +174,7 @@ export default class PostTask extends Component{
                 </Snackbar>
                 </View>
                 <Item>
-                    <Input onChangeText={text=> this.state.currentTag = text} onSubmitEditing={ ()=> this.addTagToTags(this.state.currentTag)} placeholder="Schlagwörter" />
+                    <Input ref={this.currentInput} onChangeText={text=> this.state.currentTag = text} onSubmitEditing={ ()=> {this.addTagToTags(this.state.currentTag); this.currentInput.current._root.clear() }} placeholder="Schlagwörter" />
                 </Item>
                 <ImageGallery items={this.state.imageGalleryItems}></ImageGallery>
                 <IconButton
@@ -182,7 +183,6 @@ export default class PostTask extends Component{
                     size={48}
                     onPress={()=> this.addPhoto()}
                 />
-                <Button onPress={()=> this.listImage()}>show</Button>
                 <Button icon="send" mode="contained" onPress={()=>  this.proceedOrError()}>
                     Weiter
                 </Button>

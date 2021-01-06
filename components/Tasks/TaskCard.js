@@ -47,6 +47,9 @@ const TaskCard = ({username, title, tags, description, wage, imageURL}) =>{
       </TouchableRipple>
       <Divider/>
       <Paragraph style={globalStyles.fontSerif}>{description}</Paragraph>
+      <Divider/>
+      <ImageGallery items={imageURL}></ImageGallery> 
+
     </Card.Content>
     {/* {
       ((imageURL) ? true : false) &&
@@ -54,7 +57,7 @@ const TaskCard = ({username, title, tags, description, wage, imageURL}) =>{
     } */}
 
     {/* {((imageUrl) ? true : false) && */}
-      <ImageGallery items={imageURL}></ImageGallery> 
+      
     {/* } */}
     
 
