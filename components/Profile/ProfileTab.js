@@ -24,7 +24,10 @@ export default function ProfileTab() {
 
 
   const AssignedTasks = () => (
-      <TaskCard username="alobre" title="Kleiner Einkauf" tags="Einkauf" description={description} wage="5€"></TaskCard>
+    <View>
+      
+    </View>
+      // <TaskCard username="alobre" title="Kleiner Einkauf" tags="Einkauf" description={description} wage="5€"></TaskCard>
   );
   const error = () => (
     <YourTasks></YourTasks>

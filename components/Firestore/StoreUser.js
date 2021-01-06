@@ -12,7 +12,7 @@ export default function StoreUser(signInMethod, userProps){
       firestore()
       .collection('users')
       .doc(user.uid)
-      .set(
+      .add(
         {
             'displayName': userProps.displayName,
             'email': user.email,
@@ -32,7 +32,7 @@ export default function StoreUser(signInMethod, userProps){
       firestore()
       .collection('users')
       .doc(user.uid)
-      .set(
+      .add(
         {
             'displayName': user.displayName,
             'email': user.email,

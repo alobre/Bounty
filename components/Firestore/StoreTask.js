@@ -7,7 +7,7 @@ import AddPicturesToTask from '../Storage/AddPicturesToTask';
 export default function StoreTask(task){
     console.log(task);
                 firestore()
-                .collection('tasks')
+                .collection('users')
                 .doc(auth().currentUser.uid)
                 .collection('UserTasks')
                 .add(
@@ -26,7 +26,7 @@ export default function StoreTask(task){
                         if(task.images.length > 0){
                             AddPicturesToTask(task.images, doc.id, async(images) => {
                                 firestore()
-                                .collection('tasks')
+                                .collection('users')
                                 .doc(auth().currentUser.uid)
                                 .collection('UserTasks')
                                 .doc(doc.id)
@@ -37,7 +37,7 @@ export default function StoreTask(task){
                             })
                         } else {
                             firestore()
-                            .collection('tasks')
+                            .collection('users')
                             .doc(auth().currentUser.uid)
                             .collection('UserTasks')
                             .doc(doc.id)

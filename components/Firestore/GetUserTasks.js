@@ -9,7 +9,7 @@ import { View } from 'native-base';
 const GetUserTasks = () => {
     let [tasks, setTasks] = useState([])
     if(tasks == ''){
-        firestore().collection('tasks').doc(auth().currentUser.uid).collection('UserTasks').get().then((querySnapshot) => {
+        firestore().collection('users').doc(auth().currentUser.uid).collection('UserTasks').get().then((querySnapshot) => {
                 setTasks(querySnapshot.docs)
         })
     }
