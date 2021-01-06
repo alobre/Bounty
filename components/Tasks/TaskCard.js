@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import {StyleSheet, View, Modal } from 'react-native'
 import globalStyles from '../GlobalComponents/GlobalStyles.js'
-import { Avatar, Button, Card, Title, Paragraph, Text, Subheading, Divider, TouchableRipple, Badge, IconButton, Menu, Icon } from 'react-native-paper';
+import { Avatar, Button, Card, Title, Paragraph, Text, Subheading, Divider, TouchableRipple, Badge, IconButton, Menu, Icon, Chip } from 'react-native-paper';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import ImageGallery from "./ImageGallery";
 
 const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
 
 
-const TaskCard = ({username, title, category, description, wage, imageURL}) =>{
+const TaskCard = ({username, title, tags, description, wage, imageURL}) =>{
 
   const [visible, setVisible] = useState(false);
 
@@ -18,51 +18,17 @@ const TaskCard = ({username, title, category, description, wage, imageURL}) =>{
 
   let [imageVisible, setImageVisible] = useState(false)
 
-  const items= [
-    {
-      url: 'https://picsum.photos/700',
-      index: 0
-    },
-    {
-      url: 'https://picsum.photos/800',
-      index: 1
-    },
-    {
-      url: 'https://picsum.photos/900',
-      index: 2
-    },
-    {
-      url: 'https://picsum.photos/600',
-      index: 3
-    },
-    {
-      url: 'https://picsum.photos/500',
-      index: 4
-    },
-    {
-      url: 'https://picsum.photos/400',
-      index: 5
-    },
-    {
-      url: 'https://picsum.photos/300',
-      index: 6
-    },
-    {
-      url: 'https://picsum.photos/200',
-      index: 7
-    },
-    {
-      url: 'https://picsum.photos/100',
-      index: 8  
-    },
-  ]
-
-
   return (
     <Card style={styles.card} elevation={4}>
     <Grid>
     <Col>
-      <Card.Title title={title} subtitle={category}/>
+      <Card.Title title={title}/>
+      <Row>
+        {
+        ((tags) ? true : false) &&
+        tags.map((tag) => <Chip mode="outlined">{tag}</Chip>)
+        }
+      </Row>
     </Col>
     <Col style={styles.colMoreButton}>
         <Menu
@@ -100,7 +66,7 @@ const TaskCard = ({username, title, category, description, wage, imageURL}) =>{
       </View>
     <TouchableRipple rippleColor="rgba(0, 0, 0, .32)">
       <Card.Actions style={styles.buttonParent}>
-        <Button style={styles.contactContractor} onPress={() => console.log('Auftraggeber Kontaktieren')}>Auftraggeber kontaktieren</Button>
+        <Button icon="message-draw" style={styles.contactContractor} onPress={() => console.log('Auftraggeber Kontaktieren')}>Auftraggeber kontaktieren</Button>
       </Card.Actions>
     </TouchableRipple>
     </View>

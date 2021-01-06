@@ -15,7 +15,7 @@ const GetUserTasks = () => {
     }
 return(
 <View>
-    {tasks.map(task => <TaskCard key={task.data().id} username={task.data().username} title={task.data().title} category={task.data().tags} description={task.data().description} wage={task.data().bounty} imageURL={task.data().images}></TaskCard>)}
+    {tasks.map(task => <TaskCard key={task.data().id} username={task.data().username} title={task.data().title} tags={task.data().tags} description={task.data().description} wage={task.data().bounty} imageURL={task.data().images}></TaskCard>)}
 </View>
 )
 }

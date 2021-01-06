@@ -103,7 +103,7 @@ const CurrentTasks = () => {
             data={tasks}
             keyExtractor={item => item.id.toString()}
             renderItem={({item}) => {
-              return(<TaskCard key={item.id} username={item.username} title={item.title} description={item.description} wage={item.bounty} category={item.tags} imageURL={item.images}></TaskCard>) 
+              return(<TaskCard key={item.id} username={item.username} title={item.title} description={item.description} wage={item.bounty} tags={item.tags} imageURL={item.images}></TaskCard>) 
             }}
             ListFooterComponent={renderFooter}
             refreshControl={
