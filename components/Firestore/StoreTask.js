@@ -21,7 +21,9 @@ export default function StoreTask(task){
                         'date': task.date,
                         'username': task.username,
                         'bounty': task.bounty,
-                        'images': false
+                        'images': false,
+                        'taskAssigned': task.taskAssigned,
+                        'taskDone': task.taskDone,
                     }).then(doc => {
                         if(task.images.length > 0){
                             AddPicturesToTask(task.images, doc.id, async(images) => {

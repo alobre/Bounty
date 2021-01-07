@@ -10,6 +10,7 @@ import {
 import { ScrollView } from 'react-native-gesture-handler';
 import { Text } from "react-native-paper";
 import TaskCard from './TaskCard'
+import GetUser from '../Firestore/GetUser'
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 
@@ -32,18 +33,21 @@ const CurrentTasks = () => {
 
   const getTasks = async () => {
     setIsLoading(true);
-    const snapshot = await UserTasksRef.orderBy('dateAndTime', 'desc').limit(3).get();
-
+    console.log("getTasks");
+    const snapshot = await UserTasksRef.where('taskAssigned', '==', 'notAssigned').orderBy('dateAndTime', 'desc').limit(3).get();
     if(!snapshot.empty){
       let newTasks = [];
-
+      console.log('inside true');
       setLastDoc(snapshot.docs[snapshot.docs.length - 1]);
 
       for (let i = 0; i < snapshot.docs.length; i++) {
+        let UserData = await GetUser(snapshot.docs[i].data().uid)
+        snapshot.docs[i].data().userData = UserData.data()
         newTasks.push(snapshot.docs[i].data())
       }
       setTasks(newTasks);
     } else {
+      console.log("inside false");
       setLastDoc(null)
     }
     setIsLoading(false)
@@ -54,7 +58,7 @@ const CurrentTasks = () => {
       setIsMoreLoading(true);
 
       setTimeout(async() => {
-        let snapshot = await UserTasksRef.orderBy('time', 'desc').startAfter(lastDoc.data().time).limit(3).get();
+        let snapshot = await UserTasksRef.where('taskAssigned', '==', 'notAssigned').orderBy('dateAndTime', 'desc').startAfter(lastDoc.data().time).limit(3).get();
   
         if (!snapshot.empty) {
           let newTasks = tasks;
@@ -62,6 +66,8 @@ const CurrentTasks = () => {
           setLastDoc(snapshot.docs[snapshot.docs.length - 1]);
   
           for(let i = 0; i < snapshot.docs.length; i++) {
+            let UserData = await GetUser(snapshot.docs[i].data().uid)
+            snapshot.docs[i].data().userData = UserData.data()
             newTasks.push(snapshot.docs[i].data());
           }
   
@@ -103,7 +109,7 @@ const CurrentTasks = () => {
             data={tasks}
             keyExtractor={item => item.id.toString()}
             renderItem={({item}) => {
-              return(<TaskCard key={item.id} username={item.username} title={item.title} description={item.description} wage={item.bounty} tags={item.tags} imageURL={item.images}></TaskCard>) 
+              return(<TaskCard key={item.id} taskId={item.id} avatar={item.userData.photoURL} username={item.userData.displayName} title={item.title} description={item.description} wage={item.bounty} tags={item.tags} imageURL={item.images}></TaskCard>) 
             }}
             ListFooterComponent={renderFooter}
             refreshControl={

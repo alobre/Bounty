@@ -8,7 +8,7 @@ import ImageGallery from "./ImageGallery";
 const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
 
 
-const TaskCard = ({username, title, tags, description, wage, imageURL}) =>{
+const TaskCard = ({taskId, username, avatar, title, tags, description, wage, imageURL}) =>{
 
   const [visible, setVisible] = useState(false);
 
@@ -26,7 +26,7 @@ const TaskCard = ({username, title, tags, description, wage, imageURL}) =>{
       <Row>
         {
         ((tags) ? true : false) &&
-        tags.map((tag) => <Chip mode="outlined">{tag}</Chip>)
+        tags.map((tag) => <Chip key={tag + '-' + taskId } mode="outlined">{tag}</Chip>)
         }
       </Row>
     </Col>
@@ -41,7 +41,7 @@ const TaskCard = ({username, title, tags, description, wage, imageURL}) =>{
     <Card.Content>
       <TouchableRipple>
         <View style={styles.profile}>
-          <Avatar.Image size={24} source={require('../../media/obama.jpg')} />
+          <Avatar.Image size={24} source={{uri: avatar}} />
           <Subheading style={styles.username}>{username}</Subheading>
         </View>
       </TouchableRipple>

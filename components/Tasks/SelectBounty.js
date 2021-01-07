@@ -18,9 +18,11 @@ export default class SelectBounty extends Component{
                 "tags": this.props.route.params.tags,
                 "bounty": "€",
                 "date": moment().format('DD.MM.YYYY'),
-                "time": moment().format('HH:mm'),
-                "dateAndTime": moment().format('YYYY.MM.DD HH:mm'),
+                "time": moment().format('HH:mm:ss'),
+                "dateAndTime": moment().format('YYYY.MM.DD HH:mm:ss'),
                 "images": this.props.route.params.images,
+                "taskAssigned": 'notAssigned',
+                "taskDone": false
             },
             bounty: "5"
         }
@@ -35,8 +37,8 @@ export default class SelectBounty extends Component{
                 <Button onPress={ () => {
                     this.setState(state => {
                         state.task.date = moment().format('DD.MM.YYYY');
-                        state.task.time = moment().format('HH:mm');
-                        state.task.dateAndTime = moment().format('YYYY.MM.DD HH:mm');
+                        state.task.time = moment().format('HH:mm:ss');
+                        state.task.dateAndTime = moment().format('YYYY.MM.DD HH:mm:ss');
                     });
                     StoreTask(this.state.task)
                     } }>Submit</Button>
