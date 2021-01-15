@@ -16,7 +16,7 @@ import firestore from '@react-native-firebase/firestore';
 
 
 
-const CurrentTasks = ({navigation}) => {
+const CurrentTasks = () => {
 
   let onEndReachedCalledDuringMomentum = false;
   
@@ -109,19 +109,7 @@ const CurrentTasks = ({navigation}) => {
             data={tasks}
             keyExtractor={item => item.id.toString()}
             renderItem={({item}) => {
-              return(<TaskCard
-                key={item.id} 
-                taskId={item.id} 
-                uid={item.userData.uid} 
-                avatar={item.userData.photoURL} 
-                username={item.userData.displayName} 
-                title={item.title} 
-                description={item.description} 
-                wage={item.bounty} 
-                tags={item.tags} 
-                imageURL={item.images}
-                navigation={navigation}
-                />) 
+              return(<TaskCard key={item.id} taskId={item.id} avatar={item.userData.photoURL} username={item.userData.displayName} title={item.title} description={item.description} wage={item.bounty} tags={item.tags} imageURL={item.images}></TaskCard>) 
             }}
             ListFooterComponent={renderFooter}
             refreshControl={
