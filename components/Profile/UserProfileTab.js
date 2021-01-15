@@ -2,8 +2,7 @@ import * as React from 'react';
 import { View, StyleSheet, Dimensions } from 'react-native';
 import { ActivityIndicator, Colors, Text } from 'react-native-paper';
 import { TabView, SceneMap } from 'react-native-tab-view';
-import { ScrollView } from 'react-native-gesture-handler';
-import UserProfileTasks from './UserProfileTasks'
+import UserTasks from './UserTasks'
 import TaskCard from '../Tasks/TaskCard'
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
@@ -20,7 +19,7 @@ export default function ProfileTab({navigation, uid}) {
   ]);
 
   const Tasks = () => (
-    <UserProfileTasks navigation={navigation} uid={uid}></UserProfileTasks>
+    <UserTasks navigation={navigation} uid={uid}></UserTasks>
 );
 
 

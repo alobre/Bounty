@@ -5,6 +5,8 @@ import { ScrollView } from 'react-native-gesture-handler'
 import GetUser from '../Firestore/GetUser'
 import GetTaskByUserId from "../Firestore/GetTaskByUserId";
 import UserProfileTab from "./UserProfileTab";
+import firestore from '@react-native-firebase/firestore';
+import auth from '@react-native-firebase/auth';
 
 export default class UserProfile extends Component{
     constructor(props){
@@ -22,7 +24,6 @@ export default class UserProfile extends Component{
     }
 
     componentDidMount(){
-        console.log(this.props.route.params);
         this.getUserData(this.props.route.params.uid)
         // console.log(this.state.userData);
         console.log(GetTaskByUserId(this.props.route.params.uid));
@@ -34,7 +35,7 @@ export default class UserProfile extends Component{
             <ScrollView>
               <Card>
                 <Card.Content>
-                  <Avatar.Image size={128} style={styles.profilePic} source={{uri: this.state.userData.photoURL}} />
+                  <Avatar.Image size={128} style={styles.userPic} source={{uri: this.state.userData.photoURL}} />
                   <Title style={styles.username}>{this.state.userData.displayName}</Title>
                   <Subheading style={styles.email}>{this.state.userData.email}</Subheading>
                 </Card.Content>
@@ -52,10 +53,7 @@ const styles = StyleSheet.create({
     },
     card:{
     },
-    profilePicParent:{
-      justifyContent: 'center',
-    },
-    profilePic:{
+    userPic:{
       alignSelf: "center",
     },
     username:{

@@ -7,17 +7,15 @@ import {
     ActivityIndicator,
     RefreshControl
   } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
 import { Text } from "react-native-paper";
 import TaskCard from '../Tasks/TaskCard'
 import GetUser from '../Firestore/GetUser'
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
-import UserProfile from './UserProfile';
 
 
 
-const UserProfileTasks = ({navigation, uid}) => {
+const UserTasks = ({navigation, uid}) => {
 
   let onEndReachedCalledDuringMomentum = false;
   
@@ -122,7 +120,7 @@ const UserProfileTasks = ({navigation, uid}) => {
                 wage={item.bounty} 
                 tags={item.tags} 
                 imageURL={item.images}
-                navigation={navigation}
+                // navigation={navigation}
                 />) 
             }}
             ListFooterComponent={renderFooter}
@@ -148,4 +146,4 @@ const UserProfileTasks = ({navigation, uid}) => {
 }
 
 
-export default UserProfileTasks
+export default UserTasks

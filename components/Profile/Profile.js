@@ -4,10 +4,10 @@ import { Text, Avatar, Card, Title, Subheading, Button } from "react-native-pape
 import { Col, Row, Grid } from "react-native-easy-grid";
 import firestore from '@react-native-firebase/firestore';
 import ProfileTab from './ProfileTab'
+import GetUser from '../Firestore/GetUser'
 import Logout from '../Authentication/Logout'
 import { ScrollView } from 'react-native-gesture-handler'
 import auth from '@react-native-firebase/auth';
-import { GoogleSignin } from '@react-native-community/google-signin';
 
 export default class User extends Component{
     constructor(props){
@@ -17,22 +17,32 @@ export default class User extends Component{
             name: '',
             photoURL: '',
             email:'',
-          }
+          },
+          userData: ""
         }
+      }
+
+      async getProfileData(){
+        const ProfileData = await GetUser(auth().currentUser.uid)
+        console.log(ProfileData.data());
+        this.setState({
+          user: {
+            name: ProfileData.data().displayName,
+            email: ProfileData.data().email,
+            photoURL: ProfileData.data().photoURL,
+          }
+        })
       }
       
       componentDidMount(){
-        this.subscriber = firestore().collection('users').doc(auth().currentUser.uid).onSnapshot( doc => {
-          if(doc){
-          this.setState({
-            user: {
-              name: doc.data().displayName,
-              email: doc.data().email,
-              photoURL: doc.data().photoURL,
-            }
-          })
-        }
-        })      }
+        this.getProfileData()    
+      }
+
+      // componentWillUnmount() {
+      //   if (this._asyncRequest) {
+      //     this._asyncRequest.cancel();
+      //   }
+      // }
 
     render(){
           return(
@@ -47,12 +57,22 @@ export default class User extends Component{
                   <Logout navigation={this.props.navigation} style={styles.logoutButton}/>
                 </Card.Content>
               </Card>
-              <ProfileTab/>
+               <ProfileTab/>
             </ScrollView>
           )
       }
 }
 
+// const Profile = () => {
+
+//   return(
+//     <View>
+//       <Text>Profile</Text>
+//     </View>
+//   )
+// }
+
+// export default Profile
 
 const styles = StyleSheet.create({
   grid:{
