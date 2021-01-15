@@ -8,6 +8,7 @@ import BottomNavigation from './GlobalComponents/BottomNavigation'
 import { Provider as PaperProvider, Button } from 'react-native-paper';
 import { Root } from 'native-base'
 import Profile from './Profile/Profile'
+import UserProfile from './Profile/UserProfile'
 import AddTaskButton from './Tasks/AddTaskButton'
 import PostTask from './Tasks/PostTask'
 import SelectBounty from './Tasks/SelectBounty';
@@ -18,7 +19,7 @@ function HomeScreen({ navigation }) {
     <Root>
     <PaperProvider>
     <AddTaskButton navigation={navigation}></AddTaskButton>
-    <BottomNavigation></BottomNavigation>
+    <BottomNavigation  navigation={navigation}></BottomNavigation>
     </PaperProvider></Root>
   );
 }
@@ -49,6 +50,7 @@ export default class App extends Component {
         <Stack.Screen name="PostTask" component={PostTask} />
         <Stack.Screen name="SelectBounty" component={SelectBounty} />
         <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="UserProfile" component={UserProfile} />
         <Stack.Screen name="Register" component={Register} />
       </Stack.Navigator>
     </NavigationContainer>

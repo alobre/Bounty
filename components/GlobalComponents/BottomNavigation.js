@@ -5,11 +5,14 @@ import Messages from '../Messages'
 import globalStyles from './GlobalStyles.js'
 import { BottomNavigation, Text } from 'react-native-paper';
 
-const BountyRoute = () => <TaskTab></TaskTab>
+let globalNavigation;
+
+const BountyRoute = () => <TaskTab navigation={globalNavigation}></TaskTab>
 const MessagesRoute = () => <Messages></Messages>;
 const SettingsRoute = () => {};
 
-const bottomNavigation = () => {
+const bottomNavigation = ({navigation}) => {
+    globalNavigation = navigation
     const [index, setIndex] = React.useState(0);
     const [routes] = React.useState([
       { key: 'bounty', title: 'Bounty', icon: 'clipboard-outline', color: '#fff'},

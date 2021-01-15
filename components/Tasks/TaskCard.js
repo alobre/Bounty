@@ -8,7 +8,7 @@ import ImageGallery from "./ImageGallery";
 const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
 
 
-const TaskCard = ({taskId, username, avatar, title, tags, description, wage, imageURL}) =>{
+const TaskCard = ({taskId, uid, username, avatar, title, tags, description, wage, imageURL, navigation}) =>{
 
   const [visible, setVisible] = useState(false);
 
@@ -39,7 +39,7 @@ const TaskCard = ({taskId, username, avatar, title, tags, description, wage, ima
     </Col>
     </Grid>
     <Card.Content>
-      <TouchableRipple>
+      <TouchableRipple onPress={()=>{navigation.navigate('UserProfile', {navigation: navigation, uid: uid})}}>
         <View style={styles.profile}>
           <Avatar.Image size={24} source={{uri: avatar}} />
           <Subheading style={styles.username}>{username}</Subheading>

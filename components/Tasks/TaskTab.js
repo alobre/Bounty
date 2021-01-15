@@ -3,17 +3,21 @@ import { Dimensions, View } from 'react-native'
 import { TabView, SceneMap } from 'react-native-tab-view';
 import RecomendedTasks from './RecomendedTasks'
 import CurrentTasks from "./CurrentTasks";
+
+let globalNavigation;
+
 const FirstRoute = () => (
     <RecomendedTasks/>
   );
   const SecondRoute = () => (
     <View>
-      <CurrentTasks></CurrentTasks>
+      <CurrentTasks navigation={globalNavigation}></CurrentTasks>
     </View>
   );
   const initialLayout = { width: Dimensions.get('window').width };
 
-const TaskTab = () => {
+const TaskTab = ({navigation}) => {
+  globalNavigation = navigation
     const [index, setIndex] = React.useState(0);
     const [routes] = React.useState([
       { key: 'first', title: 'Empfehlung' },

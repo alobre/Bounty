@@ -8,8 +8,6 @@ import TaskCard from '../Tasks/TaskCard'
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 
-const description = 'Hallo! Ich hätte gerne: 4 Bananen, 6er Pack Wasser (prickelnd), Gouda, Salami'
-
 
 const initialLayout = { width: Dimensions.get('window').width };
 
@@ -29,15 +27,14 @@ export default function ProfileTab() {
     </View>
       // <TaskCard username="alobre" title="Kleiner Einkauf" tags="Einkauf" description={description} wage="5€"></TaskCard>
   );
-  const error = () => (
+  const YourTasks = () => (
     <YourTasks></YourTasks>
 );
 
 
   const renderScene = SceneMap({
     first: AssignedTasks,
-    // second: YourTasks,
-    second: error
+    second: YourTasks,
   });
 
   return (
