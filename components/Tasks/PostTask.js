@@ -4,7 +4,6 @@ import { StyleSheet, Dimensions } from 'react-native';
 import { TextInput, Button, Chip, Text, Snackbar, HelperText, IconButton, Colors } from 'react-native-paper';
 import { Textarea, Form, Item, Input } from "native-base"; 
 import ImagePicker from 'react-native-image-crop-picker';
-import Toast from 'react-native-tiny-toast'
 import StoreTask from '../Firestore/StoreTask';
 import firestore from '@react-native-firebase/firestore';
 import storage from '@react-native-firebase/storage';

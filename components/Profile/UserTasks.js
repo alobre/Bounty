@@ -117,7 +117,7 @@ const UserTasks = ({navigation, uid}) => {
                 username={item.userData.displayName} 
                 title={item.title} 
                 description={item.description} 
-                wage={item.bounty} 
+                bounty={item.bounty} 
                 tags={item.tags} 
                 imageURL={item.images}
                 // navigation={navigation}

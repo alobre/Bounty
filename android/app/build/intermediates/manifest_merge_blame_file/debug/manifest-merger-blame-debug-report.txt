@@ -32,8 +32,8 @@
 20-->G:\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:8:64-88
 21
 22    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-22-->[com.facebook.flipper:flipper:0.54.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\7638e0b60802d509c9d9ff2e1dec0c3a\jetified-flipper-0.54.0\AndroidManifest.xml:16:5-76
-22-->[com.facebook.flipper:flipper:0.54.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\7638e0b60802d509c9d9ff2e1dec0c3a\jetified-flipper-0.54.0\AndroidManifest.xml:16:22-73
+22-->[com.facebook.flipper:flipper:0.54.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\5277a081be0a7e4eab8044f9102a0e95\jetified-flipper-0.54.0\AndroidManifest.xml:16:5-76
+22-->[com.facebook.flipper:flipper:0.54.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\5277a081be0a7e4eab8044f9102a0e95\jetified-flipper-0.54.0\AndroidManifest.xml:16:22-73
 23    <uses-permission android:name="android.permission.WAKE_LOCK" />
 23-->[:react-native-firebase_auth] G:\Programmieren\BountyHunter\node_modules\@react-native-firebase\auth\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-68
 23-->[:react-native-firebase_auth] G:\Programmieren\BountyHunter\node_modules\@react-native-firebase\auth\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:22-65
@@ -58,8 +58,8 @@
 32    </queries>
 33
 34    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-34-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\cee2b7a0fb5433b88e2f4d0eb20b7a7d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:26:5-110
-34-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\cee2b7a0fb5433b88e2f4d0eb20b7a7d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:26:22-107
+34-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d535ddb9b282b7dfd1ae98643f85d9b9\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:26:5-110
+34-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d535ddb9b282b7dfd1ae98643f85d9b9\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:26:22-107
 35
 36    <application
 36-->G:\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:10:5-30:19
@@ -68,7 +68,7 @@
 38        android:allowBackup="false"
 38-->G:\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:15:7-34
 39        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-39-->[androidx.core:core:1.1.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\33905501977a28c0fc6a2935607f48a6\core-1.1.0\AndroidManifest.xml:24:18-86
+39-->[androidx.core:core:1.1.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\241ed957067c6e64de29ec08090d8118\core-1.1.0\AndroidManifest.xml:24:18-86
 40        android:debuggable="true"
 41        android:icon="@mipmap/ic_launcher"
 41-->G:\Programmieren\BountyHunter\android\app\src\main\AndroidManifest.xml:13:7-41
@@ -132,233 +132,233 @@
 72            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 72-->[:react-native-image-crop-picker] G:\Programmieren\BountyHunter\node_modules\react-native-image-crop-picker\android\build\intermediates\library_manifest\debug\AndroidManifest.xml:31:13-69
 73        <activity
-73-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:27:9-44:20
+73-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:27:9-44:20
 74            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-74-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:28:13-80
+74-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:28:13-80
 75            android:excludeFromRecents="true"
-75-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:29:13-46
+75-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:29:13-46
 76            android:exported="true"
-76-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:30:13-36
+76-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:30:13-36
 77            android:launchMode="singleTask"
-77-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:31:13-44
+77-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:31:13-44
 78            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-78-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:32:13-72
+78-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:32:13-72
 79            <intent-filter>
-79-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:33:13-43:29
+79-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:33:13-43:29
 80                <action android:name="android.intent.action.VIEW" />
-80-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:34:17-69
-80-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:34:25-66
+80-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:34:17-69
+80-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:34:25-66
 81
 82                <category android:name="android.intent.category.DEFAULT" />
-82-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:17-76
-82-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:27-73
+82-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:17-76
+82-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:27-73
 83                <category android:name="android.intent.category.BROWSABLE" />
-83-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:37:17-78
-83-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:37:27-75
+83-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:37:17-78
+83-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:37:27-75
 84
 85                <data
-85-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:39:17-42:51
+85-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:39:17-42:51
 86                    android:host="firebase.auth"
-86-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:40:21-49
+86-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:40:21-49
 87                    android:path="/"
-87-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:41:21-37
+87-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:41:21-37
 88                    android:scheme="genericidp" />
-88-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:42:21-48
+88-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:42:21-48
 89            </intent-filter>
 90        </activity>
 91        <activity
-91-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:45:9-62:20
+91-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:45:9-62:20
 92            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-92-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:46:13-79
+92-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:46:13-79
 93            android:excludeFromRecents="true"
-93-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:47:13-46
+93-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:47:13-46
 94            android:exported="true"
-94-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:48:13-36
+94-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:48:13-36
 95            android:launchMode="singleTask"
-95-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:49:13-44
+95-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:49:13-44
 96            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-96-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:50:13-72
+96-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:50:13-72
 97            <intent-filter>
-97-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:51:13-61:29
+97-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:51:13-61:29
 98                <action android:name="android.intent.action.VIEW" />
-98-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:34:17-69
-98-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:34:25-66
+98-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:34:17-69
+98-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:34:25-66
 99
 100                <category android:name="android.intent.category.DEFAULT" />
-100-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:17-76
-100-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:27-73
+100-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:17-76
+100-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:27-73
 101                <category android:name="android.intent.category.BROWSABLE" />
-101-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:37:17-78
-101-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:37:27-75
+101-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:37:17-78
+101-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:37:27-75
 102
 103                <data
-103-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:39:17-42:51
+103-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:39:17-42:51
 104                    android:host="firebase.auth"
-104-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:40:21-49
+104-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:40:21-49
 105                    android:path="/"
-105-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:41:21-37
+105-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:41:21-37
 106                    android:scheme="recaptcha" />
-106-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:42:21-48
+106-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:42:21-48
 107            </intent-filter>
 108        </activity>
 109
 110        <service
-110-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:64:9-73:19
+110-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:64:9-73:19
 111            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
-111-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:65:13-101
+111-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:65:13-101
 112            android:enabled="true"
-112-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:66:13-35
+112-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:66:13-35
 113            android:exported="false" >
-113-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:67:13-37
+113-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:67:13-37
 114            <intent-filter>
-114-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:68:13-72:29
+114-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:68:13-72:29
 115                <action android:name="com.google.firebase.auth.api.gms.service.START" />
-115-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:69:17-89
-115-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:69:25-86
+115-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:69:17-89
+115-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:69:25-86
 116
 117                <category android:name="android.intent.category.DEFAULT" />
-117-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:17-76
-117-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:27-73
+117-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:17-76
+117-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:36:27-73
 118            </intent-filter>
 119        </service>
 120        <service
-120-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:74:9-80:19
+120-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:74:9-80:19
 121            android:name="com.google.firebase.components.ComponentDiscoveryService"
-121-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:75:13-84
+121-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:75:13-84
 122            android:directBootAware="true"
-122-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\51b722eac8c67be921c11a8aca5358a0\jetified-firebase-common-19.5.0\AndroidManifest.xml:35:13-43
+122-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d783eb5e4d25e462c5ff8a9ddfc544e8\jetified-firebase-common-19.5.0\AndroidManifest.xml:35:13-43
 123            android:exported="false" >
-123-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:76:13-37
+123-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:76:13-37
 124            <meta-data
-124-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:77:13-79:85
+124-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:77:13-79:85
 125                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-125-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:78:17-109
+125-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:78:17-109
 126                android:value="com.google.firebase.components.ComponentRegistrar" />
-126-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\0733df5e6f8b2dd60652fd74c7e15c92\jetified-firebase-auth-20.0.1\AndroidManifest.xml:79:17-82
+126-->[com.google.firebase:firebase-auth:20.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e516b41c11a3c77410f7ed5454fe678\jetified-firebase-auth-20.0.1\AndroidManifest.xml:79:17-82
 127            <meta-data
-127-->[com.google.firebase:firebase-firestore:22.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d61cc7fd1ff0663f2ac799948deda191\jetified-firebase-firestore-22.0.1\AndroidManifest.xml:20:13-22:85
+127-->[com.google.firebase:firebase-firestore:22.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\da9a738015686105134e56d02df1de05\jetified-firebase-firestore-22.0.1\AndroidManifest.xml:20:13-22:85
 128                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-128-->[com.google.firebase:firebase-firestore:22.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d61cc7fd1ff0663f2ac799948deda191\jetified-firebase-firestore-22.0.1\AndroidManifest.xml:21:17-111
+128-->[com.google.firebase:firebase-firestore:22.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\da9a738015686105134e56d02df1de05\jetified-firebase-firestore-22.0.1\AndroidManifest.xml:21:17-111
 129                android:value="com.google.firebase.components.ComponentRegistrar" />
-129-->[com.google.firebase:firebase-firestore:22.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d61cc7fd1ff0663f2ac799948deda191\jetified-firebase-firestore-22.0.1\AndroidManifest.xml:22:17-82
+129-->[com.google.firebase:firebase-firestore:22.0.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\da9a738015686105134e56d02df1de05\jetified-firebase-firestore-22.0.1\AndroidManifest.xml:22:17-82
 130            <meta-data
-130-->[com.google.firebase:firebase-storage:19.2.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\ed73ddd99109fb435533c7454fc4d11a\jetified-firebase-storage-19.2.1\AndroidManifest.xml:33:13-35:85
+130-->[com.google.firebase:firebase-storage:19.2.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\3c49246819d89d16c5086085c5a36d4c\jetified-firebase-storage-19.2.1\AndroidManifest.xml:33:13-35:85
 131                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-131-->[com.google.firebase:firebase-storage:19.2.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\ed73ddd99109fb435533c7454fc4d11a\jetified-firebase-storage-19.2.1\AndroidManifest.xml:34:17-107
+131-->[com.google.firebase:firebase-storage:19.2.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\3c49246819d89d16c5086085c5a36d4c\jetified-firebase-storage-19.2.1\AndroidManifest.xml:34:17-107
 132                android:value="com.google.firebase.components.ComponentRegistrar" />
-132-->[com.google.firebase:firebase-storage:19.2.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\ed73ddd99109fb435533c7454fc4d11a\jetified-firebase-storage-19.2.1\AndroidManifest.xml:35:17-82
+132-->[com.google.firebase:firebase-storage:19.2.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\3c49246819d89d16c5086085c5a36d4c\jetified-firebase-storage-19.2.1\AndroidManifest.xml:35:17-82
 133            <meta-data
-133-->[com.google.firebase:firebase-database:19.6.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\eb47d0a52cf88ca3f81be752a7c1e60a\jetified-firebase-database-19.6.0\AndroidManifest.xml:32:13-34:85
+133-->[com.google.firebase:firebase-database:19.6.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1ac55671c19017fc13671c13ed97e475\jetified-firebase-database-19.6.0\AndroidManifest.xml:32:13-34:85
 134                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-134-->[com.google.firebase:firebase-database:19.6.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\eb47d0a52cf88ca3f81be752a7c1e60a\jetified-firebase-database-19.6.0\AndroidManifest.xml:33:17-109
+134-->[com.google.firebase:firebase-database:19.6.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1ac55671c19017fc13671c13ed97e475\jetified-firebase-database-19.6.0\AndroidManifest.xml:33:17-109
 135                android:value="com.google.firebase.components.ComponentRegistrar" />
-135-->[com.google.firebase:firebase-database:19.6.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\eb47d0a52cf88ca3f81be752a7c1e60a\jetified-firebase-database-19.6.0\AndroidManifest.xml:34:17-82
+135-->[com.google.firebase:firebase-database:19.6.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1ac55671c19017fc13671c13ed97e475\jetified-firebase-database-19.6.0\AndroidManifest.xml:34:17-82
 136            <meta-data
-136-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e88a126654a3ff3bf83521b7c6a15dc\jetified-play-services-measurement-api-18.0.0\AndroidManifest.xml:30:13-32:85
+136-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\9001e637591bf99550f9534257e99161\jetified-play-services-measurement-api-18.0.0\AndroidManifest.xml:30:13-32:85
 137                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-137-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e88a126654a3ff3bf83521b7c6a15dc\jetified-play-services-measurement-api-18.0.0\AndroidManifest.xml:31:17-139
+137-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\9001e637591bf99550f9534257e99161\jetified-play-services-measurement-api-18.0.0\AndroidManifest.xml:31:17-139
 138                android:value="com.google.firebase.components.ComponentRegistrar" />
-138-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\1e88a126654a3ff3bf83521b7c6a15dc\jetified-play-services-measurement-api-18.0.0\AndroidManifest.xml:32:17-82
+138-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\9001e637591bf99550f9534257e99161\jetified-play-services-measurement-api-18.0.0\AndroidManifest.xml:32:17-82
 139            <meta-data
-139-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\59ef91bda777c8354d8b0ef283a4538f\jetified-firebase-installations-16.3.5\AndroidManifest.xml:18:13-20:85
+139-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\b7c07682c91341ab849188c1424f6c29\jetified-firebase-installations-16.3.5\AndroidManifest.xml:18:13-20:85
 140                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-140-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\59ef91bda777c8354d8b0ef283a4538f\jetified-firebase-installations-16.3.5\AndroidManifest.xml:19:17-127
+140-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\b7c07682c91341ab849188c1424f6c29\jetified-firebase-installations-16.3.5\AndroidManifest.xml:19:17-127
 141                android:value="com.google.firebase.components.ComponentRegistrar" />
-141-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\59ef91bda777c8354d8b0ef283a4538f\jetified-firebase-installations-16.3.5\AndroidManifest.xml:20:17-82
+141-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\b7c07682c91341ab849188c1424f6c29\jetified-firebase-installations-16.3.5\AndroidManifest.xml:20:17-82
 142            <!--
 143                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
 144                clients to use it as well, by defining this registrar in their own core/common library.
 145            -->
 146            <meta-data
-146-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\51b722eac8c67be921c11a8aca5358a0\jetified-firebase-common-19.5.0\AndroidManifest.xml:43:13-45:85
+146-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d783eb5e4d25e462c5ff8a9ddfc544e8\jetified-firebase-common-19.5.0\AndroidManifest.xml:43:13-45:85
 147                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
-147-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\51b722eac8c67be921c11a8aca5358a0\jetified-firebase-common-19.5.0\AndroidManifest.xml:44:17-121
+147-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d783eb5e4d25e462c5ff8a9ddfc544e8\jetified-firebase-common-19.5.0\AndroidManifest.xml:44:17-121
 148                android:value="com.google.firebase.components.ComponentRegistrar" />
-148-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\51b722eac8c67be921c11a8aca5358a0\jetified-firebase-common-19.5.0\AndroidManifest.xml:45:17-82
+148-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d783eb5e4d25e462c5ff8a9ddfc544e8\jetified-firebase-common-19.5.0\AndroidManifest.xml:45:17-82
 149        </service>
 150
 151        <provider
-151-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\51b722eac8c67be921c11a8aca5358a0\jetified-firebase-common-19.5.0\AndroidManifest.xml:26:9-31:39
+151-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d783eb5e4d25e462c5ff8a9ddfc544e8\jetified-firebase-common-19.5.0\AndroidManifest.xml:26:9-31:39
 152            android:name="com.google.firebase.provider.FirebaseInitProvider"
-152-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\51b722eac8c67be921c11a8aca5358a0\jetified-firebase-common-19.5.0\AndroidManifest.xml:27:13-77
+152-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d783eb5e4d25e462c5ff8a9ddfc544e8\jetified-firebase-common-19.5.0\AndroidManifest.xml:27:13-77
 153            android:authorities="com.bountyhunter.firebaseinitprovider"
-153-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\51b722eac8c67be921c11a8aca5358a0\jetified-firebase-common-19.5.0\AndroidManifest.xml:28:13-72
+153-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d783eb5e4d25e462c5ff8a9ddfc544e8\jetified-firebase-common-19.5.0\AndroidManifest.xml:28:13-72
 154            android:directBootAware="true"
-154-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\51b722eac8c67be921c11a8aca5358a0\jetified-firebase-common-19.5.0\AndroidManifest.xml:29:13-43
+154-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d783eb5e4d25e462c5ff8a9ddfc544e8\jetified-firebase-common-19.5.0\AndroidManifest.xml:29:13-43
 155            android:exported="false"
-155-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\51b722eac8c67be921c11a8aca5358a0\jetified-firebase-common-19.5.0\AndroidManifest.xml:30:13-37
+155-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d783eb5e4d25e462c5ff8a9ddfc544e8\jetified-firebase-common-19.5.0\AndroidManifest.xml:30:13-37
 156            android:initOrder="100" />
-156-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\51b722eac8c67be921c11a8aca5358a0\jetified-firebase-common-19.5.0\AndroidManifest.xml:31:13-36
+156-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d783eb5e4d25e462c5ff8a9ddfc544e8\jetified-firebase-common-19.5.0\AndroidManifest.xml:31:13-36
 157
 158        <activity
-158-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\98df050e215070a1a5291865226d1e1d\jetified-play-services-auth-19.0.0\AndroidManifest.xml:23:9-27:75
+158-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\676f483ead82b2750302cc89c7fbf5f1\jetified-play-services-auth-19.0.0\AndroidManifest.xml:23:9-27:75
 159            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-159-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\98df050e215070a1a5291865226d1e1d\jetified-play-services-auth-19.0.0\AndroidManifest.xml:24:13-93
+159-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\676f483ead82b2750302cc89c7fbf5f1\jetified-play-services-auth-19.0.0\AndroidManifest.xml:24:13-93
 160            android:excludeFromRecents="true"
-160-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\98df050e215070a1a5291865226d1e1d\jetified-play-services-auth-19.0.0\AndroidManifest.xml:25:13-46
+160-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\676f483ead82b2750302cc89c7fbf5f1\jetified-play-services-auth-19.0.0\AndroidManifest.xml:25:13-46
 161            android:exported="false"
-161-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\98df050e215070a1a5291865226d1e1d\jetified-play-services-auth-19.0.0\AndroidManifest.xml:26:13-37
+161-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\676f483ead82b2750302cc89c7fbf5f1\jetified-play-services-auth-19.0.0\AndroidManifest.xml:26:13-37
 162            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-162-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\98df050e215070a1a5291865226d1e1d\jetified-play-services-auth-19.0.0\AndroidManifest.xml:27:13-72
+162-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\676f483ead82b2750302cc89c7fbf5f1\jetified-play-services-auth-19.0.0\AndroidManifest.xml:27:13-72
 163        <!--
 164            Service handling Google Sign-In user revocation. For apps that do not integrate with
 165            Google Sign-In, this service will never be started.
 166        -->
 167        <service
-167-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\98df050e215070a1a5291865226d1e1d\jetified-play-services-auth-19.0.0\AndroidManifest.xml:33:9-37:51
+167-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\676f483ead82b2750302cc89c7fbf5f1\jetified-play-services-auth-19.0.0\AndroidManifest.xml:33:9-37:51
 168            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-168-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\98df050e215070a1a5291865226d1e1d\jetified-play-services-auth-19.0.0\AndroidManifest.xml:34:13-89
+168-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\676f483ead82b2750302cc89c7fbf5f1\jetified-play-services-auth-19.0.0\AndroidManifest.xml:34:13-89
 169            android:exported="true"
-169-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\98df050e215070a1a5291865226d1e1d\jetified-play-services-auth-19.0.0\AndroidManifest.xml:35:13-36
+169-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\676f483ead82b2750302cc89c7fbf5f1\jetified-play-services-auth-19.0.0\AndroidManifest.xml:35:13-36
 170            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-170-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\98df050e215070a1a5291865226d1e1d\jetified-play-services-auth-19.0.0\AndroidManifest.xml:36:13-107
+170-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\676f483ead82b2750302cc89c7fbf5f1\jetified-play-services-auth-19.0.0\AndroidManifest.xml:36:13-107
 171            android:visibleToInstantApps="true" />
-171-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\98df050e215070a1a5291865226d1e1d\jetified-play-services-auth-19.0.0\AndroidManifest.xml:37:13-48
+171-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\676f483ead82b2750302cc89c7fbf5f1\jetified-play-services-auth-19.0.0\AndroidManifest.xml:37:13-48
 172
 173        <activity
-173-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\18b63455f7cdf2e55499d904fd0b4a4d\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+173-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d92a27efcac738b4f280b9ad0c07bda7\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
 174            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-174-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\18b63455f7cdf2e55499d904fd0b4a4d\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+174-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d92a27efcac738b4f280b9ad0c07bda7\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
 175            android:exported="false"
-175-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\18b63455f7cdf2e55499d904fd0b4a4d\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+175-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d92a27efcac738b4f280b9ad0c07bda7\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
 176            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-176-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\18b63455f7cdf2e55499d904fd0b4a4d\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+176-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d92a27efcac738b4f280b9ad0c07bda7\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
 177
 178        <receiver
-178-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\cee2b7a0fb5433b88e2f4d0eb20b7a7d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:29:9-33:20
+178-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d535ddb9b282b7dfd1ae98643f85d9b9\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:29:9-33:20
 179            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-179-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\cee2b7a0fb5433b88e2f4d0eb20b7a7d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:30:13-85
+179-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d535ddb9b282b7dfd1ae98643f85d9b9\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:30:13-85
 180            android:enabled="true"
-180-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\cee2b7a0fb5433b88e2f4d0eb20b7a7d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:31:13-35
+180-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d535ddb9b282b7dfd1ae98643f85d9b9\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:31:13-35
 181            android:exported="false" >
-181-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\cee2b7a0fb5433b88e2f4d0eb20b7a7d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:32:13-37
+181-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d535ddb9b282b7dfd1ae98643f85d9b9\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:32:13-37
 182        </receiver>
 183
 184        <service
-184-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\cee2b7a0fb5433b88e2f4d0eb20b7a7d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:35:9-38:40
+184-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d535ddb9b282b7dfd1ae98643f85d9b9\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:35:9-38:40
 185            android:name="com.google.android.gms.measurement.AppMeasurementService"
-185-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\cee2b7a0fb5433b88e2f4d0eb20b7a7d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:36:13-84
+185-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d535ddb9b282b7dfd1ae98643f85d9b9\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:36:13-84
 186            android:enabled="true"
-186-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\cee2b7a0fb5433b88e2f4d0eb20b7a7d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:37:13-35
+186-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d535ddb9b282b7dfd1ae98643f85d9b9\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:37:13-35
 187            android:exported="false" />
-187-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\cee2b7a0fb5433b88e2f4d0eb20b7a7d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:38:13-37
+187-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d535ddb9b282b7dfd1ae98643f85d9b9\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:38:13-37
 188        <service
-188-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\cee2b7a0fb5433b88e2f4d0eb20b7a7d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:39:9-43:72
+188-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d535ddb9b282b7dfd1ae98643f85d9b9\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:39:9-43:72
 189            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-189-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\cee2b7a0fb5433b88e2f4d0eb20b7a7d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:40:13-87
+189-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d535ddb9b282b7dfd1ae98643f85d9b9\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:40:13-87
 190            android:enabled="true"
-190-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\cee2b7a0fb5433b88e2f4d0eb20b7a7d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:41:13-35
+190-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d535ddb9b282b7dfd1ae98643f85d9b9\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:41:13-35
 191            android:exported="false"
-191-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\cee2b7a0fb5433b88e2f4d0eb20b7a7d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:42:13-37
+191-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d535ddb9b282b7dfd1ae98643f85d9b9\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:42:13-37
 192            android:permission="android.permission.BIND_JOB_SERVICE" />
-192-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\cee2b7a0fb5433b88e2f4d0eb20b7a7d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:43:13-69
+192-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\d535ddb9b282b7dfd1ae98643f85d9b9\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:43:13-69
 193
 194        <meta-data
-194-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\f76ae763f45745eae98475cc002a8731\jetified-play-services-basement-17.1.1\AndroidManifest.xml:23:9-25:69
+194-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\fddb1ae14a7a9b9a3acdaeb1009a8259\jetified-play-services-basement-17.1.1\AndroidManifest.xml:23:9-25:69
 195            android:name="com.google.android.gms.version"
-195-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\f76ae763f45745eae98475cc002a8731\jetified-play-services-basement-17.1.1\AndroidManifest.xml:24:13-58
+195-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\fddb1ae14a7a9b9a3acdaeb1009a8259\jetified-play-services-basement-17.1.1\AndroidManifest.xml:24:13-58
 196            android:value="@integer/google_play_services_version" />
-196-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\f76ae763f45745eae98475cc002a8731\jetified-play-services-basement-17.1.1\AndroidManifest.xml:25:13-66
+196-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\Shrek\.gradle\caches\transforms-2\files-2.1\fddb1ae14a7a9b9a3acdaeb1009a8259\jetified-play-services-basement-17.1.1\AndroidManifest.xml:25:13-66
 197    </application>
 198
 199</manifest>

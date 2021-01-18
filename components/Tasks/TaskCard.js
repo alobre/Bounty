@@ -8,7 +8,7 @@ import ImageGallery from "./ImageGallery";
 const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
 
 
-const TaskCard = ({taskId, uid, username, avatar, title, tags, description, wage, imageURL, navigation}) =>{
+const TaskCard = ({taskId, uid, username, avatar, title, tags, description, bounty, imageURL, navigation}) =>{
 
   const [visible, setVisible] = useState(false);
 
@@ -64,7 +64,7 @@ const TaskCard = ({taskId, uid, username, avatar, title, tags, description, wage
     <View style={styles.priceAndContact}>
       <View style={styles.priceParent}>
         <Badge size={40} style={styles.price}>
-          {wage}
+          {bounty}
         </Badge>
       </View>
     <TouchableRipple rippleColor="rgba(0, 0, 0, .32)">

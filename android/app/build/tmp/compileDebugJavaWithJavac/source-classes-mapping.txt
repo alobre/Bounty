@@ -1,0 +1,15 @@
+com/bountyhunter/BuildConfig.java
+ com.bountyhunter.BuildConfig
+com/bountyhunter/MainActivity.java
+ com.bountyhunter.MainActivity
+ com.bountyhunter.MainActivity$1
+com/bountyhunter/MainApplication.java
+ com.bountyhunter.MainApplication
+ com.bountyhunter.MainApplication$1
+com/bountyhunter/ReactNativeFlipper.java
+ com.bountyhunter.ReactNativeFlipper
+ com.bountyhunter.ReactNativeFlipper$1
+ com.bountyhunter.ReactNativeFlipper$2
+ com.bountyhunter.ReactNativeFlipper$2$1
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList

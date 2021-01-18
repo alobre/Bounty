@@ -1,6 +1,6 @@
 {
   "name": "BountyHunter",
-  "version": "0.6.9",
+  "version": "0.6.10",
   "private": true,
   "scripts": {
     "prestart": "npm-link-shared ./node_modules/<other package>/node_modules . react",
@@ -18,6 +18,7 @@
   "dependencies": {
     "@dudigital/react-native-zoomable-view": "^1.0.16",
     "@material/card": "^8.0.0",
+    "@react-native-community/async-storage": "^1.12.1",
     "@react-native-community/google-signin": "^5.0.0",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-native-firebase/app": "^10.2.0",
@@ -42,6 +43,10 @@
     "react-native-tab-view": "^2.15.2",
     "react-native-tiny-toast": "^1.0.7",
     "react-native-vector-icons": "^7.1.0",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
     "socket.io-client": "^3.0.4",
     "validate.js": "^0.13.1"
   },
