@@ -9,7 +9,8 @@ const persistConfig = {
     key: 'root',
     storage: AsyncStorage,
     whitelist: [
-        "taskDetailReducer"
+        "taskDetailReducer",
+        "userDetailReducer"
     ],
     blacklist: [],
 };

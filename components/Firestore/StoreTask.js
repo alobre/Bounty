@@ -13,6 +13,7 @@ export default function StoreTask(task){
                 .add(
                     {   
                         'id': false,
+                        'uid': auth().currentUser.uid,
                         'title': task.title,
                         'description': task.description,
                         'tags': task.tags,

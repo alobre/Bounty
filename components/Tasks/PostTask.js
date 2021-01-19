@@ -48,19 +48,6 @@ export default class PostTask extends Component{
         ImagePicker.openPicker({
             multiple: true
         }).then(images => {
-        // for (let i = 0; i < images.length; i++) {
-        //     const image = images[i];
-        //     console.log(image);
-        //     let ref = storage().ref('/tasks/' + auth().currentUser.uid + '/123321/' + i + '-TaskImage.jpg' )
-        //     let task = ref.putFile(image.path)
-        //     task.on('state_changed', taskSnapshot => {
-        //         console.log(`${taskSnapshot.bytesTransferred} transferred out of ${taskSnapshot.totalBytes}`);
-        //     });
-            
-        //     task.then(() => {
-        //         console.log('Image uploaded to the bucket!');
-        //     });
-        // }
             let build=[];
             images.filter( image => {
                 build.push({url: image.path})
@@ -68,39 +55,6 @@ export default class PostTask extends Component{
             this.setState({imageGalleryItems: build})
             this.setState({images: images})
         });
-    }
-
-    async listImage(){
-    // firestore()
-    // .collection('tasks')
-    // .doc(auth().currentUser.uid)
-    // .collection('UserTasks')
-    // .doc('qB3Juq9mInwi5xa7qRBC')
-    // .get()
-    // .then(async(data)=>{
-    //     console.log(data.data().images[0].fullPath);
-    //     let test = await storage().ref(data.data().images[0].fullPath).getDownloadURL()
-    //     console.log(test);
-    // })
-    // let test = await storage().ref('/tasks/ZTl8uxjhqXUSq2Ytl1kcW2iPUCo1/123321/1-TaskImage.jpg').getDownloadURL()
-    // console.log(test);
-    // firestore()
-    //         .collection('tasks')
-    //         .doc(auth().currentUser.uid)
-    //         .collection('UserTasks')
-    //         .doc()
-    //         .set(
-    //             {
-    //                 'id': 'task.id',
-    //                 'title': 'task.title',
-    //                 'description': 'task.description',
-    //                 'tags': 'task.tags',
-    //                 'time': 'task.time',
-    //                 'date': 'task.date',
-    //                 'username': 'task.username',
-    //                 'bounty': 'task.bounty',
-    //                 'images': 'images'
-    //             })
     }
 
     async removeTagFromTags(tag){

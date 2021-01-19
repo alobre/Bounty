@@ -10,7 +10,7 @@ import {
 import { ScrollView } from 'react-native-gesture-handler';
 import { Text } from "react-native-paper";
 import TaskCard from './TaskCard'
-import GetUser from '../Firestore/GetUser'
+import GetPublicUser from '../Firestore/GetPublicUser'
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 
@@ -41,7 +41,8 @@ const CurrentTasks = ({navigation}) => {
       setLastDoc(snapshot.docs[snapshot.docs.length - 1]);
 
       for (let i = 0; i < snapshot.docs.length; i++) {
-        let UserData = await GetUser(snapshot.docs[i].data().uid)
+        let UserData = await GetPublicUser(snapshot.docs[i].data().uid)
+        console.log(UserData.data());
         snapshot.docs[i].data().userData = UserData.data()
         newTasks.push(snapshot.docs[i].data())
       }
@@ -66,7 +67,7 @@ const CurrentTasks = ({navigation}) => {
           setLastDoc(snapshot.docs[snapshot.docs.length - 1]);
   
           for(let i = 0; i < snapshot.docs.length; i++) {
-            let UserData = await GetUser(snapshot.docs[i].data().uid)
+            let UserData = await GetPublicUser(snapshot.docs[i].data().uid)
             snapshot.docs[i].data().userData = UserData.data()
             newTasks.push(snapshot.docs[i].data());
           }

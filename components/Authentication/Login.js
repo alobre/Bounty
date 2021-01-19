@@ -5,21 +5,13 @@ import auth from '@react-native-firebase/auth';
 import { GoogleSignin } from '@react-native-community/google-signin';
 import StoreUser from '../Firestore/StoreUser'
 
+
 GoogleSignin.configure({
   webClientId: '823936420532-4ne8kstai80ctb5orvp2ovlesuef5tna.apps.googleusercontent.com',
 });
 
 async function onGoogleButtonPress() {
-  // try {
-  // // Get the users ID token
-  // const { idToken } = await GoogleSignin.signIn();
-  // // Create a Google credential with the token
-  // const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-  // // Sign-in the user with the credential
-  // return auth().signInWithCredential(googleCredential);
-  // } catch (error) {
-  //   console.log('error :>> ', error);
-  // }
+
   GoogleSignin.signIn()
   .then((data) => {
     // Create a new Firebase credential with the token
@@ -27,7 +19,9 @@ async function onGoogleButtonPress() {
     // Login with the credential
     return auth().signInWithCredential(credential);
   })
-  .then((user)=>StoreUser('google'))
+  .then((user)=>{
+    StoreUser('google')
+  })
   .catch((error) => {
     const { code, message } = error;
     // For details of error codes, see the docs
@@ -101,6 +95,8 @@ constructor(props){
   );
   }
 };
+
+
 // export default Login
 const styles = StyleSheet.create({
     profile:{

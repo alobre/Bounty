@@ -3,16 +3,38 @@ import { View, StyleSheet  } from 'react-native';
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
 import { InputGroup } from 'native-base';
+//Redux
+import {connect} from "react-redux"
+
 
 export default function StoreUser(signInMethod, userProps){
     // console.log(firestore())
     // console.log(auth().currentUser)
     if(signInMethod == 'register'){
       let user = auth().currentUser
+      // firestore()
+      // .collection('users')
+      // .doc(user.uid)
+      // .add(
+      //   {
+      //       'displayName': userProps.displayName,
+      //       'email': user.email,
+      //       'emailVeryfied': user.emailVeryfied,
+      //       'phoneNumber': user.phoneNumber,
+      //       'photoURL': user.photoURL,
+      //       'uid': user.uid
+
+      //   }
+      //   )
+      // .then(() => {
+      //   console.log('User added!');
+      // });
       firestore()
       .collection('users')
       .doc(user.uid)
-      .add(
+      .collection('PrivateUserData')
+      .doc(user.uid)
+      .set(
         {
             'displayName': userProps.displayName,
             'email': user.email,
@@ -24,15 +46,44 @@ export default function StoreUser(signInMethod, userProps){
         }
         )
       .then(() => {
-        console.log('User added!');
-      }); 
-    }
-    if(signInMethod == 'google'){
-       let user = auth().currentUser
+        console.log('PrivateUserData added!');
+      });
       firestore()
       .collection('users')
       .doc(user.uid)
-      .add(
+      .collection('PublicUserData')
+      .doc(user.uid)
+      .set(
+        {
+            'displayName': user.displayName,
+            'photoURL': user.photoURL,
+            'uid': user.uid
+
+        }
+        )
+      .then(() => {
+        console.log('PublicUserData added!');
+      });  
+    }
+    if(signInMethod == 'google'){
+      console.log("storing google");
+       let user = auth().currentUser
+      //  this.props.reduxSaveTaskDetail(
+      //   {
+      //     'username': user.displayName,
+      //     'email': user.email,
+      //     'photoURL': user.photoURL,
+      //     'uid': user.uid,
+      //     'interestedIn': []
+      //   }
+      // )
+      console.log(auth().currentUser.uid);
+      firestore()
+      .collection('users')
+      .doc(auth().currentUser.uid)
+      .collection('PrivateUserData')
+      .doc(user.uid)
+      .set(
         {
             'displayName': user.displayName,
             'email': user.email,
@@ -44,7 +95,35 @@ export default function StoreUser(signInMethod, userProps){
         }
         )
       .then(() => {
-        console.log('User added!');
+        console.log('PrivateUserData added!');
+      });
+      firestore()
+      .collection('users')
+      .doc(user.uid)
+      .collection('PublicUserData')
+      .doc(user.uid)
+      .set(
+        {
+            'displayName': user.displayName,
+            'photoURL': user.photoURL,
+            'uid': user.uid
+
+        }
+        )
+      .then(() => {
+        console.log('PublicUserData added!');
       }); 
     }
 }
+
+// const mapDispatchToProps = (dispatch) => 
+// {
+//     return{
+//      reduxSaveUserDetail:(userDetails) => dispatch(saveUserDetails(userDetails))
+         
+//     }
+// }
+// export default connect(
+//     null,
+//       mapDispatchToProps
+//   )(StoreUser); 

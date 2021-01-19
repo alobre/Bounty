@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, View   } from 'react-native';
 import { Text, Avatar, Card, Title, Subheading, Button } from "react-native-paper";
 import { ScrollView } from 'react-native-gesture-handler'
-import GetUser from '../Firestore/GetUser'
+import GetPublicUser from '../Firestore/GetPublicUser'
 import GetTaskByUserId from "../Firestore/GetTaskByUserId";
 import UserProfileTab from "./UserProfileTab";
 import firestore from '@react-native-firebase/firestore';
@@ -17,7 +17,7 @@ export default class UserProfile extends Component{
     }
 
     async getUserData(uid){
-        const udata = await GetUser(uid)
+        const udata = await GetPublicUser(uid)
         this.setState({userData: udata.data()})
         // console.log(GetUser(uid));
         console.log(this.state.userData);

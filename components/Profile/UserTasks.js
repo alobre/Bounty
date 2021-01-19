@@ -9,7 +9,7 @@ import {
   } from 'react-native';
 import { Text } from "react-native-paper";
 import TaskCard from '../Tasks/TaskCard'
-import GetUser from '../Firestore/GetUser'
+import GetUser from '../Firestore/GetPrivateUser'
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 

@@ -4,7 +4,7 @@ import { Text, Avatar, Card, Title, Subheading, Button } from "react-native-pape
 import { Col, Row, Grid } from "react-native-easy-grid";
 import firestore from '@react-native-firebase/firestore';
 import ProfileTab from './ProfileTab'
-import GetUser from '../Firestore/GetUser'
+import GetPrivateUser from '../Firestore/GetPrivateUser'
 import Logout from '../Authentication/Logout'
 import { ScrollView } from 'react-native-gesture-handler'
 import auth from '@react-native-firebase/auth';
@@ -23,7 +23,7 @@ export default class User extends Component{
       }
 
       async getProfileData(){
-        const ProfileData = await GetUser(auth().currentUser.uid)
+        const ProfileData = await GetPrivateUser(auth().currentUser.uid)
         console.log(ProfileData.data());
         this.setState({
           user: {

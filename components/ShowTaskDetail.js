@@ -1,17 +1,18 @@
 import React from "react";
 import {View, Text,SafeAreaView,StyleSheet} from "react-native";
 import {connect} from "react-redux";
+import AsyncStorage from '@react-native-community/async-storage';
 
-class ShowTaskDetail extends React.Component{
+class ShowUserDetail extends React.Component{
 
-    componentDidMount(){
-        console.log(this.props.taskDetails);
+    async componentDidMount(){
+        console.log(this.props.userDetails);
     }
 render()
 {
     return(
 <SafeAreaView>
-        <Text>Title: {this.props.taskDetails.title}</Text>
+        {/* <Text>Title: {this.props.taskDetails.title}</Text> */}
 </SafeAreaView>
     )
 }
@@ -19,8 +20,9 @@ render()
 
 const mapStateToProps = (state) => {
     return{
-      taskDetails: state.taskDetailReducer.taskDetails
+    //   taskDetails: state.taskDetailReducer.taskDetails,
+      userDetails: state.userDetailReducer.userDetails
     }
   }
   
-  export default connect(mapStateToProps,null)(ShowTaskDetail)
+  export default connect(mapStateToProps,null)(ShowUserDetail)
