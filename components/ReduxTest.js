@@ -1,11 +1,11 @@
-import React from "react";
+import React, {Component} from "react";
 import {View, Text,StyleSheet, SafeAreaView,TextInput,TouchableHighlight} from "react-native";
 import { Button } from "react-native-paper";
 import {connect} from "react-redux"
 import {saveTaskDetails} from "../redux/Actions/saveTaskDetailAction"
 
 
-class TaskDetails extends React.Component
+class TaskDetails extends Component
 {
     constructor(props)
     {

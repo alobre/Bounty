@@ -13,10 +13,10 @@ const initialState = {
 };
 const taskDetailReducer = (state = initialState , action) => {
     switch(action.type){
-        case "SAVE_EMPLOYEE_DETAIL" :{
+        case "SAVE_TASK_DETAIL" :{
             return{
             ...state,
-            employeeDetails : action.employeeDetails
+            taskDetails : action.taskDetails
             }
         }
         default:{

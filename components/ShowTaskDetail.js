@@ -11,7 +11,7 @@ render()
 {
     return(
 <SafeAreaView>
-
+        <Text>Title: {this.props.taskDetails.title}</Text>
 </SafeAreaView>
     )
 }
