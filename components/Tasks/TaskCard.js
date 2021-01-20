@@ -4,11 +4,13 @@ import globalStyles from '../GlobalComponents/GlobalStyles.js'
 import { Avatar, Button, Card, Title, Paragraph, Text, Subheading, Divider, TouchableRipple, Badge, IconButton, Menu, Icon, Chip } from 'react-native-paper';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import ImageGallery from "./ImageGallery";
+import {connect} from "react-redux"
+import {saveUserDetails} from "../../redux/Actions/saveUserDetailAction"
 
 const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
 
 
-const TaskCard = ({taskId, uid, username, avatar, title, tags, description, bounty, imageURL, navigation}) =>{
+const TaskCard = ({reduxSaveUserDetail, userDetails, taskId, uid, username, avatar, title, tags, description, bounty, imageURL, navigation}) =>{
 
   const [visible, setVisible] = useState(false);
 
@@ -18,15 +20,40 @@ const TaskCard = ({taskId, uid, username, avatar, title, tags, description, boun
 
   let [imageVisible, setImageVisible] = useState(false)
 
+  let [chipSelected, setChipSelected] = useState(false)
+
+  let user = {
+    uid: 1,
+    username: "Alobre",
+    email: "alobre@gmail.com",
+    imageURL: "www.google.at",
+    tags: ['alo', 'bre']
+  }
+
+  const addTagToFavorite = (tag) => {
+    setChipSelected(true)
+    reduxSaveUserDetail(user);
+    let newTags = userDetails.tags;
+    newTags.push(tag)
+    reduxSaveUserDetail({
+      // uid: uid,
+      // username: username,
+      // email: email
+      // imageURL: imageURL,
+      tags: newTags
+    });
+    console.log(userDetails);
+  }
+
   return (
     <Card style={styles.card} elevation={4}>
     <Grid>
     <Col>
       <Card.Title title={title}/>
-      <Row>
+      <Row style={styles.tagParent}>
         {
         ((tags) ? true : false) &&
-        tags.map((tag) => <Chip key={tag + '-' + taskId } mode="outlined">{tag}</Chip>)
+        tags.map((tag) => <Chip key={tag + '-' + taskId } selected={chipSelected} onPress={ ()=> (chipSelected) ? setChipSelected(false) : addTagToFavorite(tag)} mode="outlined">{tag}</Chip>)
         }
       </Row>
     </Col>
@@ -94,8 +121,12 @@ const TaskCard = ({taskId, uid, username, avatar, title, tags, description, boun
       flex: 3,
       paddingBottom:0
     },
+    tagParent:{
+      paddingLeft: 10
+    },
     profile:{
       flexDirection: "row",
+      paddingVertical: 10
     },
     username:{
       paddingLeft: 3,
@@ -122,4 +153,22 @@ const TaskCard = ({taskId, uid, username, avatar, title, tags, description, boun
     }
   })
 
-export default TaskCard;
+  const mapStateToProps = (state) => {
+    return{
+    //   taskDetails: state.taskDetailReducer.taskDetails,
+      userDetails: state.userDetailReducer.userDetails
+    }
+  }
+  
+  const mapDispatchToProps = (dispatch) => 
+  {
+      return{
+      //  reduxSaveTaskDetail:(taskDetails) => dispatch(saveTaskDetails(taskDetails)),
+       reduxSaveUserDetail:(userDetails) => dispatch(saveUserDetails(userDetails)),
+           
+      }
+  }
+  export default connect(
+      mapStateToProps,
+      mapDispatchToProps
+    )(TaskCard); 

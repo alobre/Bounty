@@ -1,5 +1,5 @@
 const initialState = {
-    taskDetails: {
+    userDetails: {
         uid: '',
         username: '',
         email: '',

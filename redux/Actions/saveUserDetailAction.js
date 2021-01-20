@@ -6,6 +6,6 @@ export const saveUserDetails = (userDetails) =>(
             username: userDetails.username,
             email: userDetails.email,
             imageURL: userDetails.imageURL,
-            interestedIn: userDetails.tags
+            tags: userDetails.tags
         }
     });
