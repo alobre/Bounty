@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {View, Text,StyleSheet, SafeAreaView,TouchableHighlight} from "react-native";
+import {View, Text, StyleSheet, SafeAreaView,TouchableHighlight} from "react-native";
 import { Button, TextInput } from "react-native-paper";
 import {connect} from "react-redux"
 import {saveTaskDetails} from "../redux/Actions/saveTaskDetailAction"

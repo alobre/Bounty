@@ -23,15 +23,20 @@ const TaskCard = ({reduxSaveUserDetail, userDetails, taskId, uid, username, avat
   let [chipSelected, setChipSelected] = useState(false)
 
   let user = {
-    uid: 1,
-    username: "Alobre",
-    email: "alobre@gmail.com",
-    imageURL: "www.google.at",
-    tags: ['alo', 'bre']
+    // uid: 1,
+    // username: "Alobre",
+    // email: "alobre@gmail.com",
+    // imageURL: "www.google.at",
+    // tags: ['alo', 'bre']
+  }
+
+  const addOrRemoveTag = (tag) => {
+    // console.log(userDetails.tags.includes(tag));
+    isInterested(tag) ? removeTagFromFavorite(tag) : addTagToFavorite(tag)
+    // isInterested(tag) ? console.log("true") : console.log("false")
   }
 
   const addTagToFavorite = (tag) => {
-    reduxSaveUserDetail(user);
     let newTags = userDetails.tags;
     newTags.push(tag)
     reduxSaveUserDetail({
@@ -44,9 +49,21 @@ const TaskCard = ({reduxSaveUserDetail, userDetails, taskId, uid, username, avat
     console.log(userDetails);
   }
 
+  const removeTagFromFavorite = (chipTag) => {
+    let currentUserTags = userDetails.tags.filter( tag => tag != chipTag )
+    reduxSaveUserDetail({
+      // uid: uid,
+      // username: username,
+      // email: email
+      // imageURL: imageURL,
+      tags: currentUserTags
+    });
+    console.log(userDetails);
+  }
+
   const isInterested = (chipTag) => {
     let visible;
-    userDetails.includes(chipTag) ? visible = true : visible = false
+    userDetails.tags.includes(chipTag) ? visible = true : visible = false
     return visible
   }
 
@@ -58,7 +75,7 @@ const TaskCard = ({reduxSaveUserDetail, userDetails, taskId, uid, username, avat
       <Row style={styles.tagParent}>
         {
         ((tags) ? true : false) &&
-        tags.map((tag) => <Chip key={tag + '-' + taskId } selected={() => isInterested()} onPress={ ()=> (chipSelected) ? setChipSelected(false) : addTagToFavorite(tag)} mode="outlined">{tag}</Chip>)
+        tags.map((tag) => <Chip key={tag + '-' + taskId } selected={isInterested(tag)} onPress={ ()=> addOrRemoveTag(tag) } mode="outlined">{tag}</Chip>)
         }
       </Row>
     </Col>
