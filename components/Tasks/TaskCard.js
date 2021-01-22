@@ -31,7 +31,6 @@ const TaskCard = ({reduxSaveUserDetail, userDetails, taskId, uid, username, avat
   }
 
   const addTagToFavorite = (tag) => {
-    setChipSelected(true)
     reduxSaveUserDetail(user);
     let newTags = userDetails.tags;
     newTags.push(tag)
@@ -45,6 +44,12 @@ const TaskCard = ({reduxSaveUserDetail, userDetails, taskId, uid, username, avat
     console.log(userDetails);
   }
 
+  const isInterested = (chipTag) => {
+    let visible;
+    userDetails.includes(chipTag) ? visible = true : visible = false
+    return visible
+  }
+
   return (
     <Card style={styles.card} elevation={4}>
     <Grid>
@@ -53,7 +58,7 @@ const TaskCard = ({reduxSaveUserDetail, userDetails, taskId, uid, username, avat
       <Row style={styles.tagParent}>
         {
         ((tags) ? true : false) &&
-        tags.map((tag) => <Chip key={tag + '-' + taskId } selected={chipSelected} onPress={ ()=> (chipSelected) ? setChipSelected(false) : addTagToFavorite(tag)} mode="outlined">{tag}</Chip>)
+        tags.map((tag) => <Chip key={tag + '-' + taskId } selected={() => isInterested()} onPress={ ()=> (chipSelected) ? setChipSelected(false) : addTagToFavorite(tag)} mode="outlined">{tag}</Chip>)
         }
       </Row>
     </Col>
