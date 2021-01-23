@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View   } from 'react-native';
-import { Text, Avatar, Card, Title, Subheading, Button } from "react-native-paper";
+import { Text, Avatar, Card, Title, Subheading, Button, Provider } from "react-native-paper";
 import { ScrollView } from 'react-native-gesture-handler'
 import GetPublicUser from '../Firestore/GetPublicUser'
 import GetTaskByUserId from "../Firestore/GetTaskByUserId";
@@ -32,16 +32,16 @@ export default class UserProfile extends Component{
 
     render(){
         return(
-            <ScrollView>
+            <Provider>
               <Card>
                 <Card.Content>
                   <Avatar.Image size={128} style={styles.userPic} source={{uri: this.state.userData.photoURL}} />
                   <Title style={styles.username}>{this.state.userData.displayName}</Title>
                   <Subheading style={styles.email}>{this.state.userData.email}</Subheading>
                 </Card.Content>
-                    <UserProfileTab navigation={this.props.route.params.navigation} uid={this.props.route.params.uid}/>
-              </Card>
-            </ScrollView>
+                </Card>
+                <UserProfileTab navigation={this.props.route.params.navigation} uid={this.props.route.params.uid}/>
+             </Provider>
         )
     }
 }

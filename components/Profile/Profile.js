@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Text, Avatar, Card, Title, Subheading, Button } from "react-native-paper";
+import { Text, Avatar, Card, Title, Subheading, Button, Provider } from "react-native-paper";
 import { Col, Row, Grid } from "react-native-easy-grid";
 import firestore from '@react-native-firebase/firestore';
 import ProfileTab from './ProfileTab'
@@ -46,7 +46,7 @@ export default class User extends Component{
 
     render(){
           return(
-            <ScrollView>
+            <Provider>
               <Card>
                 <Card.Content>
                   <Avatar.Image size={128} style={styles.profilePic} source={{uri: this.state.user.photoURL}} />
@@ -58,7 +58,7 @@ export default class User extends Component{
                 </Card.Content>
               </Card>
                <ProfileTab/>
-            </ScrollView>
+            </Provider>
           )
       }
 }

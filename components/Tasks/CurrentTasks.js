@@ -34,7 +34,7 @@ const CurrentTasks = ({navigation}) => {
   const getTasks = async () => {
     setIsLoading(true);
     console.log("getTasks");
-    const snapshot = await UserTasksRef.where('taskAssigned', '==', 'notAssigned').orderBy('dateAndTime', 'desc').limit(3).get();
+    const snapshot = await UserTasksRef.where('taskAssigned', '==', 'notAssigned').orderBy('dateAndTime', 'desc').limit(24).get();
     if(!snapshot.empty){
       let newTasks = [];
       console.log('inside true');
@@ -55,11 +55,13 @@ const CurrentTasks = ({navigation}) => {
   }
 
   const getMore = async () => {
+    console.log(lastDoc);
+    console.log("out");
     if(lastDoc){
+      console.log("in");
       setIsMoreLoading(true);
-
       setTimeout(async() => {
-        let snapshot = await UserTasksRef.where('taskAssigned', '==', 'notAssigned').orderBy('dateAndTime', 'desc').startAfter(lastDoc.data().time).limit(3).get();
+        let snapshot = await UserTasksRef.where('taskAssigned', '==', 'notAssigned').orderBy('dateAndTime', 'desc').startAfter(lastDoc.data().dateAndTime).limit(24).get();
   
         if (!snapshot.empty) {
           let newTasks = tasks;

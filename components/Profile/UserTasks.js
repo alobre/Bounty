@@ -7,11 +7,12 @@ import {
     ActivityIndicator,
     RefreshControl
   } from 'react-native';
-import { Text } from "react-native-paper";
+import { Text, Provider } from "react-native-paper";
 import TaskCard from '../Tasks/TaskCard'
 import GetUser from '../Firestore/GetPrivateUser'
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 

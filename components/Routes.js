@@ -25,7 +25,7 @@ function HomeScreen({ navigation }) {
   return (
     <Root>
     <PaperProvider>
-    <ReduxTest navigation={navigation}></ReduxTest>
+    {/* <ReduxTest navigation={navigation}></ReduxTest> */}
     <AddTaskButton navigation={navigation}></AddTaskButton>
     <BottomNavigation  navigation={navigation}></BottomNavigation>
     </PaperProvider></Root>
