@@ -7,16 +7,17 @@ import {
     ActivityIndicator,
     RefreshControl
   } from 'react-native';
-import { Text, Provider } from "react-native-paper";
-import TaskCard from '../Tasks/TaskCard'
-import GetUser from '../Firestore/GetPrivateUser'
+import { ScrollView } from 'react-native-gesture-handler';
+import { Text } from "react-native-paper";
+import TaskCard from './TaskCard'
+import GetPublicUser from '../Firestore/GetPublicUser'
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
-import { ScrollView } from 'react-native-gesture-handler';
+import {connect} from "react-redux"
+import {saveUserDetails} from "../../redux/Actions/saveUserDetailAction"
 
 
-
-const UserTasks = ({navigation, uid}) => {
+const RecommendedTasks = ({navigation, userDetails}) => {
 
   let onEndReachedCalledDuringMomentum = false;
   
@@ -25,7 +26,10 @@ const UserTasks = ({navigation, uid}) => {
   const [lastDoc, setLastDoc] = useState(null);
   const [tasks, setTasks] = useState([]);
 
-  const UserTasksRef = firestore().collection('users').doc(uid).collection('UserTasks');
+  const interestedIn = userDetails.tags;
+    console.log(interestedIn);
+
+  const UserTasksRef = firestore().collectionGroup('UserTasks');
 
   useEffect(() => {
     getTasks();
@@ -34,14 +38,15 @@ const UserTasks = ({navigation, uid}) => {
   const getTasks = async () => {
     setIsLoading(true);
     console.log("getTasks");
-    const snapshot = await UserTasksRef.where('taskAssigned', '==', 'notAssigned').orderBy('dateAndTime', 'desc').limit(24).get();
+    const snapshot = await UserTasksRef.where('taskAssigned', '==', 'notAssigned').where('tags', 'array-contains-any', interestedIn).orderBy('dateAndTime', 'desc').limit(24).get();
     if(!snapshot.empty){
       let newTasks = [];
       console.log('inside true');
       setLastDoc(snapshot.docs[snapshot.docs.length - 1]);
 
       for (let i = 0; i < snapshot.docs.length; i++) {
-        let UserData = await GetUser(snapshot.docs[i].data().uid)
+        let UserData = await GetPublicUser(snapshot.docs[i].data().uid)
+        console.log(UserData.data());
         snapshot.docs[i].data().userData = UserData.data()
         newTasks.push(snapshot.docs[i].data())
       }
@@ -54,11 +59,13 @@ const UserTasks = ({navigation, uid}) => {
   }
 
   const getMore = async () => {
+    console.log(lastDoc);
+    console.log("out");
     if(lastDoc){
+      console.log("in");
       setIsMoreLoading(true);
-
       setTimeout(async() => {
-        let snapshot = await UserTasksRef.where('taskAssigned', '==', 'notAssigned').orderBy('dateAndTime', 'desc').startAfter(lastDoc.data().dateAndTime).limit(24).get();
+        let snapshot = await UserTasksRef.where('taskAssigned', '==', 'notAssigned').where('tags', '==', 'Putzen').orderBy('dateAndTime', 'desc').startAfter(lastDoc.data().dateAndTime).limit(24).get();
   
         if (!snapshot.empty) {
           let newTasks = tasks;
@@ -66,7 +73,7 @@ const UserTasks = ({navigation, uid}) => {
           setLastDoc(snapshot.docs[snapshot.docs.length - 1]);
   
           for(let i = 0; i < snapshot.docs.length; i++) {
-            let UserData = await GetUser(snapshot.docs[i].data().uid)
+            let UserData = await GetPublicUser(snapshot.docs[i].data().uid)
             snapshot.docs[i].data().userData = UserData.data()
             newTasks.push(snapshot.docs[i].data());
           }
@@ -121,7 +128,7 @@ const UserTasks = ({navigation, uid}) => {
                 bounty={item.bounty} 
                 tags={item.tags} 
                 imageURL={item.images}
-                // navigation={navigation}
+                navigation={navigation}
                 />) 
             }}
             ListFooterComponent={renderFooter}
@@ -147,4 +154,22 @@ const UserTasks = ({navigation, uid}) => {
 }
 
 
-export default UserTasks
+const mapStateToProps = (state) => {
+    return{
+    //   taskDetails: state.taskDetailReducer.taskDetails,
+      userDetails: state.userDetailReducer.userDetails
+    }
+  }
+  
+  const mapDispatchToProps = (dispatch) => 
+  {
+      return{
+      //  reduxSaveTaskDetail:(taskDetails) => dispatch(saveTaskDetails(taskDetails)),
+       reduxSaveUserDetail:(userDetails) => dispatch(saveUserDetails(userDetails)),
+           
+      }
+  }
+  export default connect(
+      mapStateToProps,
+      mapDispatchToProps
+    )(RecommendedTasks); 

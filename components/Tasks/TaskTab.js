@@ -1,13 +1,13 @@
 import React from 'react';
 import { Dimensions, View } from 'react-native'
 import { TabView, SceneMap } from 'react-native-tab-view';
-import RecomendedTasks from './RecomendedTasks'
+import RecommendedTasks from './RecommendedTasks'
 import CurrentTasks from "./CurrentTasks";
 
 let globalNavigation;
 
 const FirstRoute = () => (
-    <RecomendedTasks/>
+    <RecommendedTasks/>
   );
   const SecondRoute = () => (
     <View>
