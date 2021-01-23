@@ -2,13 +2,14 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native'
 import TaskTab from '../Tasks/TaskTab'
 import Messages from '../Messages'
+import Chat from '../Messaging/Chat'
 import globalStyles from './GlobalStyles.js'
 import { BottomNavigation, Text } from 'react-native-paper';
 
 let globalNavigation;
 
 const BountyRoute = () => <TaskTab navigation={globalNavigation}></TaskTab>
-const MessagesRoute = () => <Messages></Messages>;
+const ChatRoute = () => <Chat navigation={globalNavigation}></Chat>;
 const SettingsRoute = () => {};
 
 const bottomNavigation = ({navigation}) => {
@@ -22,7 +23,7 @@ const bottomNavigation = ({navigation}) => {
   
     const renderScene = BottomNavigation.SceneMap({
       bounty: BountyRoute,
-      messages: MessagesRoute,
+      messages: ChatRoute,
       settings: SettingsRoute,
     });
 

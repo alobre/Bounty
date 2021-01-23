@@ -13,6 +13,7 @@ import TaskCard from './TaskCard'
 import GetPublicUser from '../Firestore/GetPublicUser'
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
+import AddTaskButton from './AddTaskButton'
 import {connect} from "react-redux"
 import {saveUserDetails} from "../../redux/Actions/saveUserDetailAction"
 
@@ -112,6 +113,7 @@ const RecommendedTasks = ({navigation, userDetails}) => {
 
   return(
     <View>
+      {/* <AddTaskButton navigation={navigation}></AddTaskButton> */}
       <FlatList 
             data={tasks}
             keyExtractor={item => item.id.toString()}
@@ -149,9 +151,16 @@ const RecommendedTasks = ({navigation, userDetails}) => {
             }
           >
           </FlatList>
+          
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  fab:{
+    height: 1000
+  }
+})
 
 
 const mapStateToProps = (state) => {

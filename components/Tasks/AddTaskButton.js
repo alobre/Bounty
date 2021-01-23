@@ -13,13 +13,14 @@ export default class PostTask extends Component{
 
     render(){
         return(
-            <Portal>
-            <FAB
-            style={styles.fab}
-            large
-            icon="plus"
-            onPress={()=> this.props.navigation.navigate('PostTask')}
-        /></Portal>
+            // <Portal>
+                <FAB
+                style={styles.fab}
+                large
+                icon="plus"
+                onPress={()=> this.props.navigation.navigate('PostTask')}
+                />
+            // </Portal> 
         )
     }
 }

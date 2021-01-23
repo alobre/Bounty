@@ -1,6 +1,6 @@
 {
   "name": "BountyHunter",
-  "version": "0.7.3",
+  "version": "0.7.3.1",
   "private": true,
   "scripts": {
     "prestart": "npm-link-shared ./node_modules/<other package>/node_modules . react",
@@ -25,6 +25,7 @@
     "@react-native-firebase/auth": "^10.2.0",
     "@react-native-firebase/database": "^10.3.1",
     "@react-native-firebase/firestore": "^10.3.1",
+    "@react-native-firebase/messaging": "^10.5.1",
     "@react-native-firebase/storage": "^10.4.0",
     "@react-navigation/native": "^5.8.10",
     "@react-navigation/stack": "^5.12.8",
@@ -33,6 +34,7 @@
     "react": "16.13.1",
     "react-native": "0.63.4",
     "react-native-gesture-handler": "^1.9.0",
+    "react-native-gifted-chat": "^0.16.3",
     "react-native-global-props": "^1.1.5",
     "react-native-image-crop-picker": "^0.35.2",
     "react-native-image-zoom-viewer": "^3.0.1",
