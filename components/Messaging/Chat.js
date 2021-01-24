@@ -11,26 +11,18 @@ function Chat({route}) {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    setMessages([
-      {
-        _id: 1,
-        text: 'Hello developer',
-        createdAt: new Date(),
-        user: {
-          _id: 2,
-          uid:'NaQ5Rbn3JCgsDAEouAsVtzqmyVL2',
-          name: 'React Native',
-          avatar: 'https://placeimg.com/140/140/any',
-        },
-      },
-    ])
+    GetMessages(auth().currentUser.uid, route.params.task.uid, docs => {
+      docs._changes.map( doc =>  {
+        setMessages(previousMessages => GiftedChat.append(previousMessages, doc.doc.data()))
+      })
+    });
   }, [])
 
   const onSend = useCallback((messages = []) => {
     // GetMessages(auth().currentUser.uid, route.params.task.uid)
     StoreMessage(route.params.task, messages[0])
 
-    setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
+    // setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
   }, [])
 
   return (
