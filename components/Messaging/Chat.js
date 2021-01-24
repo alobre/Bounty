@@ -2,8 +2,10 @@ import React, { useState, useCallback, useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Button } from 'react-native-paper'
 import { GiftedChat } from 'react-native-gifted-chat';
-import PostMessage from '../Firestore/PostMessage'
+import GetMessages from '../Firestore/GetMessages'
+import StoreMessage from '../Firestore/StoreMessage'
 import auth from '@react-native-firebase/auth';
+
 
 function Chat({route}) {
   const [messages, setMessages] = useState([]);
@@ -25,15 +27,15 @@ function Chat({route}) {
   }, [])
 
   const onSend = useCallback((messages = []) => {
-     
-    PostMessage(route.params.task, messages[0])
+    // GetMessages(auth().currentUser.uid, route.params.task.uid)
+    StoreMessage(route.params.task, messages[0])
 
     setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
   }, [])
 
   return (
     <View style={styles.container}>
-    <Button onPress={() => console.log(route)}>alobre</Button>
+    <Button onPress={() => GetMessages(auth().currentUser.uid, route.params.task.uid)}>alobre</Button>
     <GiftedChat
       messages={messages} 
       onSend={messages => onSend(messages)}
