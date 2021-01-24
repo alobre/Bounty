@@ -9,7 +9,7 @@ let globalNavigation;
 
 const FirstRoute = () => (
   <View>
-    <RecommendedTasks/>
+    <RecommendedTasks navigation={globalNavigation}/>
   </View>
 
   );
