@@ -13,6 +13,7 @@ function Chat({route}) {
   useEffect(() => {
     GetMessages(auth().currentUser.uid, route.params.task.uid, docs => {
       docs._changes.map( doc =>  {
+        console.log(doc.doc.data());
         setMessages(previousMessages => GiftedChat.append(previousMessages, doc.doc.data()))
       })
     });
@@ -30,6 +31,8 @@ function Chat({route}) {
     <Button onPress={() => GetMessages(auth().currentUser.uid, route.params.task.uid)}>alobre</Button>
     <GiftedChat
       messages={messages} 
+      showUserAvatar
+      renderUsernameOnMessage
       onSend={messages => onSend(messages)}
       user={{
         _id: auth().currentUser.uid,
