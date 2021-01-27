@@ -7,7 +7,8 @@ import GetPublicUser from './GetPublicUser'
 
 
 export default async function StoreMessage(chatPartner, message){
-    let user = await GetPublicUser(auth().currentUser.uid)
+    let user = await GetPublicUser(auth().currentUser.uid);
+    let partner = await GetPublicUser(chatPartner.uid);
     // console.log(user.data());
         firestore()
         .collection('users')
@@ -27,6 +28,7 @@ export default async function StoreMessage(chatPartner, message){
             },
             '_id': message._id
         })
+
         firestore()
         .collection('users')
         .doc(chatPartner.uid)
@@ -45,4 +47,38 @@ export default async function StoreMessage(chatPartner, message){
             },
             '_id': message._id
         })
+
+        firestore()
+        .collection('users')
+        .doc(auth().currentUser.uid)
+        .collection('Conversations')
+        .doc(chatPartner.uid)
+        .set({
+            'chatPartnerUid': partner.data().uid,
+            'chatPartnerName': partner.data().displayName,
+            'chatPartnerAvatar': partner.data().photoURL,
+            'lastUpdateDateAndTime': moment().format('YYYY.MM.DD HH:mm:ss'),
+            'lastUpdateDate': moment().format('DD.MM.YYYY'),
+            'lastUpdateTime': moment().format('HH:mm:ss'),
+            'lastWhoWrote': user.data(),
+            'lastMessage': message.text,
+        })
+
+        firestore()
+        .collection('users')
+        .doc(chatPartner.uid)
+        .collection('Conversations')
+        .doc(auth().currentUser.uid)
+        .set({
+            'chatPartnerUid': user.data().uid,
+            'chatPartnerName': user.data().displayName,
+            'chatPartnerAvatar': user.data().photoURL,
+            'lastUpdateDateAndTime': moment().format('YYYY.MM.DD HH:mm:ss'),
+            'lastUpdateDate': moment().format('DD.MM.YYYY'),
+            'lastUpdateTime': moment().format('HH:mm:ss'),
+            'lastWhoWrote': user.data(),
+            'lastMessage': message.text,
+
+        })
+
 }

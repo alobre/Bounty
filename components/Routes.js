@@ -14,6 +14,7 @@ import PostTask from './Tasks/PostTask'
 import SelectBounty from './Tasks/SelectBounty';
 import Register from './Authentication/Register';
 import Chat from './Messaging/Chat'
+import Conversations from './Messaging/Conversations'
 //Redux
 import { PersistGate } from 'redux-persist/es/integration/react'
 import { Provider } from 'react-redux';
@@ -28,7 +29,7 @@ function HomeScreen({ navigation }) {
     <PaperProvider>
     {/* <ReduxTest navigation={navigation}></ReduxTest> */}
     {/* <AddTaskButton navigation={navigation}></AddTaskButton> */}
-    <BottomNavigation  navigation={navigation}></BottomNavigation>
+    <BottomNavigation navigation={navigation}></BottomNavigation>
     </PaperProvider></Root>
   );
 }
@@ -68,6 +69,7 @@ export default class App extends Component {
           <Stack.Screen name="ShowTaskDetail" component={ShowTaskDetail} />
           <Stack.Screen name="Register" component={Register} />
           <Stack.Screen name="Chat" component={Chat} />
+          <Stack.Screen name="Conversations" component={Conversations} />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

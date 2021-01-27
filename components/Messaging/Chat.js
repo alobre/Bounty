@@ -20,15 +20,12 @@ function Chat({route}) {
   }, [])
 
   const onSend = useCallback((messages = []) => {
-    // GetMessages(auth().currentUser.uid, route.params.task.uid)
+    console.log(route.params.task);
     StoreMessage(route.params.task, messages[0])
-
-    // setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
   }, [])
 
   return (
     <View style={styles.container}>
-    <Button onPress={() => GetMessages(auth().currentUser.uid, route.params.task.uid)}>alobre</Button>
     <GiftedChat
       messages={messages} 
       showUserAvatar

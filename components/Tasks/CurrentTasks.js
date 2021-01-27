@@ -108,6 +108,9 @@ const CurrentTasks = ({navigation}) => {
 
   return(
     <View>
+      {
+        console.log({'test': 'test',tasks})
+      }
       <FlatList 
             data={tasks}
             keyExtractor={item => item.id.toString()}
