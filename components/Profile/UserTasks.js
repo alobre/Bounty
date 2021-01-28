@@ -9,7 +9,7 @@ import {
   } from 'react-native';
 import { Text, Provider } from "react-native-paper";
 import TaskCard from '../Tasks/TaskCard'
-import GetUser from '../Firestore/GetPrivateUser'
+import GetUser from '../Firestore/GetPublicUser'
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -33,7 +33,6 @@ const UserTasks = ({navigation, uid}) => {
 
   const getTasks = async () => {
     setIsLoading(true);
-    console.log("getTasks");
     const snapshot = await UserTasksRef.where('taskAssigned', '==', 'notAssigned').orderBy('dateAndTime', 'desc').limit(24).get();
     if(!snapshot.empty){
       let newTasks = [];

@@ -22,7 +22,20 @@ const Conversations = ({navigation}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isMoreLoading, setIsMoreLoading] = useState(false);
   const [lastDoc, setLastDoc] = useState(null);
-  const [conversations, setConversations] = useState([]);
+  const [conversations, setConversations] = useState([
+  //   {chatPartnerAvatar: "https://lh4.googleusercontent.com/-twOwKprx0MA/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucmB6JqLCSucIOch1qeBE532iSrg8w/s96-c/photo.jpg",
+  //   chatPartnerName: "alo bre",
+  //   chatPartnerUid: "NaQ5Rbn3JCgsDAEouAsVtzqmyVL2",
+  //   lastMessage: "Yooo",
+  //   lastUpdateDate: "25.01.2021",
+  //   lastUpdateDateAndTime: "2021.01.25 21:00:16",
+  //   lastUpdateTime: "21:00:16",
+  //   lastWhoWrote:
+  //   {displayName: "alo bre",
+  //   photoURL: "https://lh4.googleusercontent.com/-twOwKprx0MA/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucmB6JqLCSucIOch1qeBE532iSrg8w/s96-c/photo.jpg",
+  //   uid: "NaQ5Rbn3JCgsDAEouAsVtzqmyVL2"}
+  // },
+  ]);
 
   const UserConversationsRef = firestore().collection('users').doc(auth().currentUser.uid).collection('Conversations');
 
@@ -64,7 +77,7 @@ const Conversations = ({navigation}) => {
             newConversations.push(snapshot.docs[i].data());
           }
   
-          setTasks(newConversations);
+          setConversations(newConversations);
           if (snapshot.docs.length < 3) setLastDoc(null);
         } else {
           setLastDoc(null);
@@ -79,7 +92,7 @@ const Conversations = ({navigation}) => {
 
   const onRefresh = () => {
     setTimeout(() => {
-      getTasks();
+      getConversations();
     }, 1000);
   }
 
@@ -106,7 +119,7 @@ const Conversations = ({navigation}) => {
             keyExtractor={item => item.chatPartnerUid}
             renderItem={({item}) => {
                 return(
-                    <ConversationCard conversation={item}/>
+                    <ConversationCard navigation={navigation} conversation={item}/>
                 ) 
             }}
             ListFooterComponent={renderFooter}

@@ -123,7 +123,9 @@ const TaskCard = ({reduxSaveUserDetail, userDetails, taskId, uid, username, avat
       </View>
     <TouchableRipple rippleColor="rgba(0, 0, 0, .32)">
       <Card.Actions style={styles.buttonParent}>
-        <Button icon="message-draw" style={styles.contactContractor} onPress={() => navigation.navigate('Chat', {navigation: navigation, task: task})}>Auftraggeber kontaktieren</Button>
+        <Button icon="message-draw" style={styles.contactContractor} onPress={() =>
+          navigation.navigate('Chat', {navigation: navigation, task: task})
+        }>Auftraggeber kontaktieren</Button>
       </Card.Actions>
     </TouchableRipple>
     </View>

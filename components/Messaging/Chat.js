@@ -11,6 +11,7 @@ function Chat({route}) {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
+    console.log(['inside', route.params.task]);
     GetMessages(auth().currentUser.uid, route.params.task.uid, docs => {
       docs._changes.map( doc =>  {
         console.log(doc.doc.data());
