@@ -75,7 +75,7 @@ const TaskCard = ({reduxSaveUserDetail, userDetails, taskId, uid, username, avat
   return (
     <Card style={styles.card} elevation={4}>
     <Grid>
-    <Col>
+    <Col size={90} titleNumberOfLines={3}>
       <Card.Title title={title}/>
       <Row style={styles.tagParent}>
         {
@@ -84,7 +84,7 @@ const TaskCard = ({reduxSaveUserDetail, userDetails, taskId, uid, username, avat
         }
       </Row>
     </Col>
-    <Col style={styles.colMoreButton}>
+    <Col style={styles.colMoreButton} size={10}>
         <Menu
           visible={visible}
           onDismiss={closeMenu}

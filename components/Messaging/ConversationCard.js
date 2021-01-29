@@ -26,14 +26,15 @@ export default function ConversationCard({navigation, conversation}){
                 
                 <Grid>
                     <Row>
-                <Col size={15}>
                 <TouchableRipple onPress={ ()=> navigation.navigate('UserProfile', {navigation: navigation, uid: task.uid}) }
                 rippleColor="rgba(0, 0, 0, .32)"
+                style={styles.avatarParent}
+                borderless={true}
                 >
                     <Avatar.Image size={42} source={{uri: conversation.chatPartnerAvatar}} />
+                    
                 </TouchableRipple> 
-                </Col>
-                <Col size={85}>
+                <Col>
                     {/* <Card.Title
                     title={conversation.chatPartnerName}
                     // subtitle={conversation.lastMessage}
@@ -65,6 +66,10 @@ export default function ConversationCard({navigation, conversation}){
 }
 
 const styles = StyleSheet.create({
+    avatarParent:{
+        borderRadius:20,
+        marginRight: 15
+    },
     parent:{
         width:"100%",
         height:"100%"
