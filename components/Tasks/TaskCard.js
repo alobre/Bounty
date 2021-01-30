@@ -6,6 +6,7 @@ import { Col, Row, Grid } from "react-native-easy-grid";
 import ImageGallery from "./ImageGallery";
 import {connect} from "react-redux"
 import {saveUserDetails} from "../../redux/Actions/saveUserDetailAction"
+import auth from '@react-native-firebase/auth';
 
 const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
 
@@ -121,13 +122,16 @@ const TaskCard = ({reduxSaveUserDetail, userDetails, taskId, uid, username, avat
           {bounty}
         </Badge>
       </View>
-    <TouchableRipple rippleColor="rgba(0, 0, 0, .32)">
+    {
+      auth().currentUser.uid == uid ? true :  
+      <TouchableRipple rippleColor="rgba(0, 0, 0, .32)">
       <Card.Actions style={styles.buttonParent}>
         <Button icon="message-draw" style={styles.contactContractor} onPress={() =>
           navigation.navigate('Chat', {navigation: navigation, task: task})
         }>Auftraggeber kontaktieren</Button>
       </Card.Actions>
     </TouchableRipple>
+    }
     </View>
   </Card>
     );

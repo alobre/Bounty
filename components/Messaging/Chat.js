@@ -15,6 +15,10 @@ function Chat({route}) {
     GetMessages(auth().currentUser.uid, route.params.task.uid, docs => {
       docs._changes.map( doc =>  {
         console.log(doc.doc.data());
+        // doc.doc.data()._id
+        let alreadyContains = messages.filter(message => message._id.includes(doc.doc.data()._id))
+        console.log(alreadyContains);
+        alreadyContains.length > 0? true : 
         setMessages(previousMessages => GiftedChat.append(previousMessages, doc.doc.data()))
       })
     });
