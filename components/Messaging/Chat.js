@@ -1,17 +1,20 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, FlatList } from 'react-native';
 import { Button } from 'react-native-paper'
 import { GiftedChat } from 'react-native-gifted-chat';
+import ChatBubble from './ChatUI/ChatBubble'
 import GetMessages from '../Firestore/GetMessages'
 import StoreMessage from '../Firestore/StoreMessage'
 import auth from '@react-native-firebase/auth';
+import moment from 'moment'
+import de from 'dayjs/locale/de'
 
 
 function Chat({route}) {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    console.log(['inside', route.params.task]);
+    console.log([moment.locale(),'data']);
     GetMessages(auth().currentUser.uid, route.params.task.uid, docs => {
       docs._changes.map( doc =>  {
         console.log(doc.doc.data());
@@ -31,15 +34,37 @@ function Chat({route}) {
 
   return (
     <View style={styles.container}>
-    <GiftedChat
-      messages={messages} 
+    {/* <GiftedChat
+      messages={messages}
+      locale={'de'}
+      // timeFormat={''}
       showUserAvatar
       renderUsernameOnMessage
       onSend={messages => onSend(messages)}
       user={{
         _id: auth().currentUser.uid,
       }}
-      />
+      /> */}
+    
+    <FlatList
+    data={messages}
+    keyExtractor={item => item._id}
+    renderItem={({item}) => 
+      {
+        return( 
+        <ChatBubble
+        avatar={item.user.avatar}
+        username={item.user.name}
+        message={item.text}
+        messageId={item._id}
+        createdAt={item.createdAt}
+        >
+
+        </ChatBubble>
+      )
+    }
+    }
+    ></FlatList>
     </View>
     )
 }
