@@ -69,8 +69,11 @@ const TaskCard = ({reduxSaveUserDetail, userDetails, taskId, uid, username, avat
 
   const isInterested = (chipTag) => {
     let visible;
-    userDetails.tags.includes(chipTag) ? visible = true : visible = false
-    return visible
+    
+    userDetails.tags ?
+      userDetails.tags.includes(chipTag) ? visible = true : visible = false
+    : false
+    return visible 
   }
 
   return (
@@ -123,6 +126,7 @@ const TaskCard = ({reduxSaveUserDetail, userDetails, taskId, uid, username, avat
         </Badge>
       </View>
     {
+      auth().currentUser ? 
       auth().currentUser.uid == uid ? true :  
       <TouchableRipple rippleColor="rgba(0, 0, 0, .32)">
       <Card.Actions style={styles.buttonParent}>
@@ -131,6 +135,8 @@ const TaskCard = ({reduxSaveUserDetail, userDetails, taskId, uid, username, avat
         }>Auftraggeber kontaktieren</Button>
       </Card.Actions>
     </TouchableRipple>
+    :
+    false
     }
     </View>
   </Card>

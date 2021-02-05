@@ -1,10 +1,10 @@
-#Sat Jan 23 15:34:41 CET 2021
+#Fri Feb 05 14:22:04 CET 2021
+base.2=/home/wsowy/Documents/Coding/Bounty/android/app/build/intermediates/dex/debug/mergeDexDebug/classes3.dex
 path.2=classes3.dex
+base.1=/home/wsowy/Documents/Coding/Bounty/android/app/build/intermediates/dex/debug/mergeDexDebug/classes2.dex
 path.1=classes2.dex
-path.0=classes.dex
+base.0=/home/wsowy/Documents/Coding/Bounty/android/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-base.2=G\:\\Programmieren\\BountyHunter\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
-base.1=G\:\\Programmieren\\BountyHunter\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex
-base.0=G\:\\Programmieren\\BountyHunter\\android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
