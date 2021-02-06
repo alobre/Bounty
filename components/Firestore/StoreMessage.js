@@ -16,17 +16,17 @@ export default async function StoreMessage(chatPartner, message){
         .collection('Conversations')
         .doc(chatPartner.uid)
         .collection('Messages')
-        .doc(message._id)
+        .doc(message.mid)
         .set({
             'dateAndTime': moment().format('YYYY.MM.DD HH:mm:ss'),
             'createdAt': message.createdAt.toString(),
             'text': message.text,
             'user': {
-                '_id': message.user._id,
+                'uid': message.user._id,
                 'name': user.data().displayName,
                 'avatar': user.data().photoURL,
             },
-            '_id': message._id
+            'mid': message.uid
         })
 
         firestore()
@@ -35,17 +35,17 @@ export default async function StoreMessage(chatPartner, message){
         .collection('Conversations')
         .doc(auth().currentUser.uid)
         .collection('Messages')
-        .doc(message._id)
+        .doc(message.mid)
         .set({
             'dateAndTime': moment().format('YYYY.MM.DD HH:mm:ss'),
             'createdAt': message.createdAt.toString(),
             'text': message.text,
             'user': {
-                '_id': message.user._id,
+                'uid': message.user.uid,
                 'name': user.data().displayName,
                 'avatar': user.data().photoURL,
             },
-            '_id': message._id
+            'mid': message.mid
         })
 
         firestore()

@@ -1,8 +1,10 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { StyleSheet, View, FlatList } from 'react-native';
-import { Button } from 'react-native-paper'
+import { StyleSheet, View, FlatList, Text, ScrollView } from 'react-native';
+import { Button, Card, Avatar } from 'react-native-paper'
 import { GiftedChat } from 'react-native-gifted-chat';
+import { Col, Row, Grid } from "react-native-easy-grid";
 import ChatBubble from './ChatUI/ChatBubble'
+import ChatInput from './ChatUI/ChatInput'
 import GetMessages from '../Firestore/GetMessages'
 import StoreMessage from '../Firestore/StoreMessage'
 import auth from '@react-native-firebase/auth';
@@ -21,7 +23,7 @@ function Chat({route}) {
         // doc.doc.data()._id
         let alreadyContains = messages.filter(message => {
           
-          message._id.includes(doc.doc.data()._id)
+          message.mid.includes(doc.doc.data().mid)
         })
         console.log(alreadyContains);
         alreadyContains.length > 0? true : 
@@ -30,49 +32,52 @@ function Chat({route}) {
     });
   }, [])
 
-  const onSend = useCallback((messages = []) => {
-    console.log(route.params.task);
-    StoreMessage(route.params.task, messages[0])
-  }, [])
-
   return (
-    <View style={styles.container}>
-    {/* <GiftedChat
-      messages={messages}
-      locale={'de'}
-      // timeFormat={''}
-      showUserAvatar
-      renderUsernameOnMessage
-      onSend={messages => onSend(messages)}
-      user={{
-        _id: auth().currentUser.uid,
-      }}
-      /> */}
-    
-    <FlatList
-    data={messages}
-    keyExtractor={item => item._id}
-    renderItem={({item}) => 
-      {
-        return( 
-        <ChatBubble
-        avatar={item.user.avatar}
-        username={item.user.name}
-        message={item.text}
-        messageId={item._id}
-        createdAt={item.createdAt}
-        >
+    <Grid style={styles.container}>
+      <Row size={9}>
+        <FlatList
+            style={styles.flatList}
+            data={messages}
+            keyExtractor={item => item._id}
+            renderItem={({item}) => 
+              {
+                return( 
+                <ChatBubble
+                avatar={item.user.avatar}
+                username={item.user.name}
+                message={item.text}
+                messageId={item.mid}
+                createdAt={item.createdAt}
+                dateAndTime={item.dateAndTime}
+                uid={item.user.uid}
+                >
+                </ChatBubble>
+              )
+            }
+            }
+            ></FlatList>
+      </Row>
 
-        </ChatBubble>
-      )
-    }
-    }
-    ></FlatList>
-    </View>
+      <Row size={1}>
+        <ChatInput
+        task={route.params.task}
+        style={styles.textInput}></ChatInput>
+      </Row>
+
+    </Grid>
+    
+    
     )
 }
 
   const styles = StyleSheet.create({
+    textInput: {
+      zIndex: 1,
+
+    },
+    flatList: {
+      zIndex: -1,
+    },
     container:{
       height: "100%"
     }
