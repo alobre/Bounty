@@ -16,18 +16,9 @@ function Chat({route}) {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    console.log([moment.locale(),'data']);
     GetMessages(auth().currentUser.uid, route.params.task.uid, docs => {
       docs._changes.map( doc =>  {
-        console.log(doc.doc.data());
-        // doc.doc.data()._id
-        let alreadyContains = messages.filter(message => {
-          
-          message.mid.includes(doc.doc.data().mid)
-        })
-        console.log(alreadyContains);
-        alreadyContains.length > 0? true : 
-        setMessages(previousMessages => GiftedChat.append(previousMessages, doc.doc.data()))
+        messages.find(el => el.mid == doc.doc.data().mid) ? true : setMessages(prev => [...prev,doc.doc.data()])
       })
     });
   }, [])
@@ -38,7 +29,7 @@ function Chat({route}) {
         <FlatList
             style={styles.flatList}
             data={messages}
-            keyExtractor={item => item._id}
+            keyExtractor={item => item.mid}
             renderItem={({item}) => 
               {
                 return( 

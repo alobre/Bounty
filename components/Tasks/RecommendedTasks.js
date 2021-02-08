@@ -28,7 +28,6 @@ const RecommendedTasks = ({navigation, userDetails}) => {
   const [tasks, setTasks] = useState([]);
 
   const interestedIn = userDetails.tags;
-    console.log(interestedIn);
 
   const UserTasksRef = firestore().collectionGroup('UserTasks');
 
@@ -38,32 +37,25 @@ const RecommendedTasks = ({navigation, userDetails}) => {
 
   const getTasks = async () => {
     setIsLoading(true);
-    console.log("getTasks");
     const snapshot = await UserTasksRef.where('taskAssigned', '==', 'notAssigned').where('tags', 'array-contains-any', interestedIn).orderBy('dateAndTime', 'desc').limit(24).get();
     if(!snapshot.empty){
       let newTasks = [];
-      console.log('inside true');
       setLastDoc(snapshot.docs[snapshot.docs.length - 1]);
 
       for (let i = 0; i < snapshot.docs.length; i++) {
         let UserData = await GetPublicUser(snapshot.docs[i].data().uid)
-        console.log(UserData.data());
         snapshot.docs[i].data().userData = UserData.data()
         newTasks.push(snapshot.docs[i].data())
       }
       setTasks(newTasks);
     } else {
-      console.log("inside false");
       setLastDoc(null)
     }
     setIsLoading(false)
   }
 
   const getMore = async () => {
-    console.log(lastDoc);
-    console.log("out");
     if(lastDoc){
-      console.log("in");
       setIsMoreLoading(true);
       setTimeout(async() => {
         let snapshot = await UserTasksRef.where('taskAssigned', '==', 'notAssigned').where('tags', '==', 'Putzen').orderBy('dateAndTime', 'desc').startAfter(lastDoc.data().dateAndTime).limit(24).get();

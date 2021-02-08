@@ -71,8 +71,6 @@ export default class Register extends Component {
                 <TextInput placeholder="Passwort"></TextInput>
                 <Button onPress={
                     () => {
-                        // console.log(validate({email:'alobre@gmail.com', password:"passwort123"}, constraintsRegister, {format: "detailed"}));
-                        // console.log(validate.contains("passwort123".split(''), RegExp("1"|"2")));
                         this.createUser()
                     }
                 }>Registrieren</Button>

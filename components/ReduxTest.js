@@ -36,7 +36,6 @@ class TaskDetails extends Component
                 <Button
                     onPress={async() => {          
                         if(this.state.text){
-                            console.log(this.state.text);
                             await AsyncStorage.setItem('token',this.state.text)   
                             this.props.reduxSaveTaskDetail(this.state.taskDetails)
                         }
@@ -51,7 +50,6 @@ class TaskDetails extends Component
                             }
                             )
                         .then((res) => {
-                            console.log(res);
                         });
                         this.props.navigation.navigate("ShowTaskDetail")
                         }

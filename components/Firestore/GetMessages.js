@@ -4,7 +4,7 @@ import auth from '@react-native-firebase/auth';
 
 export default async function GetMessages (uid, chatPartnerId, callback){
     const chatPartnerRef = firestore().collection('users').doc(uid).collection('Conversations').doc(chatPartnerId).collection('Messages')
-    await chatPartnerRef.orderBy('createdAt', 'desc').onSnapshot(docs => {
+    await chatPartnerRef.orderBy('createdAt', 'asc').onSnapshot(docs => {
         callback(docs)
     });
 }

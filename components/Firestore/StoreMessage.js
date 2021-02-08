@@ -9,7 +9,6 @@ import GetPublicUser from './GetPublicUser'
 export default async function StoreMessage(chatPartner, message){
     let user = await GetPublicUser(auth().currentUser.uid);
     let partner = await GetPublicUser(chatPartner.uid);
-    // console.log(user.data());
         firestore()
         .collection('users')
         .doc(auth().currentUser.uid)
@@ -22,11 +21,11 @@ export default async function StoreMessage(chatPartner, message){
             'createdAt': message.createdAt.toString(),
             'text': message.text,
             'user': {
-                'uid': message.user._id,
+                'uid': message.user.uid,
                 'name': user.data().displayName,
                 'avatar': user.data().photoURL,
             },
-            'mid': message.uid
+            'mid': message.mid
         })
 
         firestore()

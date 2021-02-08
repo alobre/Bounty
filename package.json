@@ -1,6 +1,6 @@
 {
   "name": "BountyHunter",
-  "version": "0.7.9",
+  "version": "0.7.9.1",
   "private": true,
   "scripts": {
     "prestart": "npm-link-shared ./node_modules/<other package>/node_modules . react",

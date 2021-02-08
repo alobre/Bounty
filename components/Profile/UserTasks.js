@@ -36,7 +36,6 @@ const UserTasks = ({navigation, uid}) => {
     const snapshot = await UserTasksRef.where('taskAssigned', '==', 'notAssigned').orderBy('dateAndTime', 'desc').limit(24).get();
     if(!snapshot.empty){
       let newTasks = [];
-      console.log('inside true');
       setLastDoc(snapshot.docs[snapshot.docs.length - 1]);
 
       for (let i = 0; i < snapshot.docs.length; i++) {
@@ -46,7 +45,6 @@ const UserTasks = ({navigation, uid}) => {
       }
       setTasks(newTasks);
     } else {
-      console.log("inside false");
       setLastDoc(null)
     }
     setIsLoading(false)

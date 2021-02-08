@@ -8,8 +8,6 @@ import {connect} from "react-redux"
 
 
 export default function StoreUser(signInMethod, userProps){
-    // console.log(firestore())
-    // console.log(auth().currentUser)
     if(signInMethod == 'register'){
       let user = auth().currentUser
       // firestore()
@@ -27,7 +25,6 @@ export default function StoreUser(signInMethod, userProps){
       //   }
       //   )
       // .then(() => {
-      //   console.log('User added!');
       // });
       firestore()
       .collection('users')
@@ -77,7 +74,6 @@ export default function StoreUser(signInMethod, userProps){
       //     'interestedIn': []
       //   }
       // )
-      console.log(auth().currentUser.uid);
       firestore()
       .collection('users')
       .doc(auth().currentUser.uid)

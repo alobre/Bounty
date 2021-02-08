@@ -19,15 +19,10 @@ export default class UserProfile extends Component{
     async getUserData(uid){
         const udata = await GetPublicUser(uid)
         this.setState({userData: udata.data()})
-        // console.log(GetUser(uid));
-        console.log(this.state.userData);
     }
 
     componentDidMount(){
         this.getUserData(this.props.route.params.uid)
-        // console.log(this.state.userData);
-        console.log(GetTaskByUserId(this.props.route.params.uid));
-        // console.log(GetUser(this.props.uid));
     }
 
     render(){

@@ -1,11 +1,9 @@
 import React from 'react';
-import { StyleSheet, TouchableNativeFeedback, View } from 'react-native';
+import { StyleSheet, TouchableNativeFeedback, View, Dimensions } from 'react-native';
 import { Card, Avatar, Text, Container, PaperProvider, Provider } from 'react-native-paper';
 import auth from '@react-native-firebase/auth';
 
 function ChatBubble({uid, avatar, username, message, mid, createdAt, dateAndTime}){
-    // console.log([avatar, message, messageId, username, createdAt]);
-    
     
     return(
        uid == auth().currentUser.uid ? 
@@ -13,9 +11,7 @@ function ChatBubble({uid, avatar, username, message, mid, createdAt, dateAndTime
             <View style={styles.yourMsgParent}>
                 <Card style={styles.yourMsgCard}>
                     <Text>{message}</Text>
-                    <Text>{dateAndTime.split(' ')[1]}</Text>
-                    {/* <Text>{username}</Text>
-                    <Text>{createdAt}</Text> */}
+                    <Text style={styles.time}>{dateAndTime.split(' ')[1].slice(0,-3)}</Text>
                 </Card>
                 <Avatar.Image size={42} source={{uri: avatar}} /> 
             </View>
@@ -26,7 +22,7 @@ function ChatBubble({uid, avatar, username, message, mid, createdAt, dateAndTime
                 <Avatar.Image size={42} source={{uri: avatar}} /> 
                 <Card style={styles.partnerMsgCard}>
                     <Text>{message}</Text>
-                    <Text>{dateAndTime.split(' ')[1]}</Text>
+                    <Text style={styles.time}>{dateAndTime.split(' ')[1].slice(0,-3)}</Text>
                     {/* <Text>{username}</Text>
                     <Text>{createdAt}</Text> */}
                 </Card> 
@@ -51,9 +47,13 @@ yourMsgParent:{
     margin: 5
 },
 yourMsgCard:{
+    maxWidth: Dimensions.get('window').width / 1.4,
     marginRight: 3,
     padding: 5,
     borderRadius: 10
+},
+time:{
+    alignSelf: 'flex-end'
 }
 })
 

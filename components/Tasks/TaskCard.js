@@ -37,9 +37,7 @@ const TaskCard = ({reduxSaveUserDetail, userDetails, taskId, uid, username, avat
   }
 
   const addOrRemoveTag = (tag) => {
-    // console.log(userDetails.tags.includes(tag));
     isInterested(tag) ? removeTagFromFavorite(tag) : addTagToFavorite(tag)
-    // isInterested(tag) ? console.log("true") : console.log("false")
   }
 
   const addTagToFavorite = (tag) => {
@@ -52,7 +50,6 @@ const TaskCard = ({reduxSaveUserDetail, userDetails, taskId, uid, username, avat
       // imageURL: imageURL,
       tags: newTags
     });
-    console.log(userDetails);
   }
 
   const removeTagFromFavorite = (chipTag) => {
@@ -64,7 +61,6 @@ const TaskCard = ({reduxSaveUserDetail, userDetails, taskId, uid, username, avat
       // imageURL: imageURL,
       tags: currentUserTags
     });
-    console.log(userDetails);
   }
 
   const isInterested = (chipTag) => {

@@ -6,7 +6,6 @@ import AsyncStorage from '@react-native-community/async-storage';
 class ShowUserDetail extends React.Component{
 
     async componentDidMount(){
-        console.log(this.props.userDetails);
     }
 render()
 {

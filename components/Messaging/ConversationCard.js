@@ -12,10 +12,8 @@ export default function ConversationCard({navigation, conversation}){
         // <View>
         <TouchableNativeFeedback
         // style={styles.ripple}
-        // onPress={()=> console.log("object") }
         // rippleColor="rgba(0, 0, 0, .32)"
             onPress={()=>{
-                console.log(conversation);
                 navigation.navigate('Chat', {navigation: navigation, task: task})
             }}
             background={Platform.OS === 'android' ? TouchableNativeFeedback.SelectableBackground() : ''}

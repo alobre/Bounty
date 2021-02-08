@@ -111,9 +111,6 @@ const Conversations = ({navigation}) => {
 
   return(
     <View>
-    {
-        console.log(conversations)
-    }
       <FlatList 
             data={conversations}
             keyExtractor={item => item.chatPartnerUid}

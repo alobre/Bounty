@@ -5,7 +5,6 @@ import { InputGroup } from 'native-base';
 import AddPicturesToTask from '../Storage/AddPicturesToTask';
 
 export default function StoreTask(task){
-    console.log('storetask');
                 firestore()
                 .collection('users')
                 .doc(auth().currentUser.uid)

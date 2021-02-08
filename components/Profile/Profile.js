@@ -24,7 +24,6 @@ export default class User extends Component{
 
       async getProfileData(){
         const ProfileData = await GetPrivateUser(auth().currentUser.uid)
-        console.log(ProfileData.data());
         this.setState({
           user: {
             name: ProfileData.data().displayName,
