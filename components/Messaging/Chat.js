@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { StyleSheet, View, FlatList, Text, ScrollView } from 'react-native';
-import { Button, Card, Avatar } from 'react-native-paper'
+import { StyleSheet, View, FlatList, Text, ScrollView, Keyboard } from 'react-native';
+import { Button, Card, Avatar, FAB } from 'react-native-paper'
 import { GiftedChat } from 'react-native-gifted-chat';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import ChatBubble from './ChatUI/ChatBubble'
@@ -14,20 +14,32 @@ import de from 'dayjs/locale/de'
 
 function Chat({route}) {
   const [messages, setMessages] = useState([]);
+  let flatList = React.createRef();
+  const [keyboardState, setKeyboardState] = useState(1)
 
   useEffect(() => {
     GetMessages(auth().currentUser.uid, route.params.task.uid, docs => {
       docs._changes.map( doc =>  {
-        messages.find(el => el.mid == doc.doc.data().mid) ? true : setMessages(prev => [...prev,doc.doc.data()])
+        messages.find(el => el.mid == doc.doc.data().mid) ? true : setMessages(prev => [doc.doc.data(), ...prev])
       })
     });
+    Keyboard.addListener('keyboardDidShow', () => setKeyboardState(2))
+    Keyboard.addListener('keyboardDidHide', () => setKeyboardState(1))
+    return () => {
+      Keyboard.removeListener("keyboardDidShow", () => setKeyboardState(2));
+      Keyboard.removeListener("keyboardDidHide", () => setKeyboardState(1));
+    };
   }, [])
+
+
 
   return (
     <Grid style={styles.container}>
       <Row size={9}>
         <FlatList
+            ref={flatList}
             style={styles.flatList}
+            inverted
             data={messages}
             keyExtractor={item => item.mid}
             renderItem={({item}) => 
@@ -49,10 +61,11 @@ function Chat({route}) {
             ></FlatList>
       </Row>
 
-      <Row size={1}>
+      <Row size={keyboardState} style={styles.textInputParent}>
         <ChatInput
         task={route.params.task}
-        style={styles.textInput}></ChatInput>
+        style={styles.textInput}>
+        </ChatInput>
       </Row>
 
     </Grid>
@@ -62,9 +75,11 @@ function Chat({route}) {
 }
 
   const styles = StyleSheet.create({
+    textInputParent:{
+      backgroundColor: 'rgba(52, 52, 52, 0)'
+    },
     textInput: {
       zIndex: 1,
-
     },
     flatList: {
       zIndex: -1,
