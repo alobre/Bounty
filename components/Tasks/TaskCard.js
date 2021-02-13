@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import {StyleSheet, View, Modal } from 'react-native'
 import globalStyles from '../GlobalComponents/GlobalStyles.js'
-import { Avatar, Button, Card, Title, Paragraph, Text, Subheading, Divider, TouchableRipple, Badge, IconButton, Menu, Icon, Chip } from 'react-native-paper';
+import { Avatar, Button, Card, Title, Paragraph, Text, Subheading, Divider, TouchableRipple, Badge, IconButton, Menu, Icon, Chip, FAB, Portal, Dialog, TextInput } from 'react-native-paper';
+import { Input } from 'native-base'
 import { Col, Row, Grid } from "react-native-easy-grid";
 import ImageGallery from "./ImageGallery";
 import {connect} from "react-redux"
 import {saveUserDetails} from "../../redux/Actions/saveUserDetailAction"
 import auth from '@react-native-firebase/auth';
+import StoreMessage from '../Firestore/StoreMessage'
+import BuildMessage from '../Messaging/BuildMessage.js'
 
 const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
 
@@ -16,7 +19,16 @@ const TaskCard = ({reduxSaveUserDetail, userDetails, taskId, uid, username, avat
   const task = {
     taskId,
     uid,
+    username,
+    avatar,
+    title,
+    tags,
+    description,
+    bounty,
+    imageURL
   }
+
+  const [pilotMessage,setPilotMessage] = useState({})
 
   const [visible, setVisible] = useState(false);
 
@@ -27,6 +39,8 @@ const TaskCard = ({reduxSaveUserDetail, userDetails, taskId, uid, username, avat
   let [imageVisible, setImageVisible] = useState(false)
 
   let [chipSelected, setChipSelected] = useState(false)
+
+  const [contactContractorDialog, setContactContractorDialog] = useState(false)
 
   let user = {
     // uid: 1,
@@ -75,8 +89,8 @@ const TaskCard = ({reduxSaveUserDetail, userDetails, taskId, uid, username, avat
   return (
     <Card style={styles.card} elevation={4}>
     <Grid>
-    <Col size={90} titleNumberOfLines={3}>
-      <Card.Title title={title}/>
+    <Col size={90}>
+      <Card.Title titleNumberOfLines={3} title={title}/>
       <Row style={styles.tagParent}>
         {
         ((tags) ? true : false) &&
@@ -126,14 +140,77 @@ const TaskCard = ({reduxSaveUserDetail, userDetails, taskId, uid, username, avat
       auth().currentUser.uid == uid ? true :  
       <TouchableRipple rippleColor="rgba(0, 0, 0, .32)">
       <Card.Actions style={styles.buttonParent}>
-        <Button icon="message-draw" style={styles.contactContractor} onPress={() =>
-          navigation.navigate('Chat', {navigation: navigation, task: task})
-        }>Auftraggeber kontaktieren</Button>
+        <FAB 
+        icon="message-draw"
+        style={styles.contactContractor}
+        small
+        onPress={() =>
+          // navigation.navigate('Chat', {navigation: navigation, task: task})
+          setContactContractorDialog(true)
+        }
+        ></FAB>
       </Card.Actions>
     </TouchableRipple>
     :
     false
     }
+    {/* <ContactContractorDialog dialogVisible={contactContractorDialog} taskDetails={task}></ContactContractorDialog> */}
+    <Portal>
+            <Dialog style={styles.contactContractorDialog} dismissable onDismiss={() => setContactContractorDialog(false)} visible={contactContractorDialog}>
+                <Dialog.Title>Autraggeber kontaktieren?</Dialog.Title>
+                <Dialog.Content style={styles.contactContractorDialogContent}>
+                                        <Card>
+                                          <Card.Title title={title}/>
+                                          <Card.Content>
+                                          <View style={styles.tagParentD}>
+                                          {
+                                          ((tags) ? true : false) &&
+                                          tags.map((tag) => <Chip style={styles.tagD} key={tag + '-' + taskId } selected={isInterested(tag)} onPress={ ()=> addOrRemoveTag(tag) } mode="outlined">{tag}</Chip>)
+                                          }
+                                          </View>
+                                          <TouchableRipple onPress={()=>{navigation.navigate('UserProfile', {navigation: navigation, uid: uid})}}>
+                                            <View style={styles.profile}>
+                                              <Avatar.Image size={24} source={{uri: avatar}} />
+                                              <Subheading style={styles.username}>{username}</Subheading>
+                                            </View>
+                                        </TouchableRipple>
+                                            <Paragraph>{description}</Paragraph>
+                                            <Divider/>
+                                            <ImageGallery items={imageURL}></ImageGallery> 
+                                            <Divider/>
+                                          <View style={styles.priceParentD}>
+                                            <Badge size={40} style={styles.priceD}>
+                                              {bounty}
+                                            </Badge>
+                                          </View>
+                                          </Card.Content>
+                                        </Card>
+                </Dialog.Content>
+                <Dialog.Content style={styles.inputDParent}>
+                  <Input
+                  onChangeText={ message =>
+                    setPilotMessage({
+                      text: message,
+                      isPilotMessage: true,
+                      requestedTaskId: taskId
+                    })
+                  }
+                  style={styles.inputD}
+                  />
+                </Dialog.Content>
+                <Dialog.Actions>
+                    <Button onPress={() => setContactContractorDialog(false)}>Abbrechen</Button>
+                    <Button onPress={() => {
+                      setContactContractorDialog(false);
+                      BuildMessage(pilotMessage, buildedMessage => {
+                        StoreMessage(task, buildedMessage)
+                        navigation.navigate('Chat', {navigation, task})
+                      })
+                      
+                      }}>Senden</Button>
+                </Dialog.Actions>
+            </Dialog>
+        </Portal>
     </View>
   </Card>
     );
@@ -184,8 +261,77 @@ const TaskCard = ({reduxSaveUserDetail, userDetails, taskId, uid, username, avat
       margin: 10,
       alignSelf: "flex-start"
     },
-    contactContractor:{
-    }
+    contactContractorDialog:{
+      // height: 500,
+    },
+    contactContractorDialogContent:{
+      // height: 300,
+    },
+    //Dialog
+    cardD:{
+      margin: 6
+    },
+    colMoreButtonD:{
+      justifyContent: 'flex-start',
+      alignContent: "center"
+    },
+    moreButtonD:{
+      borderRadius: 30,
+      alignContent: 'center',
+      alignSelf: 'flex-end'
+    },
+    titleD:{
+      fontSize: 20,
+    },
+    tagParentD:{
+      // paddingLeft: 10
+      // height: 10
+      display: "flex",
+      flexWrap: "wrap",
+      flexDirection: "row"
+    },
+    tagD:{
+      
+    },
+    profileD:{
+      flexDirection: "row",
+      paddingVertical: 10
+    },
+    usernameD:{
+      paddingLeft: 3,
+      color: "#0a90c9"
+    },
+    buttonParentD:{
+      justifyContent: "flex-end"
+    },
+    priceAndContactD:{
+      flexDirection: "row"
+    },
+    priceParentD:{
+      // flex:1
+    },
+    priceD:{
+      backgroundColor: "#eddd2d",
+      borderColor: '#968b0f',
+      borderWidth: 1,
+      margin: 10,
+      alignSelf: "flex-start"
+    },
+    inputDParent:{
+      height: "12%",
+      display: "flex",
+      justifyContent: "center",
+      alignContent: "center",
+      alignItems: "center",
+      // backgroundColor: "black"
+    },
+    inputD:{
+      alignSelf: "center",
+      width: "100%",
+      borderRadius: 30,
+      borderColor: 'lightgrey',
+      borderWidth: 1
+    },
   })
 
   const mapStateToProps = (state) => {

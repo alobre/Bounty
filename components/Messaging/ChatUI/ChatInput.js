@@ -3,7 +3,7 @@ import { StyleSheet, View, TextInput } from 'react-native';
 import { Provider, Card, FAB } from 'react-native-paper';
 import { Input } from 'native-base';
 import { Col, Row, Grid } from "react-native-easy-grid";
-import { v4 as uuidv4 } from 'uuid';
+import BuildMessage from '../BuildMessage';
 import StoreMessage from '../../Firestore/StoreMessage'
 import auth from '@react-native-firebase/auth';
 
@@ -12,19 +12,8 @@ export default function ChatInput({task}){
     let currentMessage;
     let currentInput = React.createRef();
 
-    const buildMessage = (messageText, callback) => {
-        callback({
-            mid: uuidv4(),
-            createdAt: new Date(),
-            text: messageText,
-            user:{
-                uid: auth().currentUser.uid
-            }
-        })
-    }
-
     const onSend = (message) => {
-        buildMessage(message, buildedMessage => {
+        BuildMessage(message, buildedMessage => {
             StoreMessage(task, buildedMessage) 
         })
       }
@@ -56,8 +45,8 @@ export default function ChatInput({task}){
                     small
                     icon="send"
                     onPress={() => {
-                            onSend(currentMessage);
-                            currentInput.current._root.clear()
+                                onSend(currentMessage);
+                                currentInput.current._root.clear()
                             }
                         }
                     />

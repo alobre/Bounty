@@ -1,8 +1,9 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { StyleSheet, View, FlatList, Text, ScrollView, Keyboard } from 'react-native';
+import { StyleSheet, View, FlatList, Text, ScrollView, Keyboard, Dimensions } from 'react-native';
 import { Button, Card, Avatar, FAB } from 'react-native-paper'
 import { GiftedChat } from 'react-native-gifted-chat';
 import { Col, Row, Grid } from "react-native-easy-grid";
+import PilotMessage from './ChatUI/PilotMessage'
 import ChatBubble from './ChatUI/ChatBubble'
 import ChatInput from './ChatUI/ChatInput'
 import GetMessages from '../Firestore/GetMessages'
@@ -45,6 +46,19 @@ function Chat({route}) {
             renderItem={({item}) => 
               {
                 return( 
+                item.isPilotMessage ? 
+                <PilotMessage
+                avatar={item.user.avatar}
+                username={item.user.name}
+                message={item.text}
+                messageId={item.mid}
+                createdAt={item.createdAt}
+                dateAndTime={item.dateAndTime}
+                uid={item.user.uid}
+                requestedTaskId={item.requestedTaskId}
+                >
+                </PilotMessage>
+                :
                 <ChatBubble
                 avatar={item.user.avatar}
                 username={item.user.name}

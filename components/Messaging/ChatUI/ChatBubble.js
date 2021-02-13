@@ -8,6 +8,32 @@ function ChatBubble({uid, avatar, username, message, mid, createdAt, dateAndTime
     return(
        uid == auth().currentUser.uid ? 
         <Provider>
+            <Card>
+                <Card.Title title={title}/>
+                <Card.Content>
+                <View style={styles.tagParentD}>
+                {
+                ((tags) ? true : false) &&
+                tags.map((tag) => <Chip style={styles.tagD} key={tag + '-' + taskId } selected={isInterested(tag)} onPress={ ()=> addOrRemoveTag(tag) } mode="outlined">{tag}</Chip>)
+                }
+                </View>
+                <TouchableRipple onPress={()=>{navigation.navigate('UserProfile', {navigation: navigation, uid: uid})}}>
+                <View style={styles.profile}>
+                    <Avatar.Image size={24} source={{uri: avatar}} />
+                    <Subheading style={styles.username}>{username}</Subheading>
+                </View>
+            </TouchableRipple>
+                <Paragraph>{description}</Paragraph>
+                <Divider/>
+                <ImageGallery items={imageURL}></ImageGallery> 
+                <Divider/>
+                <View style={styles.priceParentD}>
+                <Badge size={40} style={styles.priceD}>
+                    {bounty}
+                </Badge>
+                </View>
+                </Card.Content>
+            </Card>
             <View style={styles.yourMsgParent}>
                 <Card style={styles.yourMsgCard}>
                     <Text>{message}</Text>

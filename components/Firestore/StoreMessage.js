@@ -20,6 +20,8 @@ export default async function StoreMessage(chatPartner, message){
             'dateAndTime': moment().format('YYYY.MM.DD HH:mm:ss'),
             'createdAt': message.createdAt.toString(),
             'text': message.text,
+            'isPilotMessage': message.isPilotMessage,
+            'requestedTaskId': message.requestedTaskId,
             'user': {
                 'uid': message.user.uid,
                 'name': user.data().displayName,
@@ -39,6 +41,8 @@ export default async function StoreMessage(chatPartner, message){
             'dateAndTime': moment().format('YYYY.MM.DD HH:mm:ss'),
             'createdAt': message.createdAt.toString(),
             'text': message.text,
+            'isPilotMessage': message.isPilotMessage,
+            'requestedTaskId': message.requestedTaskId,
             'user': {
                 'uid': message.user.uid,
                 'name': user.data().displayName,
