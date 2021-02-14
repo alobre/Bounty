@@ -8,7 +8,7 @@ function ChatBubble({uid, avatar, username, message, mid, createdAt, dateAndTime
     return(
        uid == auth().currentUser.uid ? 
         <Provider>
-            <Card>
+            {/* <Card>
                 <Card.Title title={title}/>
                 <Card.Content>
                 <View style={styles.tagParentD}>
@@ -33,7 +33,7 @@ function ChatBubble({uid, avatar, username, message, mid, createdAt, dateAndTime
                 </Badge>
                 </View>
                 </Card.Content>
-            </Card>
+            </Card> */}
             <View style={styles.yourMsgParent}>
                 <Card style={styles.yourMsgCard}>
                     <Text>{message}</Text>

@@ -9,7 +9,9 @@ import auth from '@react-native-firebase/auth';
 
 export default function ChatInput({task}){
     const [messages, setMessages] = useState([]);
-    let currentMessage;
+    let currentMessage = {
+        text: ''
+    } ;
     let currentInput = React.createRef();
 
     const onSend = (message) => {
@@ -27,7 +29,7 @@ export default function ChatInput({task}){
                         <Input
                         ref={currentInput}
                         onChangeText={ message =>
-                            currentMessage = message
+                            currentMessage.text = message
                         }
                         // onSubmitEditing={() => {
                         //     onSend(currentMessage);

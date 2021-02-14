@@ -99,7 +99,7 @@ function Chat({route}) {
       zIndex: -1,
     },
     container:{
-      height: "100%"
+      height: Dimensions.get("window").height
     }
   });
 

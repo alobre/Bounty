@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, TouchableNativeFeedback, View, Dimensions } from 'react-native';
-import { Card, Avatar, Text, Container, PaperProvider, Provider, Chip, TouchableRipple, Badge, Subheading, Paragraph, Divider, Button } from 'react-native-paper';
+import { StyleSheet, TouchableNativeFeedback, View, Dimensions, PixelRatio } from 'react-native';
+import { Card, Avatar, Text, Container, PaperProvider, Provider, Dialog, Chip, TouchableRipple, Badge, Subheading, Paragraph, Divider, Button } from 'react-native-paper';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import ImageGallery from "../../Tasks/ImageGallery";
 import auth from '@react-native-firebase/auth';
@@ -11,6 +11,7 @@ function PilotMessage({requestedTaskId, uid, avatar, username, message, mid, cre
     
     const [taskDetails, setTaskDetails] = useState({})
     const [taskOwnerDetails, setTaskOwnerDetails] = useState({})
+    const [openDialog, setOpenDialog] = useState(false)
 
     async function getTaskDetails(callback){
         const taskDetails = await GetTaskDetails(requestedTaskId)
@@ -74,9 +75,9 @@ function PilotMessage({requestedTaskId, uid, avatar, username, message, mid, cre
       }, [])
 
     return(
-       uid == auth().currentUser.uid ? 
+      <View>
+       {uid == auth().currentUser.uid ? 
         <Provider>
-            
             <View style={styles.yourMsgParent}>
                 <Card style={styles.yourMsgCard}>
                                         <Card>
@@ -112,7 +113,15 @@ function PilotMessage({requestedTaskId, uid, avatar, username, message, mid, cre
             </View>
         </Provider>
        :  
+       
         <Provider>
+                      <Dialog style={styles.dialog} dismissable onDismiss={() => setOpenDialog(false)} visible={openDialog}>
+              <Dialog.Title>Auftrag zuweisen?</Dialog.Title>
+              <Dialog.Content>
+                <Button>Abbrechen</Button>
+                <Button>Akzeptieren</Button>
+              </Dialog.Content>
+            </Dialog>
             <View style={styles.partnerMsgParent}>
                 <Avatar.Image size={42} source={{uri: avatar}} /> 
                 <Card style={styles.partnerMsgCard}>
@@ -148,7 +157,11 @@ function PilotMessage({requestedTaskId, uid, avatar, username, message, mid, cre
                                                 </Button>
                                             </Col>
                                             <Col>
-                                              <Button style={styles.acceptButton} onPress={ () => console.log(taskOwnerDetails)}>Zuweisen</Button>
+                                              <Button onPress={ () => setOpenDialog(true)}>
+                                                <Text style={styles.acceptButton}>
+                                                  Zuweisen
+                                                </Text>
+                                                </Button>
                                             </Col>
                                           </Grid>
                                         </Card>
@@ -159,7 +172,16 @@ function PilotMessage({requestedTaskId, uid, avatar, username, message, mid, cre
                 </Card> 
             </View>
         </Provider>
+        }
+      </View>
     )
+}
+
+let btnFontSize = 12;
+
+console.log(PixelRatio.get())
+if (PixelRatio.get() <= 2) {
+  btnFontSize = 14;
 }
 
 const styles = StyleSheet.create({
@@ -236,10 +258,13 @@ card:{
     alignSelf: "flex-start"
   },
   declineButton:{
-    // fontSize: 12,
+    fontSize: btnFontSize,
   },
   acceptButton:{
-
+    fontSize: btnFontSize,
+  },
+  dialog:{
+    zIndex: 1,
   },
 })
 
