@@ -1,21 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, TouchableNativeFeedback, View, Dimensions } from 'react-native';
-import { Card, Avatar, Text, Container, PaperProvider, Provider, Chip, TouchableRipple, Badge, Subheading, Paragraph, Divider } from 'react-native-paper';
+import { Card, Avatar, Text, Container, PaperProvider, Provider, Chip, TouchableRipple, Badge, Subheading, Paragraph, Divider, Button } from 'react-native-paper';
+import { Col, Row, Grid } from "react-native-easy-grid";
 import ImageGallery from "../../Tasks/ImageGallery";
 import auth from '@react-native-firebase/auth';
 import GetTaskDetails from '../../Firestore/GetTaskDetails';
+import GetPublicUser from '../../Firestore/GetPublicUser'
 
 function PilotMessage({requestedTaskId, uid, avatar, username, message, mid, createdAt, dateAndTime}){
     
     const [taskDetails, setTaskDetails] = useState({})
+    const [taskOwnerDetails, setTaskOwnerDetails] = useState({})
 
     async function getTaskDetails(callback){
         const taskDetails = await GetTaskDetails(requestedTaskId)
-        callback(taskDetails)
+        const taskOwnerDetails = await GetPublicUser(taskDetails.docs[0].data().uid)
+        // console.log(taskOwnerDetails)
+        callback(taskDetails, taskOwnerDetails)
+    }
+
+    async function getTaskOwnerDetails(){
+      // setTaskOwnerDetails
     }
 
     function readData(){
-        console.log(taskDetails)
+        console.log([taskDetails, taskOwnerDetails])
     }
 
     const isInterested = (chipTag) => {
@@ -56,7 +65,11 @@ function PilotMessage({requestedTaskId, uid, avatar, username, message, mid, cre
 
     useEffect(() => {
         // getTaskDetails();
-        getTaskDetails(data => setTaskDetails(data.docs[0].data()))
+        getTaskDetails((taskDetails, taskOwnerDetails) => {
+          // console.log([taskDetails, taskOwnerDetails])
+          setTaskDetails(taskDetails.docs[0].data())
+          setTaskOwnerDetails(taskOwnerDetails.data())
+        })
         readData()
       }, [])
 
@@ -77,8 +90,8 @@ function PilotMessage({requestedTaskId, uid, avatar, username, message, mid, cre
                                           </View>
                                           <TouchableRipple onPress={()=>{navigation.navigate('UserProfile', {navigation: navigation, uid: uid})}}>
                                             <View style={styles.profile}>
-                                              <Avatar.Image size={24} source={{uri: avatar}} />
-                                              <Subheading style={styles.username}>{username}</Subheading>
+                                              <Avatar.Image size={24} source={{uri: taskOwnerDetails.photoURL}} />
+                                              <Subheading style={styles.username}>{taskOwnerDetails.displayName}</Subheading>
                                             </View>
                                         </TouchableRipple>
                                             <Paragraph>{taskDetails.description}</Paragraph>
@@ -92,7 +105,7 @@ function PilotMessage({requestedTaskId, uid, avatar, username, message, mid, cre
                                           </View>
                                           </Card.Content>
                                         </Card>
-                    <Text>Pilot: {message}</Text>
+                    <Text>{message}</Text>
                     <Text style={styles.time}>{dateAndTime.split(' ')[1].slice(0,-3)}</Text>
                 </Card>
                 <Avatar.Image size={42} source={{uri: avatar}} /> 
@@ -114,8 +127,8 @@ function PilotMessage({requestedTaskId, uid, avatar, username, message, mid, cre
                                           </View>
                                           <TouchableRipple onPress={()=>{navigation.navigate('UserProfile', {navigation: navigation, uid: uid})}}>
                                             <View style={styles.profile}>
-                                              <Avatar.Image size={24} source={{uri: avatar}} />
-                                              <Subheading style={styles.username}>{username}</Subheading>
+                                              <Avatar.Image size={24} source={{uri: taskOwnerDetails.photoURL}} />
+                                              <Subheading style={styles.username}>{taskOwnerDetails.displayName}</Subheading>
                                             </View>
                                         </TouchableRipple>
                                             <Paragraph>{taskDetails.description}</Paragraph>
@@ -128,6 +141,16 @@ function PilotMessage({requestedTaskId, uid, avatar, username, message, mid, cre
                                             </Badge>
                                           </View>
                                           </Card.Content>
+                                          <Grid>
+                                            <Col>
+                                              <Button onPress={ () => console.log("object")}>
+                                                <Text adjustsFontSizeToFit style={styles.declineButton}>Ablehnen</Text>
+                                                </Button>
+                                            </Col>
+                                            <Col>
+                                              <Button style={styles.acceptButton} onPress={ () => console.log(taskOwnerDetails)}>Zuweisen</Button>
+                                            </Col>
+                                          </Grid>
                                         </Card>
                     <Text>{message}</Text>
                     <Text style={styles.time}>{dateAndTime.split(' ')[1].slice(0,-3)}</Text>
@@ -211,6 +234,12 @@ card:{
     borderWidth: 1,
     margin: 10,
     alignSelf: "flex-start"
+  },
+  declineButton:{
+    // fontSize: 12,
+  },
+  acceptButton:{
+
   },
 })
 
