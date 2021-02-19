@@ -3,30 +3,26 @@ import { StyleSheet, TouchableNativeFeedback, View, Dimensions, PixelRatio } fro
 import { Card, Avatar, Text, Container, PaperProvider, Provider, Dialog, Chip, TouchableRipple, Badge, Subheading, Paragraph, Divider, Button } from 'react-native-paper';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import ImageGallery from "../../Tasks/ImageGallery";
+import CompactTaskCard from '../../Tasks/CompactTaskCard'
 import auth from '@react-native-firebase/auth';
 import GetTaskDetails from '../../Firestore/GetTaskDetails';
 import GetPublicUser from '../../Firestore/GetPublicUser'
 
-function PilotMessage({requestedTaskId, uid, avatar, username, message, mid, createdAt, dateAndTime}){
+function PilotMessage({requestedTaskId, uid, avatar, username, message, mid, createdAt, dateAndTime, OpenDialog, TaskInfo}){
     
     const [taskDetails, setTaskDetails] = useState({})
     const [taskOwnerDetails, setTaskOwnerDetails] = useState({})
-    const [openDialog, setOpenDialog] = useState(false)
+    // const [openDialog, setOpenDialog] = useState(false)
 
     async function getTaskDetails(callback){
         const taskDetails = await GetTaskDetails(requestedTaskId)
         const taskOwnerDetails = await GetPublicUser(taskDetails.docs[0].data().uid)
-        // console.log(taskOwnerDetails)
         callback(taskDetails, taskOwnerDetails)
     }
 
-    async function getTaskOwnerDetails(){
-      // setTaskOwnerDetails
-    }
-
-    function readData(){
-        console.log([taskDetails, taskOwnerDetails])
-    }
+    // function readData(){
+    //     console.log([taskDetails, taskOwnerDetails])
+    // }
 
     const isInterested = (chipTag) => {
         let visible;
@@ -67,11 +63,9 @@ function PilotMessage({requestedTaskId, uid, avatar, username, message, mid, cre
     useEffect(() => {
         // getTaskDetails();
         getTaskDetails((taskDetails, taskOwnerDetails) => {
-          // console.log([taskDetails, taskOwnerDetails])
           setTaskDetails(taskDetails.docs[0].data())
           setTaskOwnerDetails(taskOwnerDetails.data())
         })
-        readData()
       }, [])
 
     return(
@@ -80,15 +74,19 @@ function PilotMessage({requestedTaskId, uid, avatar, username, message, mid, cre
         <Provider>
             <View style={styles.yourMsgParent}>
                 <Card style={styles.yourMsgCard}>
-                                        <Card>
+                  <CompactTaskCard
+                  title={taskDetails.title}
+                  description={taskDetails.description}
+                   images={taskDetails.images}
+                   bounty={taskDetails.bounty}
+                  //  navigation
+                   uid={taskOwnerDetails.uid}
+                   photoURL={taskOwnerDetails.photoURL}
+                   displayName={taskOwnerDetails.displayName}
+                  />
+                                        {/* <Card>
                                           <Card.Title title={taskDetails.title}/>
                                           <Card.Content>
-                                          <View style={styles.tagParent}>
-                                          {/* {
-                                          ((taskDetails.tags) ? true : false) &&
-                                          taskDetails.tags.map((tag) => <Chip style={styles.tag} key={tag + '-' + taskDetails.taskId } selected={isInterested(tag)} onPress={ ()=> addOrRemoveTag(tag) } mode="outlined">{tag}</Chip>)
-                                          } */}
-                                          </View>
                                           <TouchableRipple onPress={()=>{navigation.navigate('UserProfile', {navigation: navigation, uid: uid})}}>
                                             <View style={styles.profile}>
                                               <Avatar.Image size={24} source={{uri: taskOwnerDetails.photoURL}} />
@@ -105,7 +103,7 @@ function PilotMessage({requestedTaskId, uid, avatar, username, message, mid, cre
                                             </Badge>
                                           </View>
                                           </Card.Content>
-                                        </Card>
+                                        </Card> */}
                     <Text>{message}</Text>
                     <Text style={styles.time}>{dateAndTime.split(' ')[1].slice(0,-3)}</Text>
                 </Card>
@@ -115,60 +113,38 @@ function PilotMessage({requestedTaskId, uid, avatar, username, message, mid, cre
        :  
        
         <Provider>
-                      <Dialog style={styles.dialog} dismissable onDismiss={() => setOpenDialog(false)} visible={openDialog}>
-              <Dialog.Title>Auftrag zuweisen?</Dialog.Title>
-              <Dialog.Content>
-                <Button>Abbrechen</Button>
-                <Button>Akzeptieren</Button>
-              </Dialog.Content>
-            </Dialog>
             <View style={styles.partnerMsgParent}>
                 <Avatar.Image size={42} source={{uri: avatar}} /> 
                 <Card style={styles.partnerMsgCard}>
-                                        <Card>
-                                          <Card.Title title={taskDetails.title}/>
-                                          <Card.Content>
-                                          <View style={styles.tagParent}>
-                                          {/* {
-                                          ((taskDetails.tags) ? true : false) &&
-                                          taskDetails.tags.map((tag) => <Chip style={styles.tag} key={tag + '-' + taskDetails.taskId } selected={isInterested(tag)} onPress={ ()=> addOrRemoveTag(tag) } mode="outlined">{tag}</Chip>)
-                                          } */}
-                                          </View>
-                                          <TouchableRipple onPress={()=>{navigation.navigate('UserProfile', {navigation: navigation, uid: uid})}}>
-                                            <View style={styles.profile}>
-                                              <Avatar.Image size={24} source={{uri: taskOwnerDetails.photoURL}} />
-                                              <Subheading style={styles.username}>{taskOwnerDetails.displayName}</Subheading>
-                                            </View>
-                                        </TouchableRipple>
-                                            <Paragraph>{taskDetails.description}</Paragraph>
-                                            <Divider/>
-                                            <ImageGallery items={taskDetails.images}></ImageGallery> 
-                                            <Divider/>
-                                          <View style={styles.priceParent}>
-                                            <Badge size={40} style={styles.price}>
-                                              {taskDetails.bounty}
-                                            </Badge>
-                                          </View>
-                                          </Card.Content>
-                                          <Grid>
-                                            <Col>
-                                              <Button onPress={ () => console.log("object")}>
-                                                <Text adjustsFontSizeToFit style={styles.declineButton}>Ablehnen</Text>
-                                                </Button>
-                                            </Col>
-                                            <Col>
-                                              <Button onPress={ () => setOpenDialog(true)}>
-                                                <Text style={styles.acceptButton}>
-                                                  Zuweisen
-                                                </Text>
-                                                </Button>
-                                            </Col>
-                                          </Grid>
-                                        </Card>
+                <CompactTaskCard
+                  title={taskDetails.title}
+                  description={taskDetails.description}
+                   images={taskDetails.images}
+                   bounty={taskDetails.bounty}
+                  //  navigation
+                   uid={taskOwnerDetails.uid}
+                   photoURL={taskOwnerDetails.photoURL}
+                   displayName={taskOwnerDetails.displayName}
+                  />
+                    <Grid>
+                      <Col>
+                        <Button onPress={ () => console.log("object")}>
+                          <Text adjustsFontSizeToFit style={styles.declineButton}>Ablehnen</Text>
+                          </Button>
+                      </Col>
+                      <Col>
+                        <Button onPress={ () => {
+                          TaskInfo(taskDetails);
+                          OpenDialog(true)
+                          }}>
+                          <Text style={styles.acceptButton}>
+                            Zuweisen
+                          </Text>
+                          </Button>
+                      </Col>
+                    </Grid>
                     <Text>{message}</Text>
                     <Text style={styles.time}>{dateAndTime.split(' ')[1].slice(0,-3)}</Text>
-                    {/* <Text>{username}</Text>
-                    <Text>{createdAt}</Text> */}
                 </Card> 
             </View>
         </Provider>
@@ -179,7 +155,6 @@ function PilotMessage({requestedTaskId, uid, avatar, username, message, mid, cre
 
 let btnFontSize = 12;
 
-console.log(PixelRatio.get())
 if (PixelRatio.get() <= 2) {
   btnFontSize = 14;
 }
