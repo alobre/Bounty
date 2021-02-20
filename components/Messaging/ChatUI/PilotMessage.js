@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, TouchableNativeFeedback, View, Dimensions, PixelRatio } from 'react-native';
-import { Card, Avatar, Text, Container, PaperProvider, Provider, Dialog, Chip, TouchableRipple, Badge, Subheading, Paragraph, Divider, Button } from 'react-native-paper';
+import { Card, Avatar, Text, Container, PaperProvider, Provider, Dialog, Chip, TouchableRipple, Badge, Subheading, Paragraph, Divider, Button, Surface } from 'react-native-paper';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import ImageGallery from "../../Tasks/ImageGallery";
 import CompactTaskCard from '../../Tasks/CompactTaskCard'
@@ -12,59 +12,24 @@ function PilotMessage({requestedTaskId, uid, avatar, username, message, mid, cre
     
     const [taskDetails, setTaskDetails] = useState({})
     const [taskOwnerDetails, setTaskOwnerDetails] = useState({})
+    const [taskAssignedTo, setTaskAssignedTo] = useState({})
     // const [openDialog, setOpenDialog] = useState(false)
 
     async function getTaskDetails(callback){
         const taskDetails = await GetTaskDetails(requestedTaskId)
         const taskOwnerDetails = await GetPublicUser(taskDetails.docs[0].data().uid)
-        callback(taskDetails, taskOwnerDetails)
+        let taskAssignedTo;
+        taskDetails.docs[0]._data.taskAssigned == "notAssigned" ? true : 
+        taskAssignedTo = await GetPublicUser(taskDetails.docs[0]._data.taskAssigned);
+        callback(taskDetails, taskOwnerDetails, taskAssignedTo)
     }
-
-    // function readData(){
-    //     console.log([taskDetails, taskOwnerDetails])
-    // }
-
-    const isInterested = (chipTag) => {
-        let visible;
-        
-        userDetails.tags ?
-          userDetails.tags.includes(chipTag) ? visible = true : visible = false
-        : false
-        return visible 
-      }
-
-      const addOrRemoveTag = (tag) => {
-        isInterested(tag) ? removeTagFromFavorite(tag) : addTagToFavorite(tag)
-      }
-    
-      const addTagToFavorite = (tag) => {
-        let newTags = userDetails.tags;
-        newTags.push(tag)
-        reduxSaveUserDetail({
-          // uid: uid,
-          // username: username,
-          // email: email
-          // imageURL: imageURL,
-          tags: newTags
-        });
-      }
-    
-      const removeTagFromFavorite = (chipTag) => {
-        let currentUserTags = userDetails.tags.filter( tag => tag != chipTag )
-        reduxSaveUserDetail({
-          // uid: uid,
-          // username: username,
-          // email: email
-          // imageURL: imageURL,
-          tags: currentUserTags
-        });
-      }
 
     useEffect(() => {
         // getTaskDetails();
-        getTaskDetails((taskDetails, taskOwnerDetails) => {
+        getTaskDetails((taskDetails, taskOwnerDetails, taskAssignedTo) => {
           setTaskDetails(taskDetails.docs[0].data())
           setTaskOwnerDetails(taskOwnerDetails.data())
+          setTaskAssignedTo(taskAssignedTo._data)
         })
       }, [])
 
@@ -111,7 +76,6 @@ function PilotMessage({requestedTaskId, uid, avatar, username, message, mid, cre
             </View>
         </Provider>
        :  
-       
         <Provider>
             <View style={styles.partnerMsgParent}>
                 <Avatar.Image size={42} source={{uri: avatar}} /> 
@@ -126,9 +90,11 @@ function PilotMessage({requestedTaskId, uid, avatar, username, message, mid, cre
                    photoURL={taskOwnerDetails.photoURL}
                    displayName={taskOwnerDetails.displayName}
                   />
+                  {
+                    taskDetails.taskAssigned == 'notAssigned' ? 
                     <Grid>
                       <Col>
-                        <Button onPress={ () => console.log("object")}>
+                        <Button onPress={ () => console.log(taskDetails)}>
                           <Text adjustsFontSizeToFit style={styles.declineButton}>Ablehnen</Text>
                           </Button>
                       </Col>
@@ -143,6 +109,18 @@ function PilotMessage({requestedTaskId, uid, avatar, username, message, mid, cre
                           </Button>
                       </Col>
                     </Grid>
+                    :
+                    <View>
+                      <Divider/>
+                        <Text>Auftrag zugewiesen an:</Text>
+                        <View style={styles.profile}>
+                            <Avatar.Image size={24} source={{uri: taskAssignedTo.photoURL}} />
+                            <Subheading style={styles.username}>{taskAssignedTo.displayName}</Subheading>
+                        </View>
+                      <Divider/>
+                    </View>
+                  }
+                    
                     <Text>{message}</Text>
                     <Text style={styles.time}>{dateAndTime.split(' ')[1].slice(0,-3)}</Text>
                 </Card> 

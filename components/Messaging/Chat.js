@@ -10,6 +10,7 @@ import ChatBubble from './ChatUI/ChatBubble'
 import ChatInput from './ChatUI/ChatInput'
 import GetMessages from '../Firestore/GetMessages'
 import StoreMessage from '../Firestore/StoreMessage'
+import ChatConversationBar from './ChatUI/ChatConversationBar'
 import auth from '@react-native-firebase/auth';
 import GetPublicUser from '../Firestore/GetPublicUser';
 import AssignTask from '../Firestore/AssignTask';
@@ -24,6 +25,7 @@ function Chat({route}) {
   const [openDialog, setOpenDialog] = useState(false)
   const [selectedTaskInfo, setSelectedTaskInfo] = useState({})
   const [taskOwnerInfo, setTaskOwnerInfo] = useState({})
+  const [chatPartnerInfo, setChatPartnerInfo] = useState({});
 
   const OpenDialog = (state) => {
     setOpenDialog(state);
@@ -39,12 +41,19 @@ function Chat({route}) {
     setTaskOwnerInfo(user._data)
   }
 
+  const ChatPartnerInfo = async (uid) => {
+    const user = await GetPublicUser(uid)
+    setChatPartnerInfo(user._data)
+    console.log(user._data)
+  }
+
   useEffect(() => {
     GetMessages(auth().currentUser.uid, route.params.task.uid, docs => {
       docs._changes.map( doc =>  {
         messages.find(el => el.mid == doc.doc.data().mid) ? true : setMessages(prev => [doc.doc.data(), ...prev])
       })
     });
+    ChatPartnerInfo(route.params.task.uid)
     Keyboard.addListener('keyboardDidShow', () => setKeyboardState(2))
     Keyboard.addListener('keyboardDidHide', () => setKeyboardState(1))
     return () => {
@@ -57,6 +66,7 @@ function Chat({route}) {
 
   return (
     <Provider>
+      <ChatConversationBar avatar={chatPartnerInfo.photoURL} username={chatPartnerInfo.displayName}/>
       <Dialog style={styles.dialog} dismissable onDismiss={() => setOpenDialog(false)} visible={openDialog}>
         <Dialog.Title>Auftrag zuweisen?</Dialog.Title>
         <Dialog.Content>
