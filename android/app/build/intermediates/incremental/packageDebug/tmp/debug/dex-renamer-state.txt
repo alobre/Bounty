@@ -1,4 +1,4 @@
-#Fri Feb 05 14:22:04 CET 2021
+#Sun Feb 21 18:59:09 CET 2021
 base.2=/home/wsowy/Documents/Coding/Bounty/android/app/build/intermediates/dex/debug/mergeDexDebug/classes3.dex
 path.2=classes3.dex
 base.1=/home/wsowy/Documents/Coding/Bounty/android/app/build/intermediates/dex/debug/mergeDexDebug/classes2.dex

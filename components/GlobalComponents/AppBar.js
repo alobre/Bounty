@@ -55,7 +55,8 @@ return(
    
    const styles = StyleSheet.create({
      appbar: {
-      //  backgroundColor: "white",
+      //  backgroundColor: '#c586c0',
+      elevation:0,
       shadowColor: "white",
       shadowOffset:{
         width: 0,

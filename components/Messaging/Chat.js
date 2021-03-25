@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { StyleSheet, View, FlatList, Text, ScrollView, Keyboard, Dimensions } from 'react-native';
+import { StyleSheet, View, FlatList, Text, ScrollView, Keyboard, Dimensions, Animated } from 'react-native';
 import { Button, Card, Avatar, FAB, Dialog, Provider, TouchableRipple, Badge, Paragraph, Divider, Subheading } from 'react-native-paper'
 import ImageGallery from "../Tasks/ImageGallery";
 import { GiftedChat } from 'react-native-gifted-chat';
@@ -21,11 +21,36 @@ import de from 'dayjs/locale/de'
 function Chat({route}) {
   const [messages, setMessages] = useState([]);
   let flatList = React.createRef();
-  const [keyboardState, setKeyboardState] = useState(1)
+  const [keyboardState, setKeyboardState] = useState(10)
   const [openDialog, setOpenDialog] = useState(false)
   const [selectedTaskInfo, setSelectedTaskInfo] = useState({})
   const [taskOwnerInfo, setTaskOwnerInfo] = useState({})
   const [chatPartnerInfo, setChatPartnerInfo] = useState({});
+
+  // const AnimatedFlatList = Animated.createAnimatedComponent(FlatList);
+  // const scrollY = useRef(new Animated.Value(0));
+  // const handleScroll = Animated.event(e
+  //   [
+  //     {
+  //       nativeEvent: {
+  //         contentOffset: {y: scrollY.current},
+  //       },
+  //     },
+  //   ],
+  //   {
+  //     useNativeDriver: true,
+  //   },
+  // );
+  // const scrollYClamped = diffClamp(scrollY.current, 0, headerHeight);
+  // const translateY = scrollYClamped.interpolate({
+  //   inputRange: [0, headerHeight],
+  //   outputRange: [0, -(headerHeight / 2)],
+  //   });
+  //  const translateYNumber = useRef();
+  //  translateY.addListener(({value}) => {
+  //    translateYNumber.current = value;
+  //  });
+
 
   const OpenDialog = (state) => {
     setOpenDialog(state);
@@ -54,11 +79,11 @@ function Chat({route}) {
       })
     });
     ChatPartnerInfo(route.params.task.uid)
-    Keyboard.addListener('keyboardDidShow', () => setKeyboardState(2))
-    Keyboard.addListener('keyboardDidHide', () => setKeyboardState(1))
+    Keyboard.addListener('keyboardDidShow', () => setKeyboardState(20))
+    Keyboard.addListener('keyboardDidHide', () => setKeyboardState(10))
     return () => {
-      Keyboard.removeListener("keyboardDidShow", () => setKeyboardState(2));
-      Keyboard.removeListener("keyboardDidHide", () => setKeyboardState(1));
+      Keyboard.removeListener("keyboardDidShow", () => setKeyboardState(20));
+      Keyboard.removeListener("keyboardDidHide", () => setKeyboardState(10));
     };
   }, [])
 
@@ -66,7 +91,8 @@ function Chat({route}) {
 
   return (
     <Provider>
-      <ChatConversationBar avatar={chatPartnerInfo.photoURL} username={chatPartnerInfo.displayName}/>
+      {/* <ChatConversationBar avatar={chatPartnerInfo.photoURL} username={chatPartnerInfo.displayName}/> */}
+
       <Dialog style={styles.dialog} dismissable onDismiss={() => setOpenDialog(false)} visible={openDialog}>
         <Dialog.Title>Auftrag zuweisen?</Dialog.Title>
         <Dialog.Content>
@@ -104,13 +130,18 @@ function Chat({route}) {
       </Dialog>
 
       <Grid style={styles.container}>
-        <Row size={9}>
+        <Row size={5}>
+        <ChatConversationBar style={[styles.header]} avatar={chatPartnerInfo.photoURL} username={chatPartnerInfo.displayName}/>
+        </Row>
+        <Row size={85}>
           <FlatList
               ref={flatList}
               style={styles.flatList}
               inverted
               data={messages}
               keyExtractor={item => item.mid}
+              // ListFooterComponent={ () => <Animated.ChatConversationBar style={[styles.header, {transform: [{translateY}]}]} avatar={chatPartnerInfo.photoURL} username={chatPartnerInfo.displayName}/>}
+              stickyFooterIndices={[0]}
               renderItem={({item}) => 
                 {
                   return( 
@@ -158,6 +189,8 @@ function Chat({route}) {
 }
 
   const styles = StyleSheet.create({
+    header: {
+    },
     dialog:{
       height: Dimensions.get("window").height * 0.6,
     },

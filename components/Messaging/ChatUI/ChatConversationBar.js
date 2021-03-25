@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import { Text, Appbar, Avatar } from 'react-native-paper';
 import { Col, Row, Grid } from "react-native-easy-grid";
 
@@ -8,7 +8,7 @@ const ChatConversationBar = ({avatar, username}) => {
         <Appbar style={styles.appbar}>
             {/* <Grid style={styles.grid}> */}
                 {/* <Col style={styles.avatarParent}> */}
-                    <Avatar.Image style={styles.avatar} size={32} source={{uri: avatar}} />
+                    <Avatar.Image style={styles.avatar} size={22} source={{uri: avatar}} />
                 {/* </Col> */}
                 {/* <Col style={styles.usernameParent}> */}
                     <Text style={styles.username}>{username}</Text>
@@ -20,12 +20,17 @@ const ChatConversationBar = ({avatar, username}) => {
 
 const styles = StyleSheet.create({
 appbar:{
+    // backgroundColor: "#d6b85f",
+    marginTop: 0,
+    elevation: 10,
     shadowOffset:{
-        width:0,
-        height:0
+        width:10,
+        height:10
     },
-    shadowRadius: 0,
-    height: '7%',
+    shadowOpacity: 1,
+    shadowColor: 'black',
+    shadowRadius: 100,
+    height: Dimensions.get('window').height * 0.05,
     width:'55%',
     borderBottomLeftRadius: 100,
     borderBottomRightRadius: 100,
